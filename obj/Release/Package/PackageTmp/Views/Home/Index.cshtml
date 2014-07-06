@@ -1,0 +1,58 @@
+﻿
+<div class="SlideContainer">
+    <div id="slide1" class="live">
+        <img src="../../Images/arm_party.JPG" alt="Arm Party" />
+    </div>
+    <div id="slide2">
+        <img src="../../Images/Baies_candle.jpeg" alt="Baies Candle" />
+    </div>
+    <div id="slide3">
+        <img src="../../Images/book_shelves.JPG" alt="Book Shelves" />
+    </div>
+    <div id="slide4">
+        <img src="../../Images/leopard_armparty.JPG" alt="Leopard Arm Party" />
+    </div>
+    <div id="slide5">
+        <img src="../../Images/tulips.JPG" alt="Tulips" />
+    </div>
+    <div id="slide6">
+        <img src="../../Images/zara_pumps.JPG" alt="Zara Pumps" />
+    </div>
+    <section class="SlideToolbar">
+        <ul class="SlideBlobs">
+            <li data-slideFor="slide1" onclick="ChangeSlide($(this).attr('data-slideFor'))" style="background-color:#f9bac3"></li>
+            <li data-slideFor="slide2" onclick="ChangeSlide($(this).attr('data-slideFor'))"></li>
+            <li data-slideFor="slide3" onclick="ChangeSlide($(this).attr('data-slideFor'))"></li>
+            <li data-slideFor="slide4" onclick="ChangeSlide($(this).attr('data-slideFor'))"></li>
+            <li data-slideFor="slide5" onclick="ChangeSlide($(this).attr('data-slideFor'))"></li>
+            <li data-slideFor="slide6" onclick="ChangeSlide($(this).attr('data-slideFor'))"></li>
+        </ul>
+    </section>
+    <div class="SlideToolbarShadow"></div>
+</div>
+
+@section blogPortal {
+    <a href="http://www.fancythingsblog.com">
+        <div class="portalTape"></div>
+        <p class="portalText">BLOG</p>
+        <img height="276px" width="100%" src="../../Images/blog_image.png" alt="Fancy Things Blog" />
+    </a>
+}
+@section shopPortal {
+    <a href="http://www.etsy.com/shop/shopfancythings">
+        <div class="portalTape"></div>
+        <p class="portalText">SHOP</p>
+        <img height="276px" width="100%" src='../../Images/shop_image.png' alt="My Shop" />
+    </a>
+}
+@section aboutPortal {
+    <a href="http://www.etsy.com/shop/shopfancythings">
+        <div class="portalTape"></div>
+        <p class="portalText">ABOUT</p>
+        <img height="276px" width="100%" src='../../Images/about_image.png' alt="About Me" />
+    </a>
+}
+
+<script type="text/javascript">
+    StartTimer();
+</script>

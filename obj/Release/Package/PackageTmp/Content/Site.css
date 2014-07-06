@@ -1,0 +1,660 @@
+﻿
+body
+{
+    color: #333;
+    font-size: .85em;
+    font-family: "Segoe UI" , Verdana, Helvetica, Sans-Serif;
+    /*background-image: url('http://i.istockimg.com/file_thumbview_approve/14708773/2/stock-photo-14708773-close-up-on-white-paper-high-resolution-image.jpg');*/
+    margin: 0;
+}
+
+div.ContentWrapper
+{
+    /*width: 1050px;*/
+    width: 960px;
+    height: 100%;
+    margin: 55px auto 5px auto;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(198, 198, 197, 0.9);
+}
+
+div.ContentWrapper:before, div.ContentWrapper:after {
+	content: "";
+	position: absolute;
+	left: 0px;
+}
+
+div.Content
+{
+    padding: 0 10px 10px 10px;
+    margin: 0 auto 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 2px #ccc;
+}
+
+a
+{
+    color: #333;
+    outline: none;
+    text-decoration: none;
+}
+
+a:link, a:visited, a:active, a:hover
+{
+    text-decoration: none;
+}
+
+header, footer, hgroup, section
+{
+    display: block;
+    position: relative;
+}
+
+header:before, header:after {
+	content: "";
+	display: table;
+}
+
+header:after {
+	clear: both;
+}
+
+nav 
+{
+	float:left;
+    margin: 50px 0 0 65px;
+    border-bottom: 1px solid black;
+}
+
+nav > a 
+{
+    display: inline-block;
+    cursor: pointer;
+    text-align: center; 
+    color: #444;   
+    padding-bottom: 4px;
+    font-family: Raleway, Georgia, Sans-Serif;
+    font-variant: small-caps;
+    font-size: 1.4em;
+    margin-right: 40px;
+}
+
+nav > a:first-of-type {
+	margin-left: 40px;
+}
+
+nav > a:hover {
+	color: #f9aab3;
+}
+
+.float-left
+{
+    float: left;
+}
+
+.float-right
+{
+    float: right;
+}
+
+.clear-fix:after
+{
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    color: #000;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h1
+{
+    font-size: 2em;
+}
+
+h2
+{
+    font-size: 1.75em;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+h5 a:link, h5 a:visited, h5 a:active
+{
+    padding: 0;
+    text-decoration: none;
+}
+
+
+/* main layout
+----------------------------------------------------------*/
+#body
+{
+    background-color: #fff;
+}
+
+div.hr
+{
+    width: 100%;
+    height: 15px;
+    background: #fff url(http://www.holladayhealthandfitness.com/Content/images/content-divider.gif) no-repeat scroll center;
+}
+
+div.hr > hr
+{
+    display: none;
+}
+
+.SlideContainer
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 940px;
+    height: 400px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.SlideContainer img
+{
+    height: 100%;
+    width: 940px;
+}
+
+.SlideContainer div[id*=slide]
+{
+    display: block;
+    position: absolute;
+    left: 940px;
+}
+
+.SlideContainer div.slideLeftQuick 
+{
+	left: -940px;
+}
+
+.SlideContainer div.slideLeft 
+{
+	left: -940px;
+	transition: left 1s;
+}
+
+.SlideContainer div.slideRight 
+{
+	left: 940px;
+	transition: left 1s;
+}
+
+.SlideContainer div.live
+{
+    z-index: 5;
+    left: 0px;
+    transition: left 1s;
+}
+
+.SlideToolbar {
+	position: absolute;
+	bottom: 0px;
+	z-index:10;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+}
+
+.SlideToolbarShadow {
+	position: absolute;
+	bottom: 0px;
+	z-index:9;
+	width: 100%;
+	height: 30px;
+	background-color: #fff;
+	opacity: .7;
+}
+
+.SlideToolbar > ul > li {
+	display: inline-block;
+	height: 14px;
+	width: 14px;
+	-webkit-border-radius: 7px;
+	background-color: #333;
+	cursor: pointer;
+	margin: 0 5px 0 5px;
+}
+
+.SlideBlobs 
+{
+	margin-top: 7px;
+}
+
+.Portal
+{
+    width: 306.6px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.blogPortal
+{
+    margin-right: 10px;
+}
+
+.shopPortal
+{
+    margin-right: 10px;
+}
+
+.aboutPortal
+{
+    /* about portal styles */
+}
+
+.Portal:hover img
+{
+    opacity: .9;
+}
+
+.Portal:hover p
+{
+    text-decoration: underline;
+}
+
+.portalTape
+{
+    position: absolute;
+    margin: 10px 0 0 10px;
+    width: 100px;
+    opacity: .8;
+    height: 50px;
+    background: url('../../Images/pinkTape.png') no-repeat;
+    -webkit-transform: rotate(-4deg);
+    z-index: 3;
+}
+
+.portalText {
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	position: absolute;
+    margin: 10px 0 0 10px;
+    color: White;
+    font-family: Raleway;
+    font-size: 1.5em;
+    line-height: 2.2;
+    letter-spacing: 2px;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    z-index: 4;
+}
+
+footer
+{
+    background-color: #eaeaea;
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+ul {
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-padding-start: 0;
+}
+
+/* social icons
+---------------------------------------------------------*/
+.SocialIcons
+{
+    position: fixed; 
+    top: 0px; 
+    height: 50px; 
+    width: 100%; 
+    background-color: #333;
+    text-align: center;
+    z-index: 100;
+}
+
+.SocialIcons  ul
+{
+    padding-top: 15px;
+    list-style-type: none;
+    -webkit-padding-start: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    height: 100%;
+}
+
+.SocialIcons  ul > li
+{
+    display: inline;
+    margin: 0 5px 0 5px;
+}
+
+.SocialIcons  ul > li:hover
+{
+    opacity: .85;
+}
+
+.SocialIcons a
+{
+    display: inline-block;
+    background-image: url('../Images/SocialIcons.png');
+    height: 21px;
+    width: 21px;
+}
+    
+.SocialIcons a#facebook
+{
+    background-position: 0px 0px;
+}
+
+.SocialIcons a#facebook:hover
+{
+    background-position: 26px 0px;
+}
+
+.SocialIcons a#twitter
+{
+    width: 26px;
+    background-position: 0px -21px;
+}
+
+.SocialIcons a#twitter:hover
+{
+    background-position: 26px -21px;
+}
+
+.SocialIcons a#pinterest
+{
+    background-position: 0px -42px;
+}
+
+.SocialIcons a#pinterest:hover
+{
+    background-position: 26px -42px;
+}
+
+.SocialIcons a#instagram
+{
+    background-position: 0px -62px;
+}
+
+.SocialIcons a#instagram:hover
+{
+    background-position: 26px -62px;
+}
+
+.SocialIcons a#email
+{
+    width: 26px;
+    height: 20px;
+    background-position: 0px -84px;
+}
+
+.SocialIcons a#email:hover
+{
+    background-position: 26px -84px;
+}
+
+/* info and errors */
+.message-info
+{
+    border: 1px solid;
+    clear: both;
+    padding: 10px 20px;
+}
+
+.message-error
+{
+    clear: both;
+    color: #e80c4d;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.message-success
+{
+    color: #7ac0da;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.error
+{
+    color: #e80c4d;
+}
+
+/* styles for validation helpers */
+.field-validation-error
+{
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+input.input-validation-error
+{
+    border: 1px solid #e80c4d;
+}
+
+input[type="checkbox"].input-validation-error
+{
+    border: 0 none;
+}
+
+.validation-summary-errors
+{
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/********************
+*   Mobile Styles   *
+********************/
+/*@media only screen and (max-width: 850px)
+{
+
+    /* header
+        ----------------------------------------------------------*/
+/*    header .float-left, header .float-right
+    {
+        float: none;
+    }
+
+    /* logo */
+/*    header .site-title
+    {
+        margin: 10px;
+        text-align: center;
+    }
+
+    /* login */
+ /*   #login
+    {
+        font-size: .85em;
+        margin: 0 0 12px;
+        text-align: center;
+    }
+
+    #login ul
+    {
+        margin: 5px 0;
+        padding: 0;
+    }
+
+    #login li
+    {
+        display: inline;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #login a
+    {
+        background: none;
+        color: #999;
+        font-weight: 600;
+        margin: 2px;
+        padding: 0;
+    }
+
+    #login a:hover
+    {
+        color: #333;
+    }
+
+    /* menu */
+/*    nav
+    {
+        float:left;
+        margin: 70px 0 5px 50px;
+    }
+
+    ul#menu
+    {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    ul#menu li
+    {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /* main layout
+        ----------------------------------------------------------*/
+/*    .main-content, .featured + .main-content
+    {
+        background-position: 10px 0;
+    }
+
+    .content-wrapper
+    {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .featured .content-wrapper
+    {
+        padding: 10px;
+    }
+
+    /* page content */
+ /*   article, aside
+    {
+        float: none;
+        width: 100%;
+    }
+
+    /* ordered list */
+ /*   ol.round
+    {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    ol.round li
+    {
+        padding-left: 10px;
+        margin: 25px 0;
+    }
+
+    ol.round li.zero, ol.round li.one, ol.round li.two, ol.round li.three, ol.round li.four, ol.round li.five, ol.round li.six, ol.round li.seven, ol.round li.eight, ol.round li.nine
+    {
+        background: none;
+    }
+
+    /* features */
+/*    section.feature
+    {
+        float: none;
+        padding: 10px;
+        width: auto;
+    }
+
+    section.feature img
+    {
+        color: #999;
+        content: attr(alt);
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+
+    /* forms */
+/*    input
+    {
+        width: 90%;
+    }
+
+    /* login page */
+ /*   #loginForm
+    {
+        border-right: none;
+        float: none;
+        width: auto;
+    }
+
+    #loginForm .validation-error
+    {
+        display: block;
+        margin-left: 15px;
+    }
+
+    #socialLoginForm
+    {
+        margin-left: 0;
+        float: none;
+        width: auto;
+    }
+
+
+    /* footer
+        ----------------------------------------------------------*/
+/*    footer .float-left, footer .float-right
+    {
+        float: none;
+    }
+
+    footer
+    {
+        text-align: center;
+        height: 50px;
+        margin-top: 5px;
+        padding: 10px 0;
+    }
+}
+*/

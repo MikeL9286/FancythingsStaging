@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="Fashion,Food,Beauty,Style,Home,Blog,Fancy,Life" name="keywords">
+    <meta content="Life + Style website called fancy things blog. Contains articles all about fashion, beauty, home decor, round ups of coveted products, and more."
+        name="description">
+    <title>Fancy things</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="../../Scripts/Slideshow.js" type="text/javascript"></script>
+    <script src="../../Scripts/Blog.js" type="text/javascript"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <section class="SocialIcons" style="color:White">
+        <span style="float:left;padding-top:15px;margin-left:300px;font-family:cursive">fancy meeting you here!</span>
+        @Html.Partial("SocialIcons")
+    </section>
+    <div class="ContentWrapper">
+        <div class="Content">
+            <header>
+                <div style="float:left">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img alt="Fancy Things logo" class="logo" src="../../Images/logo_site.png" />
+                    </a>
+                </div>
+                <nav>
+                    <a href="http://www.fancythingsblog.com/" target="_blank">Blog</a>
+                    <a href="http://www.etsy.com/shop/shopfancythings" target="_blank">Shop</a>
+                    <a href="http://www.instagram.com/fancythingsblog" target="_blank">Instagram</a>
+                    <a href="@Url.Action("Index", "Home")">About</a>
+                </nav>
+            </header>
+            <div id="body">
+                <section class="Slideshow">
+                    @RenderBody()
+                </section>
+                <section class="Portal blogPortal float-left">
+                    @RenderSection("blogPortal", required: false)
+                </section>
+                <section class="Portal shopPortal float-left">
+                    @RenderSection("shopPortal", required: false)
+                </section>
+                <section class="Portal aboutPortal float-left">
+                    @RenderSection("aboutPortal", required: false)
+                </section>
+                <br style="clear: both" />
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2011 - Fancythings
+    </footer>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
