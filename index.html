@@ -8,22 +8,30 @@
     <title>Fancy things</title>
     <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <!--<script src="js/Blog.js" type="text/javascript"></script>-->
-    <script src="js/ContentLoader.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
     <link href='css/bootstrap.min.css' rel='stylesheet' type='text/css' />
-    <link href="css/Site.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <script src="js/responsiveslides.min.js"></script>
+    
+    <script src="Scripts/handlebars.min.js"></script>
+    <script src="Scripts/responsiveslides.min.js"></script>
     <link href="css/responsiveslides.css" rel="stylesheet" />
+
+    <script src="Scripts/ContentLoader.js" type="text/javascript"></script>
+    <script src="Scripts/Blogger.js" type="text/javascript"></script>
+    <link href="css/Site.css" rel="stylesheet" type="text/css" />
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script>
+        Blogger.GetPosts();
+    </script>
 </head>
 <body>
     <div class="container-fluid" role="main">
@@ -70,10 +78,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <ul class="nav nav-tabs nav-justified nav-posts" role="tablist">
-                                <li class="active"><a href="#">Recent Post 1</a></li>
-                                <li><a href="#">Recent Post 2</a></li>
-                                <li><a href="#">Recent Post 3</a></li>
-                                <li><a href="#">Recent Post 4</a></li>
+                                <li class="active"><a href="#"><script>$('.slideshow-widget .nav-posts li:first a').text(Blogger.posts[0].title)</script></a></li>
+                                <li><a href="#"><script>$('.slideshow-widget .nav-posts li:eq(1) a').text(Blogger.posts[1].title)</script></a></li>
+                                <li><a href="#"><script>$('.slideshow-widget .nav-posts li:eq(2) a').text(Blogger.posts[2].title)</script></a></li>
+                                <li><a href="#"><script>$('.slideshow-widget .nav-posts li:last a').text(Blogger.posts[3].title)</script></a></li>
                             </ul>
                         </div>
                     </div>
@@ -175,34 +183,6 @@
         </div>
     </div>
 
-    <script src="js/Main.js" type="text/javascript"></script>
+    <script src="Scripts/Main.js" type="text/javascript"></script>
 </body>
 </html>
-
-
-
-
-<!-- old markup
-<body>
-    <div class="ContentWrapper">
-        <div class="Content">
-            <header>
-                <nav class="navLeft smooth">
-                    <a href="http://www.fancythingsblog.com/" target="_blank">Blog</a>
-                    <a onclick="ContentLoader.Redirect('Blog')">Blog</a>
-                    <a href="http://www.etsy.com/shop/shopfancythings" target="_blank">Shop</a>
-                </nav>
-                <nav class="navRight smooth">
-                    <a onclick="ContentLoader.Redirect('Services')">Services</a>
-                    <a onclick="ContentLoader.Redirect('About')">About</a>
-                </nav>
-            </header>
-            <div id="body">
-                <script type="text/javascript">
-                    ContentLoader.Load();
-                </script>
-            </div>
-        </div>
-    </div>
-</body>
--->
