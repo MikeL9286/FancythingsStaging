@@ -11,31 +11,167 @@
     <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <script src="js/Main.js" type="text/javascript"></script>
-    <script src="js/Slideshow.js" type="text/javascript"></script>
     <!--<script src="js/Blog.js" type="text/javascript"></script>-->
     <script src="js/ContentLoader.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <link href='css/bootstrap.min.css' rel='stylesheet' type='text/css' />
     <link href="css/Site.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/responsiveslides.min.js"></script>
+    <link href="css/responsiveslides.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
-    <div class="SocialIcons">
-        <script type="text/javascript">$("div.SocialIcons").load("views/shared/SocialIcons.html");</script>
+    <div class="container" role="main">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Fancy things</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Blog</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="slideshow-widget">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class=" nav nav-tabs nav-justified" role="tablist">
+                        <li class="active"><a href="#">Recent Post 1</a></li>
+                        <li><a href="#">Recent Post 2</a></li>
+                        <li><a href="#">Recent Post 3</a></li>
+                        <li><a href="#">Recent Post 4</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 slideshow-widget-images">
+                    <img src="http://placehold.it/760x300" class="img-responsive" alt="image1" />
+                </div>
+                <div class="col-lg-4 slideshow-widget-content">
+                    <h3>Recent Post 1</h3>
+                    <p>This is the first hundred or so characters of the post...</p>
+                    <div class="tagList" style="margin-top: 50px">
+                        <h4>#hashtag</h4>
+                        <ul>
+                            <li>Some post with the same hashtag</li>
+                            <li>Another post with the same hashtag</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 column-left">
+                <div class="post-list-sort row">
+                    <div class="col-lg-12">
+                        <ul class=" nav nav-tabs nav-justified" role="tablist">
+                            <li class="active"><a href="#">Top Posts</a></li>
+                            <li><a href="#">Recent Posts</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="post-list row">
+                    <div class="col-lg-12">
+                        <ul class="media-list">
+                            <li class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" src="http://placehold.it/150x85" alt="post thumbnail">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Top Post 1</h4>
+                                    <p><small>date - </small> The first hundred or so characters from the post</p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" src="http://placehold.it/150x85" alt="post thumbnail">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Top Post 2</h4>
+                                    <p><small>date - </small> The first hundred or so characters from the post</p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-body">
+                                    <h4 class="media-heading">Advertisement</h4>
+                                    <p>Some kind of ad can be interwoven between posts</p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" src="http://placehold.it/150x85" alt="post thumbnail">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Top Post 3</h4>
+                                    <p><small>date - </small> The first hundred or so characters from the post</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 column-right">
+                <div class="row advert shop-the-feed">
+                    <div class="col-lg-12">
+                        <h3>Shop The Feed</h3>
+                        plug-in goes here
+                    </div>
+                </div>
+
+                <div class="row advert instagram">
+                    <div class="col-lg-12">
+                        <h3>Instagram</h3>
+                        plug-in goes here
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+</body>
+</html>
+
+
+
+
+<!-- old markup
+<body>
     <div class="ContentWrapper">
         <div class="Content">
             <header>
                 <nav class="navLeft smooth">
                     <a href="http://www.fancythingsblog.com/" target="_blank">Blog</a>
-                    <!--<a onclick="ContentLoader.Redirect('Blog')">Blog</a>-->
+                    <a onclick="ContentLoader.Redirect('Blog')">Blog</a>
                     <a href="http://www.etsy.com/shop/shopfancythings" target="_blank">Shop</a>
                 </nav>
-                <div>
-                    <a href="http://thefancythings.com">
-                        <img alt="Fancy Things logo" class="logo" src="img/header.jpg" />
-                    </a>
-                </div>
                 <nav class="navRight smooth">
                     <a onclick="ContentLoader.Redirect('Services')">Services</a>
                     <a onclick="ContentLoader.Redirect('About')">About</a>
@@ -47,10 +183,6 @@
                 </script>
             </div>
         </div>
-        <footer style="display: none">
-            <script type="text/javascript">$("footer").load("views/shared/Footer.html");</script>
-        </footer>
     </div>
-    <script src="js/google.analytics.js" type="text/javascript"></script>
 </body>
-</html>
+-->
