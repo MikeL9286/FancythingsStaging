@@ -10,3 +10,8 @@
 .spacer-70 {
     height: 70px;
 }
+
+.rslides .slideshow-widget-image {
+    height: 350px;
+    width: 670px
+}

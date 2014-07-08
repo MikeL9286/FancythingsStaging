@@ -13,7 +13,7 @@
     <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
     <link href='css/bootstrap.min.css' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    
+
     <script src="Scripts/handlebars.min.js"></script>
     <script src="Scripts/responsiveslides.min.js"></script>
     <link href="css/responsiveslides.css" rel="stylesheet" />
@@ -75,37 +75,42 @@
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="slideshow-widget">
-                    <div class="row">
+                    <div class="row slideshow-widget-post-headers">
                         <div class="col-lg-12">
-                            <ul class="nav nav-tabs nav-justified nav-posts" role="tablist">
-                                <li class="active"><a href="#"><script>$('.slideshow-widget .nav-posts li:first a').text(Blogger.posts[0].title)</script></a></li>
-                                <li><a href="#"><script>$('.slideshow-widget .nav-posts li:eq(1) a').text(Blogger.posts[1].title)</script></a></li>
-                                <li><a href="#"><script>$('.slideshow-widget .nav-posts li:eq(2) a').text(Blogger.posts[2].title)</script></a></li>
-                                <li><a href="#"><script>$('.slideshow-widget .nav-posts li:last a').text(Blogger.posts[3].title)</script></a></li>
+                            <ul class="nav nav-tabs nav-justified" role="tablist">
+                                <script id="nav-post-titles-template" type="text/x-handlebars-template">
+                                    {{#posts}}
+                                    <li><a href="#">{{title}}</a></li>
+                                    {{/posts}}
+                                </script>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-8 slideshow-widget-images">
+                    <div class="row slideshow-widget-images">
+                        <script id="slideshow-images-template" type="text/x-handlebars-template">
                             <ul class="rslides">
-                                <li><img src="http://placehold.it/760x300&text=Recent+Post+1" class="img-responsive" alt="image1" /></li>
-                                <li><img src="http://placehold.it/760x300&text=Recent+Post+2" class="img-responsive" alt="image2" /></li>
-                                <li><img src="http://placehold.it/760x300&text=Recent+Post+3" class="img-responsive" alt="image3" /></li>
-                                <li><img src="http://placehold.it/760x300&text=Recent+Post+4" class="img-responsive" alt="image4" /></li>
+                                {{#posts}}
+                                <li>
+                                    <div class="col-lg-7 slideshow-widget-image">
+                                        <a href="#"><img src="{{{firstImage content}}}" class="img-responsive" alt="slideshow image" /></a>
+                                    </div>
+                                    <div class="col-lg-5 slideshow-widget-content">
+                                        <a href="#"><h3>{{title}}</h3></a>
+                                        <p>{{summary content}}</p>
+                                        <p><a href="#"><small>read more...</small></a></p>
+                                        <div class="tagList" style="margin-top: 50px">
+                                            <h4>#hashtag</h4>
+                                            <ul>
+                                                <li>Some post with the same hashtag</li>
+                                                <li>Another post with the same hashtag</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                {{/posts}}
                             </ul>
-                        </div>
-                        <div class="col-lg-4 slideshow-widget-content">
-                            <h3>Recent Post 1</h3>
-                            <p>This is the first hundred or so characters of the post...</p>
-                            <div class="tagList" style="margin-top: 50px">
-                                <h4>#hashtag</h4>
-                                <ul>
-                                    <li>Some post with the same hashtag</li>
-                                    <li>Another post with the same hashtag</li>
-                                </ul>
-                            </div>
-                        </div>
+                        </script>
                     </div>
                 </div>
 
@@ -183,6 +188,7 @@
         </div>
     </div>
 
+    <script src="Scripts/templates/blogPostsTemplate.js"></script>
     <script src="Scripts/Main.js" type="text/javascript"></script>
 </body>
 </html>

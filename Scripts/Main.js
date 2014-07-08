@@ -6,12 +6,16 @@
     });
 
     $(function () {
+        var slideshowNavContainer = $('.slideshow-widget .slideshow-widget-post-headers');
         $(".rslides").responsiveSlides({
-            manualControls: $('.slideshow-widget li'),
+            manualControls: slideshowNavContainer,
             before: function () {
-                $('.slideshow-widget .rslides_here a').tab('show');
+                slideshowNavContainer.find('.rslides_here a').tab('show');
+
             }
         });
+
+        slideshowNavContainer.find('li:first a').tab('show');
     });
 
 
