@@ -12,6 +12,5 @@
 }
 
 .rslides .slideshow-widget-image {
-    height: 350px;
-    width: 670px
+    max-height: 350px;
 }
