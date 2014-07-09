@@ -14,3 +14,7 @@
 .rslides .slideshow-widget-image {
     max-height: 350px;
 }
+
+.slideshow-widget-post-headers li {
+    white-space: nowrap;
+}
