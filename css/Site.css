@@ -12,7 +12,11 @@
 }
 
 .rslides .slideshow-widget-image {
-    max-height: 350px;
+    max-height: 375px;
+}
+
+.rslides .slideshow-widget-image img {
+    min-height: 375px;
 }
 
 .slideshow-widget-post-headers li {
