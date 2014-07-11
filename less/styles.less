@@ -1,28 +1,24 @@
+@import "variables.less";
+
 // Fancy things styles
 // -------------------------
 
-
+.container-fluid {
+    padding-top: 70px;
+}
 
 .slideshow-widget {
     margin-bottom: 20px;
-}
 
-.spacer-50 {
-    height: 50px;
-}
+    .slideshow-widget-post-headers li {
+        white-space: nowrap;
+    }
 
-.spacer-70 {
-    height: 70px;
-}
+    .slideshow-widget-image {
+        max-height: @slideshow-image-height;
 
-.rslides .slideshow-widget-image {
-    max-height: 375px;
-}
-
-.rslides .slideshow-widget-image img {
-    min-height: 375px;
-}
-
-.slideshow-widget-post-headers li {
-    white-space: nowrap;
+        img {
+            min-height: @slideshow-image-height;
+        }
+    }
 }
