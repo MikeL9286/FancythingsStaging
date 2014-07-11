@@ -101,9 +101,12 @@
     <Content Include="img\slidePurse.jpeg" />
     <Content Include="img\slideSweater.jpeg" />
     <Content Include="img\slideWelcome.jpg" />
+    <Content Include="less-1.5.1.min.js" />
     <Content Include="Scripts\Blogger.js" />
     <Content Include="Scripts\Blog.js" />
     <Content Include="Scripts\ContentLoader.js" />
+    <Content Include="Scripts\less-1.5.1.js" />
+    <Content Include="Scripts\less-1.5.1.min.js" />
     <Content Include="Scripts\responsiveslides.js" />
     <Content Include="Scripts\responsiveslides.min.js" />
     <Content Include="Scripts\Slideshow.js" />
@@ -113,6 +116,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Readme\Handlebarsjs_README.md" />
     <Content Include="App_Readme\Handlebarsjs_LICENSE" />
+    <Content Include="styles.less" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\handlebars.amd.js" />
     <Content Include="Scripts\handlebars.amd.min.js" />
