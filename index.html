@@ -98,7 +98,7 @@
                                     </div>
                                     <div class="col-md-7 col-sm-6 col-xs-12 slideshow-widget-content">
                                         <a href="#"><h3>{{title}}</h3></a>
-                                        <p>{{summary content}}</p>
+                                        <p>{{summary content 250}}</p>
                                         <p><a href="#"><small>read more...</small></a></p>
                                         <div class="tagList" style="margin-top: 50px">
                                             <h4>#hashtag</h4>
@@ -129,15 +129,16 @@
                         <div class="post-list row">
                             <div class="col-xs-12">
                                 <ul class="media-list">
-                                    <script id="top-posts-template" type="text/x-handlebars-template">
+                                    <script id="post-feed-template" type="text/x-handlebars-template">
                                         {{#posts}}
                                         <li class="media">
                                             <a class="pull-left" href="#">
-                                                <img class="media-object" src="http://placehold.it/150x85" alt="post thumbnail">
+                                                <img class="media-object" src="http://placehold.it/130x115" alt="post thumbnail">
                                             </a>
                                             <div class="media-body">
                                                 <h4 class="media-heading">{{title}}</h4>
-                                                <p><small>{{published}} - </small> {{summary content}}</p>
+                                                <p><small>{{relativeDate published}} - </small> {{summary content 200}}</p>
+                                                <p><a href="#"><small>read more...</small></a></p>
                                             </div>
                                         </li>
                                         <li class="media">
@@ -152,7 +153,7 @@
                             </div>
                         </div>
 
-                        <button type="button" class="btn btn-primary btn-block">Show more posts</button>
+                        <button type="button" class="btn btn-primary btn-block" onclick="Blogger.ShowMorePosts()">Show more posts</button>
                     </div>
 
                     <div class="col-xs-4 column-right">
@@ -175,6 +176,7 @@
         </div>
     </div>
 
+    <script src="Scripts/moment.min.js"></script>
     <script src="Scripts/templates/blogPostsTemplate.js"></script>
     <script src="Scripts/Main.js" type="text/javascript"></script>
 </body>
