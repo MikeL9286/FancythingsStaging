@@ -91,4 +91,43 @@
         });
     };
 
+    /*
+    <div>
+            <a href="http://thenextweb.com/google/2013/05/03/fullscreen-beam-launches-first-youtube-app-for-google-glass-with-public-or-private-sharing/">
+                <h2>Fullscreen BEAM: The first YouTube app for Google Glass comes with public or private sharing</h2>
+                <h4 class="count-comments" data-disqus-url="http://thenextweb.com/google/2013/05/03/fullscreen-beam-launches-first-youtube-app-for-google-glass-with-public-or-private-sharing/"></h4>
+            </a>
+        </div>
+
+    $(document).ready(function () {
+                var disqusPublicKey = "YOUR_PUBLIC_KEY";
+                var disqusShortname = "YOUR_SHORTNAME";
+                var urlArray = [];
+
+                $('.count-comments').each(function () {
+                    var url = $(this).attr('data-disqus-url');
+                    urlArray.push('link:' + url);
+                });
+
+                $('#get-counts-button').click(function () {
+
+                    $.ajax({
+                        type: 'GET',
+                        url: "https://disqus.com/api/3.0/threads/set.jsonp",
+                        data: { api_key: disqusPublicKey, forum : disqusShortname, thread : urlArray }, // URL method
+                        cache: false,
+                        dataType: "jsonp",
+                        success: function (result) {
+                            for (var i in result.response) {
+                                var countText = " comments";
+                                var count = result.response[i].posts;
+                                if (count == 1) countText = " comment";
+                                $('h4[data-disqus-url="' + result.response[i].link + '"]').html(count + countText);
+                            }
+                        }
+                    });
+                });
+            });
+    */
+
 }(window.Blogger = window.Blogger || {}, jQuery))
