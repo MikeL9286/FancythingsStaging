@@ -6,7 +6,7 @@ var template1 = Handlebars.compile(source1);
 var template2 = Handlebars.compile(source2);
 var template3 = Handlebars.compile(source3);
 
-var data = { blogPosts: Blogger.blog.items };
+var data = { blogPosts: Blogger.posts.slice(0, 4) };
 
 Handlebars.registerHelper('firstImage', function (postContent) {
     return postContent.match('<img.* src=".*"')[0].match('http.*jpg|http.*png');
