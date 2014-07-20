@@ -2,6 +2,7 @@
 
     Blogger.posts = {};
     Blogger.postFeed = [];
+    Blogger.postFeed.feedType = 'top';
 
     var postFeedLimit = 20;
     var postFeedMultiple = 4;
@@ -86,13 +87,15 @@
 
     Blogger.ShowMorePosts = function () {
         var postsToAdd;
+        var postFeedLength = Blogger.postFeed.length;
+
         if (Blogger.postFeed.feedType == 'top') {
-            var subset = popularThreads.slice(Blogger.postFeed.length, Blogger.postFeed.length + 4);
+            var subset = popularThreads.slice(postFeedLength, postFeedLength + postFeedMultiple);
             AddPopularPosts(subset);
-            postsToAdd = Blogger.postFeed.slice(Blogger.postFeed.length, Blogger.postFeed.length + 4);
+            postsToAdd = Blogger.postFeed.slice(postFeedLength, postFeedLength + postFeedMultiple);
         }
         else {
-            postsToAdd = Blogger.posts.slice(Blogger.postFeed.length, Blogger.postFeed.length + 4);
+            postsToAdd = Blogger.posts.slice(postFeedLength, postFeedLength + postFeedMultiple);
         }
 
         var source = $('#post-feed-template').html();
@@ -127,8 +130,8 @@
     function AddPopularPosts(popularThreads) {
         popularThreads.forEach(function (thread) {
             var postTitle = thread.clean_title.split(': ')[1];
+            console.log(postTitle);
             var post = GetPostByTitle(postTitle).items[0];
-            //post.commentCount = thread.posts;
             Blogger.postFeed.push(post);
         });
     };
