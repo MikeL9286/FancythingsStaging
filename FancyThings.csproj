@@ -93,6 +93,7 @@
     <Content Include="img\slidePurse.jpeg" />
     <Content Include="img\slideSweater.jpeg" />
     <Content Include="img\slideWelcome.jpg" />
+    <Content Include="Scripts\Disqus.js" />
     <Content Include="Scripts\Blogger.js" />
     <Content Include="Scripts\Blog.js" />
     <Content Include="Scripts\bootstrap.js" />

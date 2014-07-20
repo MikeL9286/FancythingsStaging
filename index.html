@@ -33,6 +33,7 @@
 
     <script>
         Blogger.GetPosts();
+        Blogger.GetPopularPosts();
     </script>
 </head>
 <body>
@@ -80,9 +81,9 @@
                         <div class="col-xs-12">
                             <ul class="nav nav-tabs nav-justified" role="tablist">
                                 <script id="nav-post-titles-template" type="text/x-handlebars-template">
-                                    {{#posts}}
+                                    {{#blogPosts}}
                                     <li><a href="#">{{title}}</a></li>
-                                    {{/posts}}
+                                    {{/blogPosts}}
                                 </script>
                             </ul>
                         </div>
@@ -91,7 +92,7 @@
                     <div class="row slideshow-widget-images">
                         <script id="slideshow-images-template" type="text/x-handlebars-template">
                             <ul class="rslides">
-                                {{#posts}}
+                                {{#blogPosts}}
                                 <li>
                                     <div class="col-md-5 col-sm-6 hidden-xs slideshow-widget-image">
                                         <a href="#"><img src="{{{firstImage content}}}" class="img-responsive" alt="slideshow image" /></a>
@@ -109,7 +110,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                {{/posts}}
+                                {{/blogPosts}}
                             </ul>
                         </script>
                     </div>
@@ -130,15 +131,15 @@
                             <div class="col-xs-12">
                                 <ul class="media-list">
                                     <script id="post-feed-template" type="text/x-handlebars-template">
-                                        {{#posts}}
+                                        {{#feedPosts}}
                                         <li class="media">
-                                            <a class="pull-left" href="#">
+                                            <a class="pull-left hidden-xs" href="#">
                                                 <img class="media-object" src="http://placehold.it/130x115" alt="post thumbnail">
                                             </a>
                                             <div class="media-body">
                                                 <a href="#"><h4 class="media-heading">{{title}}</h4></a>
-                                                <p><small>{{relativeDate published}} - </small> {{summary content 200}}</p>
-                                                <p><a href="#"><small>read more...</small></a></p>
+                                                <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
+                                                <span><a href="#"><small>see more...</small></a></span>
                                             </div>
                                         </li>
                                         <li class="media">
@@ -147,7 +148,7 @@
                                                 <p>Some kind of ad can be interwoven between posts</p>
                                             </div>
                                         </li>
-                                        {{/posts}}
+                                        {{/feedPosts}}
                                     </script>
                                 </ul>
                             </div>
@@ -156,7 +157,7 @@
                         <button type="button" class="btn btn-primary btn-block" onclick="Blogger.ShowMorePosts()">Show more posts</button>
                     </div>
 
-                    <div class="col-xs-4 column-right">
+                    <div class="col-sm-4 hidden-xs column-right">
                         <div class="row advert shop-the-feed">
                             <div class="col-xs-12">
                                 <h3>Shop The Feed</h3>
@@ -178,6 +179,7 @@
 
     <script src="Scripts/moment.min.js"></script>
     <script src="Scripts/templates/blogPostsTemplate.js"></script>
+    <script src="Scripts/templates/postFeedTemplate.js"></script>
     <script src="Scripts/Main.js" type="text/javascript"></script>
 </body>
 </html>

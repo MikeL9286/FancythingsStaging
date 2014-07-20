@@ -2,6 +2,7 @@
 
     Blogger.blog = {};
     Blogger.nextPageToken;
+    Blogger.postFeed = [];
 
     Blogger.GetPosts = function (feedType) {
         $.ajax({
@@ -22,6 +23,57 @@
             }
         });
     };
+
+    Blogger.GetPostByTitle = function (postTitle) {
+        var post;
+        $.ajax({
+            type: "GET",
+            url: 'https://www.googleapis.com/blogger/v3/blogs/5073145937869562696/posts/search?q=' + postTitle + '&key=AIzaSyBxl86QJ7gRccq_egFmP3J6Zhy3cQLluIk',
+            dataType: "json",
+            async: false,
+            processData: "false",
+            beforeSend: function (jqXHR, settings) {
+                //start timer gif
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("error: " + url);
+            },
+            success: function (data) {
+                post = data;
+            }
+        });
+        return post;
+    };
+
+    Blogger.GetPopularPosts = function (feedType) {
+        $.ajax({
+            type: "GET",
+            url: 'https://disqus.com/api/3.0/threads/listPopular.json?api_key=hfBewKMoMzDCj1FeyswsLVmBC5Gi0FvDI3ED6Or1iZueKDKubbvPnh6NolyhGdaX&forum=fancythingsblog&interval=90d',
+            dataType: "json",
+            async: false,
+            processData: "false",
+            beforeSend: function (jqXHR, settings) {
+                //start timer gif
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("error: " + url);
+            },
+            success: function (data) {
+                var subset = data.response.slice(0, 4);
+                SetPopularPosts(subset);
+            }
+        });
+    };
+
+    function SetPopularPosts(popularThreads)
+    {
+        popularThreads.forEach(function (thread) {
+            var postTitle = thread.clean_title.split(': ')[1];
+            var post = Blogger.GetPostByTitle(postTitle).items[0];
+            post.commentCount = thread.posts;
+            Blogger.postFeed.push(post);
+        });
+    }
 
     Blogger.SortByDate1 = function (a, b) {
         Blogger.blog.items.sort(SortByDate1);
@@ -90,44 +142,5 @@
             }
         });
     };
-
-    /*
-    <div>
-            <a href="http://thenextweb.com/google/2013/05/03/fullscreen-beam-launches-first-youtube-app-for-google-glass-with-public-or-private-sharing/">
-                <h2>Fullscreen BEAM: The first YouTube app for Google Glass comes with public or private sharing</h2>
-                <h4 class="count-comments" data-disqus-url="http://thenextweb.com/google/2013/05/03/fullscreen-beam-launches-first-youtube-app-for-google-glass-with-public-or-private-sharing/"></h4>
-            </a>
-        </div>
-
-    $(document).ready(function () {
-                var disqusPublicKey = "YOUR_PUBLIC_KEY";
-                var disqusShortname = "YOUR_SHORTNAME";
-                var urlArray = [];
-
-                $('.count-comments').each(function () {
-                    var url = $(this).attr('data-disqus-url');
-                    urlArray.push('link:' + url);
-                });
-
-                $('#get-counts-button').click(function () {
-
-                    $.ajax({
-                        type: 'GET',
-                        url: "https://disqus.com/api/3.0/threads/set.jsonp",
-                        data: { api_key: disqusPublicKey, forum : disqusShortname, thread : urlArray }, // URL method
-                        cache: false,
-                        dataType: "jsonp",
-                        success: function (result) {
-                            for (var i in result.response) {
-                                var countText = " comments";
-                                var count = result.response[i].posts;
-                                if (count == 1) countText = " comment";
-                                $('h4[data-disqus-url="' + result.response[i].link + '"]').html(count + countText);
-                            }
-                        }
-                    });
-                });
-            });
-    */
 
 }(window.Blogger = window.Blogger || {}, jQuery))
