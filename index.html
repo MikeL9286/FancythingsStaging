@@ -11,8 +11,8 @@
 
     <script src="Scripts/jquery-2.1.1.min.js"></script>
 
-    <link href="less/styles.less" rel="stylesheet/less" type="text/css" />
     <link href="Content/bootstrap/bootstrap.less" rel="stylesheet/less" type="text/css" />
+    <link href="less/styles.less" rel="stylesheet/less" type="text/css" />
     <script src="Scripts/less-1.5.1.min.js"></script>
 
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -33,7 +33,7 @@
 
     <script>
         Blogger.GetPosts();
-        Blogger.GetPopularThreads();
+        //Blogger.GetPopularThreads();
     </script>
 </head>
 <body>
@@ -101,12 +101,11 @@
                                         <a href="#"><h3>{{title}}</h3></a>
                                         <p><small>{{relativeDate published}} - </small> {{summary content 250}}</p>
                                         <p><a href="#"><small>read more...</small></a></p>
-                                        <div class="tagList" style="margin-top: 50px">
-                                            <h4>#hashtag</h4>
-                                            <ul>
-                                                <li>Some post with the same hashtag</li>
-                                                <li>Another post with the same hashtag</li>
-                                            </ul>
+                                        <div class="tagList">
+                                            <h4>Tags:</h4>
+                                            {{#each labels}}
+                                            <div><a href="">{{this}}</a></div>
+                                            {{/each}}
                                         </div>
                                     </div>
                                 </li>
@@ -158,28 +157,86 @@
                     </div>
 
                     <div class="col-sm-4 hidden-xs column-right">
-                        <div class="row advert shop-the-feed">
+                        <!-- like to know it widget -->
+                        <div class="row advert ltkit">
                             <div class="col-xs-12">
-                                <h3>Shop The Feed</h3>
-                                plug-in goes here
+                                <div class="ltkwidget-widget" data-rows="1" data-cols="3" data-show-frame="true" data-user-id="18622" data-padding="2"></div>
                             </div>
                         </div>
+                        <!-- /like to know it widget -->
 
+                        <!-- reward style widget -->
+                        <div class="row advert reward-style">
+                            <div class="shopthepost-widget" data-widget-id="125896">
+                                <script type="text/javascript">!function (d, s, id) { var e, p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { e = d.createElement(s); e.id = id; e.src = p + '://' + 'widgets.rewardstyle.com' + '/js/shopthepost.js'; d.body.appendChild(e); } if (typeof window.__stp === 'object') if (d.readyState === 'complete') { window.__stp.init(); } }(document, 'script', 'shopthepost-script');</script><div class="rs-adblock"><img src="//assets.rewardstyle.com/images/search/350.gif" onerror="                                        this.parentNode.innerHTML = 'Disable your ad blocking software to view this content.'" style="width: 15px; height: 15px;" /><noscript>JavaScript is currently disabled in this browser. Reactivate it to view this content.</noscript></div>
+                            </div>
+                        </div>
+                        <!-- /reward style widget -->
+
+                        <!-- Instagram widget -->
                         <div class="row advert instagram">
                             <div class="col-xs-12">
                                 <h3>Instagram</h3>
-                                plug-in goes here
+                                <iframe src="http://snapwidget.com/sl/?u=ZmFuY3l0aGluZ3NibG9nfGlufDM0NXwzfDN8fG5vfDIwfGZhZGVPdXR8b25TdGFydHx5ZXM=&v=20714" title="Instagram Widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:365px; height:365px"></iframe>
                             </div>
                         </div>
+                        <!-- /Instagram widget -->
+
+                        <!-- Facebook widget -->
+                        <div class="row advert facebook">
+                            <div class="col-xs-12">
+                                <div id="fb-root">
+                                    <fb:like-box href="http://www.facebook.com/pages/Fashion-Food/213692045319671" width="345" show_faces="true" stream="false" header="true"></fb:like-box>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Facebook widget -->
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <script src="Scripts/moment.min.js"></script>
-    <script src="Scripts/templates/blogPostsTemplate.js"></script>
-    <script src="Scripts/templates/postFeedTemplate.js"></script>
-    <script src="Scripts/Main.js" type="text/javascript"></script>
+            <script src="Scripts/moment.min.js"></script>
+            <script src="Scripts/templates/blogPostsTemplate.js"></script>
+            <script src="Scripts/templates/postFeedTemplate.js"></script>
+            <script src="Scripts/Main.js" type="text/javascript"></script>
+
+            <!-- Render LTKit widget -->
+            <script>
+                !function (d, s, id) {
+                    var e, p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
+                        e = d.createElement(s);
+                        e.id = id;
+                        e.src = p + '://' + 'www.rewardstyle.com/api/widgets' + '/js/ltkwidget.js';
+                        d.body.appendChild(e);
+                    }
+                    if (typeof (window.__ltkwidget) === 'object' && document.readyState === 'complete') {
+                        __ltkwidget.init();
+                    }
+                }(document, 'script', 'ltkwidget-script');
+            </script>
+
+            <!-- Render fb widget -->
+            <script>
+                window.fbAsyncInit = function () {
+                    FB.init({
+                        appId: '339913236114724', // App ID
+                        channelURL: 'http://www.fancythingsblog.com', // Channel File
+                        status: true, // check login status
+                        cookie: true, // enable cookies to allow the server to access the session
+                        oauth: true, // enable OAuth 2.0
+                        xfbml: true  // parse XFBML
+                    });
+                };
+
+                // Load the SDK Asynchronously
+                (function (d) {
+                    var js, id = 'facebook-jssdk'; if (d.getElementById(id)) { return; }
+                    js = d.createElement('script'); js.id = id; js.async = true;
+                    js.src = "//connect.facebook.net/en_US/all.js";
+                    d.getElementsByTagName('head')[0].appendChild(js);
+                }(document));
+            </script>
+
 </body>
 </html>

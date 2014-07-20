@@ -14,7 +14,7 @@
         }
     };
 
-    Blogger.GetPosts = function (feedType) {
+    Blogger.GetPosts = function () {
         $.ajax({
             type: "GET",
             url: 'https://www.googleapis.com/blogger/v3/blogs/5073145937869562696/posts?maxResults=' + postFeedLimit + '&key=AIzaSyBxl86QJ7gRccq_egFmP3J6Zhy3cQLluIk',
@@ -130,7 +130,6 @@
     function AddPopularPosts(popularThreads) {
         popularThreads.forEach(function (thread) {
             var postTitle = thread.clean_title.split(': ')[1];
-            console.log(postTitle);
             var post = GetPostByTitle(postTitle).items[0];
             Blogger.postFeed.push(post);
         });

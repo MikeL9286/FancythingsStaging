@@ -93,7 +93,6 @@
     <Content Include="img\slidePurse.jpeg" />
     <Content Include="img\slideSweater.jpeg" />
     <Content Include="img\slideWelcome.jpg" />
-    <Content Include="Scripts\Disqus.js" />
     <Content Include="Scripts\Blogger.js" />
     <Content Include="Scripts\Blog.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -199,6 +198,7 @@
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\templates\postFeedTemplate.js" />
     <Content Include="Scripts\templates\blogPostsTemplate.js" />
     <Content Include="views\about\index_old.html" />
     <Content Include="views\about\index.html" />
