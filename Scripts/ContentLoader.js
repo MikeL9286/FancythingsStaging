@@ -1,29 +1,27 @@
 ﻿(function (ContentLoader, $, undefined) {
 
     ContentLoader.Redirect = function(route) {
-        var baseUrl = "http://thefancythings.com";
+        //var baseUrl = "http://thefancythings.com";
+        var baseUrl = "http://mikel9286.github.io/FancythingsStaging";
         //var baseUrl = "http://localhost:34503";
-        window.location.href = baseUrl + "?route=" + route;
+        window.location.href = baseUrl + "?" + route;
     }
 
     ContentLoader.Load = function () {
-        $('footer').css('display', 'none');
-        Main.AttachEventListeners();
-
         var currentUrl = window.location.href;
-        var body = $("div#body");
+        var body = $("div#root");
 
-        if (currentUrl.indexOf("Blog") != -1) {
-            body.load("views/blog/Index.html");
-        }
-        else if (currentUrl.indexOf("Services") != -1) {
-            body.load("views/services/index.html");
+        if (currentUrl.indexOf("Services") != -1) {
+            body.load("views/services.html");
+            $('#servicesLink a').tab('show');
         }
         else if (currentUrl.indexOf("About") != -1) {
-            body.load("views/about/index.html");
+            body.load("views/about.html");
+            $('#aboutLink a').tab('show');
         }
         else {
-            body.load("views/home/Index.html");
+            body.load("views/home.html");
+            $('#homeLink a').tab('show');
         }
     };
 

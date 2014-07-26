@@ -1,0 +1,165 @@
+﻿<script>
+    Blogger.GetPosts();
+    Blogger.GetPopularThreads();
+</script>
+
+<div class="col-xs-10 col-xs-offset-1">
+    <div class="slideshow-widget">
+        <div class="row slideshow-widget-post-headers hidden-xs">
+            <div class="col-xs-12">
+                <ul class="nav nav-tabs nav-justified" role="tablist">
+                    <script id="nav-post-titles-template" type="text/x-handlebars-template">
+                        {{#blogPosts}}
+                        <li><a href="#">{{title}}</a></li>
+                        {{/blogPosts}}
+                    </script>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row slideshow-widget-images">
+            <script id="slideshow-images-template" type="text/x-handlebars-template">
+                <ul class="rslides">
+                    {{#blogPosts}}
+                    <li>
+                        <div class="col-md-5 col-sm-6 hidden-xs slideshow-widget-image">
+                            <a href="{{{url}}}"><img src="{{{firstImage content}}}" class="img-responsive" alt="slideshow image" /></a>
+                        </div>
+                        <div class="col-md-7 col-sm-6 col-xs-12 slideshow-widget-content">
+                            <a href="{{{url}}}"><h3>{{title}}</h3></a>
+                            <p><small>{{relativeDate published}} - </small> {{summary content 250}}</p>
+                            <p><a href="{{{url}}}"><small>read more...</small></a></p>
+                            <div class="tagList">
+                                <h5>Find similar posts:</h5>
+                                <ul class="nav nav-pills">
+                                    {{#each labels}}
+                                    <li><a href="#">{{this}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    {{/blogPosts}}
+                </ul>
+            </script>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-8 column-left">
+            <div class="post-list-sort row">
+                <div class="col-xs-12">
+                    <ul class=" nav nav-tabs nav-justified" role="tablist">
+                        <li class="active" onclick="Blogger.GetPopularPosts()"><a href="#">Top Posts</a></li>
+                        <li onclick="Blogger.GetRecentPosts()"><a href="#">Recent Posts</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="post-list row">
+                <div class="col-xs-12">
+                    <ul class="media-list">
+                        <script id="post-feed-template" type="text/x-handlebars-template">
+                            {{#feedPosts}}
+                            <li class="media">
+                                <a class="pull-left hidden-xs" href="#">
+                                    <img class="media-object" src="http://placehold.it/130x115" alt="post thumbnail">
+                                </a>
+                                <div class="media-body">
+                                    <a href="#"><h4 class="media-heading">{{title}}</h4></a>
+                                    <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
+                                    <span><a href="#"><small>see more...</small></a></span>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-body">
+                                    <h4 class="media-heading">Advertisement</h4>
+                                    <p>Some kind of ad can be interwoven between posts</p>
+                                </div>
+                            </li>
+                            {{/feedPosts}}
+                        </script>
+                    </ul>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-block" onclick="Blogger.ShowMorePosts()">Show more posts</button>
+        </div>
+
+        <div class="col-sm-4 hidden-xs column-right">
+            <!-- like to know it widget -->
+            <div class="row advert ltkit">
+                <div class="col-xs-12">
+                    <div class="ltkwidget-widget" data-rows="1" data-cols="3" data-show-frame="true" data-user-id="18622" data-padding="2"></div>
+                </div>
+            </div>
+            <!-- /like to know it widget -->
+            <!-- reward style widget -->
+            <div class="row advert reward-style">
+                <div class="shopthepost-widget" data-widget-id="125896">
+                    <script type="text/javascript">!function (d, s, id) { var e, p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { e = d.createElement(s); e.id = id; e.src = p + '://' + 'widgets.rewardstyle.com' + '/js/shopthepost.js'; d.body.appendChild(e); } if (typeof window.__stp === 'object') if (d.readyState === 'complete') { window.__stp.init(); } }(document, 'script', 'shopthepost-script');</script><div class="rs-adblock"><img src="//assets.rewardstyle.com/images/search/350.gif" onerror="                            this.parentNode.innerHTML = 'Disable your ad blocking software to view this content.'" style="width: 15px; height: 15px;" /><noscript>JavaScript is currently disabled in this browser. Reactivate it to view this content.</noscript></div>
+                </div>
+            </div>
+            <!-- /reward style widget -->
+            <!-- Instagram widget -->
+            <div class="row advert instagram">
+                <div class="col-xs-12">
+                    <h3>Instagram</h3>
+                    <iframe src="http://snapwidget.com/sl/?u=ZmFuY3l0aGluZ3NibG9nfGlufDM0NXwzfDN8fG5vfDIwfGZhZGVPdXR8b25TdGFydHx5ZXM=&v=20714" title="Instagram Widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:365px; height:365px"></iframe>
+                </div>
+            </div>
+            <!-- /Instagram widget -->
+            <!-- Facebook widget -->
+            <div class="row advert facebook">
+                <div class="col-xs-12">
+                    <div id="fb-root">
+                        <fb:like-box href="http://www.facebook.com/pages/Fashion-Food/213692045319671" width="345" show_faces="true" stream="false" header="true"></fb:like-box>
+                    </div>
+                </div>
+            </div>
+            <!-- /Facebook widget -->
+        </div>
+    </div>
+</div>
+
+<!-- Render LTKit widget -->
+<script>
+    !function (d, s, id) {
+        var e, p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            e = d.createElement(s);
+            e.id = id;
+            e.src = p + '://' + 'www.rewardstyle.com/api/widgets' + '/js/ltkwidget.js';
+            d.body.appendChild(e);
+        }
+        if (typeof (window.__ltkwidget) === 'object' && document.readyState === 'complete') {
+            __ltkwidget.init();
+        }
+    }(document, 'script', 'ltkwidget-script');
+</script>
+
+<!-- Render fb widget -->
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '339913236114724', // App ID
+            channelURL: 'http://www.fancythingsblog.com', // Channel File
+            status: true, // check login status
+            cookie: true, // enable cookies to allow the server to access the session
+            oauth: true, // enable OAuth 2.0
+            xfbml: true  // parse XFBML
+        });
+    };
+
+    // Load the SDK Asynchronously
+    (function (d) {
+        var js, id = 'facebook-jssdk'; if (d.getElementById(id)) { return; }
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+</script>
+
+<script src="Scripts/templates/blogPostsTemplate.js"></script>
+<script src="Scripts/templates/postFeedTemplate.js"></script>
+<script src="Scripts/home.js" type="text/javascript"></script>
