@@ -62,13 +62,13 @@
                         <script id="post-feed-template" type="text/x-handlebars-template">
                             {{#feedPosts}}
                             <li class="media">
-                                <a class="pull-left hidden-xs" href="#">
+                                <a class="pull-left hidden-xs" href="{{{url}}}">
                                     <img class="media-object" src="http://placehold.it/130x115" alt="post thumbnail">
                                 </a>
                                 <div class="media-body">
-                                    <a href="#"><h4 class="media-heading">{{title}}</h4></a>
+                                    <a href="{{{url}}}"><h4 class="media-heading">{{title}}</h4></a>
                                     <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
-                                    <span><a href="#"><small>see more...</small></a></span>
+                                    <span><a href="{{{url}}}"><small>see more...</small></a></span>
                                 </div>
                             </li>
                             <li class="media">
