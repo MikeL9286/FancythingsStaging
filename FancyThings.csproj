@@ -203,6 +203,7 @@
     <Content Include="Scripts\templates\blogPostsTemplate.js" />
     <Content Include="views\about.html" />
     <Content Include="views\home.html" />
+    <Content Include="views\services_old.html" />
     <Content Include="views\services.html" />
     <Content Include="views\shared\Footer.html" />
   </ItemGroup>

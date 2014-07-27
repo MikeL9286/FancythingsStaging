@@ -48,8 +48,8 @@
             },
             success: function (data) {                
                 popularThreads = data.response;
-                var subset = popularThreads.slice(0, postFeedMultiple);
-                AddPopularPosts(subset);
+                //var subset = popularThreads.slice(0, postFeedMultiple);
+                //AddPopularPosts(subset);
             }
         });
     };

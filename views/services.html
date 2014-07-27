@@ -1,49 +1,50 @@
 ﻿
-<!--<script src="../../js/services.js" type="text/javascript" />-->
-
-<div id="servicesContainer">
-    <div class="serviceFlex">
-        <section class="serviceTile">
-            <header class="smooth"><span class="fa fa-angle-right"></span>Social Media Strategy</header>
-            <div class="serviceDesc">Looking to <strong>grow your brands online presence</strong>? Social media is an important key to creating and maintaining a successful business. It’s our goal to optimize content for your social media platforms (i.e. Twitter, Facebook, Pinterest, Linked In, Google +, Instagram) through strategic methods that work for your brand.</div>
-        </section>
-
-        <section class="serviceTile">
-            <header class="smooth"><span class="fa fa-angle-right"></span>Content Creation</header>
-            <div class="serviceDesc">The quality of the content on your site is important and lets your readers know who you are. We'll help you <strong>create engaging and visible content</strong> (ie. blog posts, graphics, advertisements, etc..) to help attract readers.</div>
-        </section>
-
-        <br style="clear:both" />
-
-        <section class="serviceTile">
-            <header class="smooth"><span class="fa fa-angle-right"></span>Media Outreach</header>
-            <div class="serviceDesc">Have a great product or service you’re currently trying to promote? We’ll get you in touch with some of the internet's top influencers and trendsetters and help <strong>build buzz and engagement</strong> for you and your business.</div>
-        </section>
-
-        <section class="serviceTile">
-            <header class="smooth"><span class="fa fa-angle-right"></span>Design</header>
-            <div class="serviceDesc">Currently have a blog or thinking about starting one? We can build you the <strong>custom design</strong> you’ve been looking for. Just want to spruce up your site a little? We offer a <strong>la carte design services</strong> too! <a href="mailto:kristin@fancythingsblog.com">Contact me for details and pricing.</a></div>
-        </section>
+<div id="services">
+    <div class="col-xs-12">
+        <div class="row servicePitch">
+            <div class="col-xs-12">
+                <div>Interested in any of our services? Take a look and submit an inquiry!</div>
+                <a href="https://docs.google.com/forms/d/1uTBZqoY5HjB4N2MQNdZlbz2pW0zRmKUxG8SIp_9BqyM/viewform" target="_blank">
+                    <span class="btn btn-primary">Submit an Inquiry</span>
+                </a>
+                <div>We can't wait to hear from you!</div>
+            </div>
+        </div>
+        <div class="row service">
+            <div class="col-xs-1">
+                <i class="fa fa-globe"></i>
+            </div>
+            <div class="col-xs-11">
+                <h3>Social Media Strategy</h3>
+                <p>Looking to <strong>grow your brands online presence</strong>? Social media is an important key to creating and maintaining a successful business. It’s our goal to optimize content for your social media platforms (i.e. Twitter, Facebook, Pinterest, Linked In, Google +, Instagram) through strategic methods that work for your brand.</p>
+            </div>
+        </div>
+        <div class="row service">
+            <div class="col-xs-1">
+                <i class="fa fa-rss"></i>
+            </div>
+            <div class="col-xs-11">
+                <h3>Content Creation</h3>
+                <p>The quality of the content on your site is important and lets your readers know who you are. We'll help you <strong>create engaging and visible content</strong> (ie. blog posts, graphics, advertisements, etc..) to help attract readers.</p>
+            </div>
+        </div>
+        <div class="row service">
+            <div class="col-xs-1">
+                <i class="fa fa-comments"></i>
+            </div>
+            <div class="col-xs-11">
+                <h3>Media Outreach</h3>
+                <p>Have a great product or service you’re currently trying to promote? We’ll get you in touch with some of the internet's top influencers and trendsetters and help <strong>build buzz and engagement</strong> for you and your business.</p>
+            </div>
+        </div>
+        <div class="row service">
+            <div class="col-xs-1">
+                <i class="fa fa-desktop"></i>
+            </div>
+            <div class="col-xs-11">
+                <h3>Design</h3>
+                <p>Currently have a blog or thinking about starting one? We can build you the <strong>custom design</strong> you’ve been looking for. Just want to spruce up your site a little? We offer a <strong>la carte design services</strong> too! <a href="mailto:kristin@fancythingsblog.com">Contact me for details and pricing.</a></p>
+            </div>
+        </div>
     </div>
-    <br style="clear:both" />
-    <div>Interested in any of these services? We can't wait to hear from you!</div>
-    <a href="https://docs.google.com/forms/d/1uTBZqoY5HjB4N2MQNdZlbz2pW0zRmKUxG8SIp_9BqyM/viewform" target="_blank">
-        <span class="btn btn-primary inquiryBtn">Submit an Inquiry</span>
-    </a>
 </div>
-
-<script type="text/javascript">
-    $('.serviceTile').click(function () {
-        var description = $(this).find('.serviceDesc');
-        var icon = $(this).find('span.fa');
-
-        if (description.is(':visible')) {
-            description.hide(400);
-            icon.removeClass('fa-angle-down').addClass('fa-angle-right');
-        }
-        else {
-            description.show(400);
-            icon.removeClass('fa-angle-right').addClass('fa-angle-down');
-        }
-    });
-</script>
