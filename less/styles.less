@@ -13,6 +13,10 @@ body > .container {
 
     .slideshow-widget-post-headers li {
         white-space: nowrap;
+
+        a {
+            color: @text-color;
+        }
     }
 
     .slideshow-widget-image {
@@ -28,45 +32,48 @@ body > .container {
     }
 }
 
-.nav a {
-    color: @text-color;
+.post-list-sort {
+    .nav a {
+        color: @text-color;
+    }
 }
 
-#services {
+#servicesContainer {
     .row {
         padding: 25px 0;
     }
 
     .servicePitch {
         text-align: center;
-
-        .btn {
-            margin: 5px 0;
-        }
     }
 
     .service {
         height: 175px;
+        margin-bottom: 10px;
+        border-radius: 10px;
 
-        &:nth-child(2) {
+        &:nth-child(1) {
             background-color: lemonchiffon;
         }
 
-        &:nth-child(3) {
+        &:nth-child(2) {
             background-color: lightblue;
         }
 
-        &:nth-child(4) {
+        &:nth-child(3) {
             background-color: lightgrey;
         }
 
-        &:nth-child(5) {
+        &:nth-child(4) {
             background-color: lightsalmon;
         }
     }
 
     i {
-        font-size: 5em;
+        font-size: 4em;
         line-height: 125px;
     }
+}
+
+#aboutContainer {
 }
