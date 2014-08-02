@@ -13,13 +13,20 @@ Handlebars.registerHelper('firstImage', function (postContent) {
 });
 
 Handlebars.registerHelper('summary', function (postContent, length) {
-    var centerTextToRemove = postContent.match('<center>.*</center>');
-    var smallTextToRemove = postContent.match('<span.*</span>');
-    var content = postContent.split(centerTextToRemove).join(' ').split(smallTextToRemove).join(' ');
+    var postSummary = postContent.match('<div class="post-summary">(.*)</div>');
+    if (postSummary != null) {
+        return postSummary[1];
+    } else { //remove once all summaries are in place
+        var centerTextToRemove = postContent.match('<center>.*</center>');
+        var smallTextToRemove = postContent.match('<span.*</span>');
+        var content = postContent.split(centerTextToRemove).join(' ').split(smallTextToRemove).join(' ');
 
-    return content.length > length ?
-        $(content).text().substring(0, length) :
-        $(content).text();
+        console.log(content);
+
+        return content.length > length ?
+            $(content).text().substring(0, length) :
+            $(content).text();
+    }
 });
 
 Handlebars.registerHelper('relativeDate', function (publishedDate) {
