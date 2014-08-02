@@ -4,8 +4,8 @@
 </script>
 
 <div class="col-xs-12">
-    <div class="slideshow-widget">
-        <div class="row slideshow-widget-post-headers hidden-xs">
+    <div class="slideshow-widget hidden-xs">
+        <div class="row slideshow-widget-post-headers">
             <div class="col-xs-12">
                 <ul class="nav nav-tabs nav-justified" role="tablist">
                     <script id="nav-post-titles-template" type="text/x-handlebars-template">
@@ -46,7 +46,7 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-8 column-left">
+        <div class="col-xs-12 col-sm-8 column-left">
             <div class="post-list-sort row">
                 <div class="col-xs-12">
                     <ul class="nav nav-tabs nav-justified" role="tablist">
@@ -71,12 +71,15 @@
                                     <span><a href="{{{url}}}"><small>see more...</small></a></span>
                                 </div>
                             </li>
-                            <li class="media">
+                            <li>
+                                <hr />
+                            </li>
+                            <!--<li class="media">
                                 <div class="media-body">
                                     <h4 class="media-heading">Advertisement</h4>
                                     <p>Some kind of ad can be interwoven between posts</p>
                                 </div>
-                            </li>
+                            </li>-->
                             {{/feedPosts}}
                         </script>
                     </ul>
