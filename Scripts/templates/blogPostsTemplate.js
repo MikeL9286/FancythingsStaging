@@ -1,10 +1,12 @@
 ﻿var source1 = $("#nav-post-titles-template").html();
 var source2 = $("#slideshow-images-template").html();
 var source3 = $("#post-feed-template").html();
+var source4 = $("#blog-post-template").html();
 
 var template1 = Handlebars.compile(source1);
 var template2 = Handlebars.compile(source2);
 var template3 = Handlebars.compile(source3);
+var template4 = Handlebars.compile(source4);
 
 var data = { blogPosts: Blogger.posts.slice(0, 4) };
 
@@ -36,3 +38,4 @@ Handlebars.registerHelper('relativeDate', function (publishedDate) {
 $('#nav-post-titles-template').parent().append(template1(data));
 $('#slideshow-images-template').parent().append(template2(data));
 $('#post-feed-template').parent().append(template3(data));
+$('#blog-post-template').parent().append(template4(data));

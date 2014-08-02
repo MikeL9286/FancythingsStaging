@@ -106,7 +106,7 @@
         $('#post-feed-template').parent().append(html);
     };
 
-    function GetPostByTitle(postTitle) {
+    Blogger.GetPostByTitle = function(postTitle) {
         var post;
         $.ajax({
             type: "GET",
@@ -130,7 +130,7 @@
     function AddPopularPosts(popularThreads) {
         popularThreads.forEach(function (thread) {
             var postTitle = thread.clean_title.split(': ')[1];
-            var post = GetPostByTitle(postTitle).items[0];
+            var post = Blogger.GetPostByTitle(postTitle).items[0];
             Blogger.postFeed.push(post);
         });
     };

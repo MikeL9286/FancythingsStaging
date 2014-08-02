@@ -201,9 +201,9 @@
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\templates\postFeedTemplate.js" />
     <Content Include="Scripts\templates\blogPostsTemplate.js" />
+    <Content Include="views\blogpost.html" />
     <Content Include="views\about.html" />
     <Content Include="views\home.html" />
-    <Content Include="views\services_old.html" />
     <Content Include="views\services.html" />
     <Content Include="views\shared\Footer.html" />
   </ItemGroup>

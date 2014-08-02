@@ -23,7 +23,9 @@
                     {{#blogPosts}}
                     <li>
                         <div class="col-md-5 col-sm-6 hidden-xs slideshow-widget-image">
-                            <a href="{{{url}}}"><img src="{{{firstImage content}}}" class="img-responsive" alt="slideshow image" /></a>
+                            <a onclick="ContentLoader.Redirect('Post', '{{{title}}}')" href="#">
+                                <img src="{{{firstImage content}}}" class="img-responsive" alt="slideshow image" />
+                            </a>
                         </div>
                         <div class="col-md-7 col-sm-6 col-xs-12 slideshow-widget-content">
                             <a href="{{{url}}}"><h3>{{title}}</h3></a>
@@ -62,8 +64,8 @@
                         <script id="post-feed-template" type="text/x-handlebars-template">
                             {{#feedPosts}}
                             <li class="media">
-                                <a class="pull-left hidden-xs href="{{{url}}}">
-                                    <img class="media-object" src="http://placehold.it/130x115" alt="post thumbnail">
+                                    <a class="pull-left hidden-xs" href="{{{url}}}">
+                                    <img class=" media-object" src="http://placehold.it/130x115" alt="post thumbnail">
                                 </a>
                                 <div class="media-body">
                                     <a href="{{{url}}}"><h4 class="media-heading">{{title}}</h4></a>
@@ -74,12 +76,6 @@
                             <li>
                                 <hr />
                             </li>
-                            <!--<li class="media">
-                                <div class="media-body">
-                                    <h4 class="media-heading">Advertisement</h4>
-                                    <p>Some kind of ad can be interwoven between posts</p>
-                                </div>
-                            </li>-->
                             {{/feedPosts}}
                         </script>
                     </ul>
