@@ -199,6 +199,7 @@
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\templates\blogPostTemplate.js" />
     <Content Include="Scripts\templates\postFeedTemplate.js" />
     <Content Include="Scripts\templates\blogPostsTemplate.js" />
     <Content Include="views\blogpost.html" />
