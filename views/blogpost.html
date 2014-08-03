@@ -1,0 +1,21 @@
+﻿<script>
+    Blogger.posts = Blogger.GetPostByTitle(window.location.href.match('&post=(.*)')[1]);
+</script>
+
+<div id="postContainer">
+    <div class="post-content col-xs-12 col-sm-9">
+        <script id="blog-post-template" type="text/x-handlebars-template">            
+            {{#blogPosts}}
+            <h2>{{title}}</h2>
+            <div>{{published}}</div>
+            {{{content}}}
+            {{/blogPosts}}   
+            <h3>-K$</h3>
+        </script>
+    </div>
+    <div class="hidden-xs col-sm-3">
+        some other stuff can go here
+    </div>
+</div>
+
+<script src="Scripts/templates/blogPostTemplate.js"></script>

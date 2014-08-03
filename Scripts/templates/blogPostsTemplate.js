@@ -1,12 +1,10 @@
 ﻿var source1 = $("#nav-post-titles-template").html();
 var source2 = $("#slideshow-images-template").html();
 var source3 = $("#post-feed-template").html();
-var source4 = $("#blog-post-template").html();
 
 var template1 = Handlebars.compile(source1);
 var template2 = Handlebars.compile(source2);
 var template3 = Handlebars.compile(source3);
-var template4 = Handlebars.compile(source4);
 
 var data = { blogPosts: Blogger.posts.slice(0, 4) };
 
@@ -23,8 +21,6 @@ Handlebars.registerHelper('summary', function (postContent, length) {
         var smallTextToRemove = postContent.match('<span.*</span>');
         var content = postContent.split(centerTextToRemove).join(' ').split(smallTextToRemove).join(' ');
 
-        console.log(content);
-
         return content.length > length ?
             $(content).text().substring(0, length) :
             $(content).text();
@@ -35,7 +31,10 @@ Handlebars.registerHelper('relativeDate', function (publishedDate) {
     return moment(publishedDate).startOf('day').fromNow();
 });
 
+Handlebars.registerHelper('formattedDate', function (publishedDate) {
+    return moment(publishedDate).format('MMMM Do YYYY');
+});
+
 $('#nav-post-titles-template').parent().append(template1(data));
 $('#slideshow-images-template').parent().append(template2(data));
 $('#post-feed-template').parent().append(template3(data));
-$('#blog-post-template').parent().append(template4(data));

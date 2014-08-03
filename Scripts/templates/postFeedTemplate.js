@@ -17,8 +17,6 @@ Handlebars.registerHelper('summary', function (postContent, length) {
         var smallTextToRemove = postContent.match('<span.*</span>');
         var content = postContent.split(centerTextToRemove).join(' ').split(smallTextToRemove).join(' ');
 
-        console.log(content);
-
         return content.length > length ?
             $(content).text().substring(0, length) :
             $(content).text();
