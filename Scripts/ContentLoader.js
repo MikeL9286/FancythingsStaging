@@ -2,8 +2,8 @@
 
     ContentLoader.Redirect = function(route, postId) {
         //var baseUrl = "http://thefancythings.com";
-        var baseUrl = "http://mikel9286.github.io/FancythingsStaging";
-        //var baseUrl = "http://localhost:34503";
+        //var baseUrl = "http://mikel9286.github.io/FancythingsStaging";
+        var baseUrl = "http://localhost:34503";
 
         var url = baseUrl + "?page=" + route;
         url = postId == undefined ? url : url + "&post=" + postId;

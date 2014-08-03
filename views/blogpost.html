@@ -1,21 +1,28 @@
 ﻿<script>
-    Blogger.posts = Blogger.GetPostByTitle(window.location.href.match('&post=(.*)')[1]);
+    Blogger.posts = Blogger.GetPostById(window.location.href.match('&post=(.*)')[1]);
 </script>
 
 <div id="postContainer">
-    <div class="post-content col-xs-12 col-sm-9">
-        <script id="blog-post-template" type="text/x-handlebars-template">            
+    <div class="post-content col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-1">
+        <script id="blog-post-template" type="text/x-handlebars-template">
             {{#blogPosts}}
-            <h2>{{title}}</h2>
-            <div>{{published}}</div>
+            <h3>{{title}}</h3>
+            <em>{{formattedDate published}}</em>
+            <div><i class="fa fa-facebook"></i> <i class="fa fa-twitter"></i></div>
             {{{content}}}
-            {{/blogPosts}}   
             <h3>-K$</h3>
+            <ul class="nav nav-pills">
+                {{#each labels}}
+                <li><a href="#">{{this}}</a></li>
+                {{/each}}
+            </ul>
+            {{/blogPosts}}
         </script>
     </div>
-    <div class="hidden-xs col-sm-3">
+    <div class="hidden-xs col-md-4 col-md-offset-1">
         some other stuff can go here
     </div>
 </div>
 
 <script src="Scripts/templates/blogPostTemplate.js"></script>
+<script>$('img[src*=blogspot]').addClass('img-responsive');</script>

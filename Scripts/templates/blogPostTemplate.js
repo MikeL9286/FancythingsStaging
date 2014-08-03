@@ -1,7 +1,7 @@
 ﻿var source1 = $("#blog-post-template").html();
 var template1 = Handlebars.compile(source1);
 
-var data = { blogPosts: Blogger.posts.items[0] };
+var data = { blogPosts: Blogger.posts };
 
 Handlebars.registerHelper('relativeDate', function (publishedDate) {
     return moment(publishedDate).startOf('day').fromNow();

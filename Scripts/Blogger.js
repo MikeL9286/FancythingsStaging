@@ -106,7 +106,28 @@
         $('#post-feed-template').parent().append(html);
     };
 
-    Blogger.GetPostByTitle = function(postTitle) {
+    Blogger.GetPostById = function (postId) {
+        var post;
+        $.ajax({
+            type: "GET",
+            url: 'https://www.googleapis.com/blogger/v3/blogs/5073145937869562696/posts/' + postId + '?key=AIzaSyBxl86QJ7gRccq_egFmP3J6Zhy3cQLluIk',
+            dataType: "json",
+            async: false,
+            processData: "false",
+            beforeSend: function (jqXHR, settings) {
+                //start timer gif
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("error: " + url);
+            },
+            success: function (data) {
+                post = data;
+            }
+        });
+        return post;
+    };
+
+    function GetPostByTitle(postTitle) {
         var post;
         $.ajax({
             type: "GET",
@@ -130,7 +151,7 @@
     function AddPopularPosts(popularThreads) {
         popularThreads.forEach(function (thread) {
             var postTitle = thread.clean_title.split(': ')[1];
-            var post = Blogger.GetPostByTitle(postTitle).items[0];
+            var post = GetPostByTitle(postTitle).items[0];
             Blogger.postFeed.push(post);
         });
     };
