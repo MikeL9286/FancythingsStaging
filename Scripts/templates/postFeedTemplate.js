@@ -8,6 +8,18 @@ Handlebars.registerHelper('firstImage', function (postContent) {
     return postContent.match('<img.* src=".*"')[0].match('http.*jpg|http.*png');
 });
 
+Handlebars.registerHelper('thumbnail', function(postContent) {
+    var thumbnail = postContent.match('<img class="post-thumbnail".*/>');
+    var thumbnailUrl;
+
+    if (thumbnail == null)
+        thumbnailUrl = 'http://placehold.it/200x200';
+    else
+        thumbnailUrl = thumbnail[0].match('http.*jpg|http.*png');
+
+    return thumbnailUrl;
+});
+
 Handlebars.registerHelper('summary', function (postContent, length) {
     var postSummary = postContent.match('<div class="post-summary">(.*)</div>');
     if (postSummary != null) {

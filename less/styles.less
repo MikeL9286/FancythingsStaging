@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
 @import "variables.less";
 
 // Fancy things styles
@@ -6,6 +7,10 @@
 body > .container {
     max-width: 1400px;
     padding: 70px 15px 15px 15px;
+}
+
+h1, h2, h3, h4, nav li a {
+    font-family: @caps-header-font;
 }
 
 .slideshow-widget {
@@ -32,7 +37,14 @@ body > .container {
     }
 }
 
-.post-list-sort {
+.post-feed {
+    .post-feed-image {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+.post-feed-sort {
     .nav a {
         color: @text-color;
     }
@@ -54,7 +66,15 @@ hr {
 }
 
 #postContainer {
-    .post-content {
+    .post-summary {
+        display: none;
+    }
+
+    .post-header {
+        text-align: center;
+    }
+
+    .post-footer {
         text-align: center;
     }
 }
