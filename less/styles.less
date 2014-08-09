@@ -7,10 +7,32 @@
 body > .container {
     max-width: 1400px;
     padding: 70px 15px 15px 15px;
+    letter-spacing: .1em;
 }
 
-h1, h2, h3, h4, nav li a {
+.navbar {
+    background-color: white;
+    border-bottom: none;
+}
+
+.headroom--top {
+    border-bottom: none;
+}
+
+.headroom--not-top {
+    border-bottom: 1px solid @blue-color;
+}
+
+h1, h2, h3, h4 {
     font-family: @caps-header-font;
+}
+
+.column-right {
+    display: none;
+}
+
+.rounded {
+    border-radius: 10px;
 }
 
 .slideshow-widget {
@@ -39,8 +61,8 @@ h1, h2, h3, h4, nav li a {
 
 .post-feed {
     .post-feed-image {
-        height: 200px;
-        width: 200px;
+        height: 250px;
+        width: 250px;
     }
 }
 

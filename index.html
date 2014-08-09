@@ -22,6 +22,7 @@
     <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
     <script src="Scripts/handlebars.min.js"></script>
     <script src="Scripts/responsiveslides.min.js"></script>
+    <script src="Scripts/headroom.js"></script>
 
     <script src="Scripts/ContentLoader.js" type="text/javascript"></script>
     <script src="Scripts/Blogger.js" type="text/javascript"></script>
@@ -73,5 +74,12 @@
             <script>ContentLoader.Load();</script>
         </div>
     </div>
+    <script>
+        new Headroom(document.querySelector(".navbar"),
+            {
+                tolerance: 5,
+                offset: 5
+            }).init();
+    </script>
 </body>
 </html>
