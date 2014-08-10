@@ -23,14 +23,14 @@
                     {{#blogPosts}}
                     <li>
                         <div class="col-md-5 col-sm-6 hidden-xs slideshow-widget-image">
-                            <a onclick="ContentLoader.Redirect('Post', '{{{id}}}')" href="#">
+                            <a href="{{{postLink id}}}">
                                 <img src="{{{firstImage content}}}" class="img-responsive" alt="slideshow image" />
                             </a>
                         </div>
                         <div class="col-md-7 col-sm-6 col-xs-12 slideshow-widget-content">
-                            <a href="{{{url}}}"><h3>{{title}}</h3></a>
+                            <a href="{{{postLink id}}}"><h4>{{title}}</h4></a>
                             <p><small>{{relativeDate published}} - </small> {{summary content 250}}</p>
-                            <p><a href="{{{url}}}"><small>read more...</small></a></p>
+                            <p><a href="{{{postLink id}}}"><small>read more...</small></a></p>
                             <div class="tagList">
                                 <h5>Find similar posts:</h5>
                                 <ul class="nav nav-pills">
@@ -48,7 +48,7 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-12 col-sm-8 column-left">
+        <div class="col-xs-12 col-sm-12 column-left">
             <div class="post-feed-sort row">
                 <div class="col-xs-12">
                     <ul class="nav nav-tabs nav-justified" role="tablist">
@@ -64,13 +64,13 @@
                         <script id="post-feed-template" type="text/x-handlebars-template">
                             {{#feedPosts}}
                             <li class="post-feed-item media">
-                                <a class="pull-left hidden-xs" href="{{{url}}}">
+                                <a class="pull-left hidden-xs" href="{{{postLink id}}}">
                                     <img class="post-feed-image media-object rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
                                 </a>
                                 <div class="post-feed-content media-body">
-                                    <a href="{{{url}}}"><h4 class="media-heading">{{title}}</h4></a>
+                                    <a href="{{{postLink id}}}"><h4 class="media-heading">{{title}}</h4></a>
                                     <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
-                                    <span><a href="{{{url}}}"><small>see more...</small></a></span>
+                                    <span><a href="{{{postLink id}}}"><small>see more...</small></a></span>
                                 </div>
                             </li>
                             <li>
@@ -108,15 +108,6 @@
                 </div>
             </div>
             <!-- /Instagram widget -->
-            <!-- Facebook widget -->
-            <div class="row advert facebook">
-                <div class="col-xs-12">
-                    <div id="fb-root">
-                        <fb:like-box href="http://www.facebook.com/pages/Fashion-Food/213692045319671" width="345" show_faces="true" stream="false" header="true"></fb:like-box>
-                    </div>
-                </div>
-            </div>
-            <!-- /Facebook widget -->
         </div>
     </div>
 </div>

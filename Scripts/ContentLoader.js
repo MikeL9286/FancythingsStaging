@@ -2,8 +2,8 @@
 
     ContentLoader.Redirect = function(route, postId) {
         //var baseUrl = "http://thefancythings.com";
-        var baseUrl = "http://mikel9286.github.io/FancythingsStaging";
-        //var baseUrl = "http://localhost:34503";
+        //var baseUrl = "http://mikel9286.github.io/FancythingsStaging";
+        var baseUrl = "http://localhost:34503";
 
         var url = baseUrl + "?page=" + route;
         url = postId == undefined ? url : url + "&post=" + postId;
@@ -26,6 +26,14 @@
         else if (currentUrl.indexOf("page=Post") != -1) {
             body.load("views/blogpost.html");
             $('#homeLink a').tab('show');
+        }
+        else if (currentUrl.indexOf("page=Press") != -1) {
+            body.load("views/press.html");
+            $('#pressLink a').tab('show');
+        }
+        else if (currentUrl.indexOf("page=Policies") != -1) {
+            body.load("views/policies.html");
+            $('#policiesLink a').tab('show');
         }
         else {
             body.load("views/home.html");

@@ -35,6 +35,11 @@ Handlebars.registerHelper('formattedDate', function (publishedDate) {
     return moment(publishedDate).format('MMMM Do YYYY');
 });
 
+Handlebars.registerHelper('postLink', function (postId) {
+    var url = window.location.href.match('.*/');
+    return url + '?page=Post&post=' + postId;
+});
+
 $('#nav-post-titles-template').parent().append(template1(data));
 $('#slideshow-images-template').parent().append(template2(data));
 $('#post-feed-template').parent().append(template3(data));
