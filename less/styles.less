@@ -13,6 +13,23 @@ body > .container {
 .navbar {
     background-color: white;
     border-bottom: none;
+
+    .navbar-brand {
+        color: @blue-color;
+    }
+
+    a:hover {
+        color: @blue-color !important;
+    }
+
+    .active > a {
+        background-color: white !important;
+        color: @blue-color !important;
+    }
+
+    .thumbnail {
+        border-radius: 0;
+    }
 }
 
 .headroom--top {
@@ -47,22 +64,30 @@ h1, h2, h3, h4 {
     }
 
     .slideshow-widget-image {
-        max-height: @slideshow-image-height;
+        max-width: 450px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
 
-        img {
-            min-height: @slideshow-image-height;
-        }
+    .slideshow-widget-content {
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 
     .tagList {
         margin-top: 30px;
     }
+
+    .thumbnail {
+        border-top: none;
+        border-radius: 0;
+    }
 }
 
 .post-feed {
     .post-feed-image {
-        height: 250px;
-        width: 250px;
+        max-height: 250px;
+        max-width: 250px;
     }
 }
 

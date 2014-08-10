@@ -6,10 +6,22 @@ var template1 = Handlebars.compile(source1);
 var template2 = Handlebars.compile(source2);
 var template3 = Handlebars.compile(source3);
 
-var data = { blogPosts: Blogger.posts.slice(0, 4) };
+var data = { blogPosts: Blogger.posts.slice(0, 3) };
 
 Handlebars.registerHelper('firstImage', function (postContent) {
     return postContent.match('<img.* src=".*"')[0].match('http.*jpg|http.*png');
+});
+
+Handlebars.registerHelper('thumbnail', function (postContent) {
+    var thumbnail = postContent.match('<img class="post-thumbnail".*/>');
+    var thumbnailUrl;
+
+    if (thumbnail == null)
+        thumbnailUrl = 'http://placehold.it/300x300';
+    else
+        thumbnailUrl = thumbnail[0].match('http.*jpg|http.*png');
+
+    return thumbnailUrl;
 });
 
 Handlebars.registerHelper('summary', function (postContent, length) {

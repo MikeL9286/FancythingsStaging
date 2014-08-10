@@ -18,32 +18,34 @@
         </div>
 
         <div class="row slideshow-widget-images">
-            <script id="slideshow-images-template" type="text/x-handlebars-template">
-                <ul class="rslides">
-                    {{#blogPosts}}
-                    <li>
-                        <div class="col-md-5 col-sm-6 hidden-xs slideshow-widget-image">
-                            <a href="{{{postLink id}}}">
-                                <img src="{{{firstImage content}}}" class="img-responsive" alt="slideshow image" />
-                            </a>
-                        </div>
-                        <div class="col-md-7 col-sm-6 col-xs-12 slideshow-widget-content">
-                            <a href="{{{postLink id}}}"><h4>{{title}}</h4></a>
-                            <p><small>{{relativeDate published}} - </small> {{summary content 250}}</p>
-                            <p><a href="{{{postLink id}}}"><small>read more...</small></a></p>
-                            <div class="tagList">
-                                <h5>Find similar posts:</h5>
-                                <ul class="nav nav-pills">
-                                    {{#each labels}}
-                                    <li><a href="#">{{this}}</a></li>
-                                    {{/each}}
-                                </ul>
+            <div class="col-xs-12">
+                <script id="slideshow-images-template" type="text/x-handlebars-template">
+                    <ul class="rslides thumbnail">
+                        {{#blogPosts}}
+                        <li>
+                            <div class="col-md-5 col-sm-6 hidden-xs slideshow-widget-image">
+                                <a href="{{{postLink id}}}">
+                                    <img src="{{{thumbnail content}}}" class="img-responsive" alt="slideshow image" />
+                                </a>
                             </div>
-                        </div>
-                    </li>
-                    {{/blogPosts}}
-                </ul>
-            </script>
+                            <div class="col-md-7 col-sm-6 col-xs-12 slideshow-widget-content">
+                                <a href="{{{postLink id}}}"><h4>{{title}}</h4></a>
+                                <p><small>{{relativeDate published}} - </small> {{summary content 250}}</p>
+                                <p><a href="{{{postLink id}}}"><small>read more...</small></a></p>
+                                <div class="tagList">
+                                    <h5>Find similar posts:</h5>
+                                    <ul class="nav nav-pills">
+                                        {{#each labels}}
+                                        <li><a href="#">{{this}}</a></li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        {{/blogPosts}}
+                    </ul>
+                </script>
+            </div>
         </div>
     </div>
 
@@ -64,7 +66,7 @@
                         <script id="post-feed-template" type="text/x-handlebars-template">
                             {{#feedPosts}}
                             <li class="post-feed-item media">
-                                <a class="pull-left hidden-xs" href="{{{postLink id}}}">
+                                <a class="pull-left" href="{{{postLink id}}}">
                                     <img class="post-feed-image media-object rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
                                 </a>
                                 <div class="post-feed-content media-body">

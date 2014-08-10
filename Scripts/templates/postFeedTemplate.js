@@ -13,7 +13,7 @@ Handlebars.registerHelper('thumbnail', function(postContent) {
     var thumbnailUrl;
 
     if (thumbnail == null)
-        thumbnailUrl = 'http://placehold.it/200x200';
+        thumbnailUrl = 'http://placehold.it/250x250';
     else
         thumbnailUrl = thumbnail[0].match('http.*jpg|http.*png');
 
