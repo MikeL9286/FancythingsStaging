@@ -86,8 +86,15 @@ h1, h2, h3, h4 {
 
 .post-feed {
     .post-feed-image {
-        max-height: 250px;
         max-width: 250px;
+    }
+}
+
+@media (max-width: 767px) {
+    .post-feed {
+        .post-feed-image {
+            max-width: 150px;
+        }
     }
 }
 
