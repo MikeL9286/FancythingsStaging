@@ -10,6 +10,15 @@ body > .container {
     letter-spacing: .1em;
 }
 
+a {
+    color: @blue-color;
+}
+
+a:hover {
+    /*color: lightsalmon;*/
+    color: darken(@blue-color, 20%)
+}
+
 .navbar {
     background-color: white;
     border-bottom: none;
@@ -87,14 +96,6 @@ h1, h2, h3, h4 {
 .post-feed {
     .post-feed-image {
         max-width: 250px;
-    }
-}
-
-@media (max-width: 767px) {
-    .post-feed {
-        .post-feed-image {
-            max-width: 150px;
-        }
     }
 }
 
