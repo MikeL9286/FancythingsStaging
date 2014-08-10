@@ -17,6 +17,13 @@
             e.preventDefault();
             $(this).tab('show');
         });
+
+        Blogger.GetRecentPosts();
+
+        $('#waypoint-target').waypoint(function () {
+            Blogger.ShowMorePosts();
+            //reset the waypoint to the last item in the feed
+        }, { offset: 'bottom-in-view' });
     });
 
 } (window.Home = window.Home || {}, jQuery))
