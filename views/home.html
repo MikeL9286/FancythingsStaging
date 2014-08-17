@@ -50,85 +50,37 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-12 col-sm-12 column-left">
-            <div class="post-feed-sort row">
-                <div class="col-xs-12">
-                    <ul class="nav nav-tabs nav-justified" role="tablist">
-                        <li class="active" onclick="Blogger.GetRecentPosts()"><a href="#">Recent Posts</a></li>
-                        <li onclick="Blogger.GetPopularPosts()"><a href="#">Top Posts</a></li>
-                    </ul>
-                </div>
+        <div class="col-xs-12 col-sm-12">
+            <ul class="post-feed-sort">
+                <li class="hidden-xs"><hr /></li>
+                <li class="ft-button" onclick="Blogger.GetRecentPosts()"><a href="#"><h4>Recent Posts</h4></a></li>
+                <li class="divider fa fa-star"></li>
+                <li class="ft-button" onclick="Blogger.GetPopularPosts()"><a href="#"><h4>Top Posts</h4></a></li>
+                <li class="hidden-xs"><hr /></li>
+            </ul>
+
+            <div class="post-feed">
+                <script id="post-feed-template" type="text/x-handlebars-template">
+                    {{#feedPosts}}
+                    <div class="post-feed-item thumbnail">
+                        <a class="hidden-xs" href="{{{postLink id}}}">
+                            <img class="post-feed-image rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
+                        </a>
+                        <div class="post-feed-content">
+                            <a href="{{{postLink id}}}"><h4>{{title}}</h4></a>
+                            <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
+                            <span><a href="{{{postLink id}}}"><small>see more...</small></a></span>
+                        </div>
+                    </div>
+                    {{/feedPosts}}
+                </script>
             </div>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <ul class="post-feed media-list">
-                        <script id="post-feed-template" type="text/x-handlebars-template">
-                            {{#feedPosts}}
-                            <li class="post-feed-item media">
-                                <a class="pull-left hidden-xs" href="{{{postLink id}}}">
-                                    <img class="post-feed-image media-object rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
-                                </a>
-                                <div class="post-feed-content media-body">
-                                    <a href="{{{postLink id}}}"><h4 class="media-heading">{{title}}</h4></a>
-                                    <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
-                                    <span><a href="{{{postLink id}}}"><small>see more...</small></a></span>
-                                </div>
-                            </li>
-                            <li>
-                                <hr />
-                            </li>
-                            {{/feedPosts}}
-                        </script>
-                    </ul>
-                </div>
-            </div>
-            <div id="waypoint-target"></div>
-            <!--<button id="waypoint-target" type="button" class="btn btn-primary btn-block" onclick="Blogger.ShowMorePosts()">Show more posts</button>-->
-        </div>
-
-        <div class="col-sm-4 hidden-xs column-right">
-            <!-- like to know it widget -->
-            <div class="row advert ltkit">
-                <div class="col-xs-12">
-                    <div class="ltkwidget-widget" data-rows="1" data-cols="3" data-show-frame="true" data-user-id="18622" data-padding="2"></div>
-                </div>
-            </div>
-            <!-- /like to know it widget -->
-            <!-- reward style widget -->
-            <div class="row advert reward-style">
-                <div class="shopthepost-widget" data-widget-id="125896">
-                    <script type="text/javascript">!function (d, s, id) { var e, p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { e = d.createElement(s); e.id = id; e.src = p + '://' + 'widgets.rewardstyle.com' + '/js/shopthepost.js'; d.body.appendChild(e); } if (typeof window.__stp === 'object') if (d.readyState === 'complete') { window.__stp.init(); } }(document, 'script', 'shopthepost-script');</script><div class="rs-adblock"><img src="//assets.rewardstyle.com/images/search/350.gif" onerror="                            this.parentNode.innerHTML = 'Disable your ad blocking software to view this content.'" style="width: 15px; height: 15px;" /><noscript>JavaScript is currently disabled in this browser. Reactivate it to view this content.</noscript></div>
-                </div>
-            </div>
-            <!-- /reward style widget -->
-            <!-- Instagram widget -->
-            <div class="row advert instagram">
-                <div class="col-xs-12">
-                    <h3>Instagram</h3>
-                    <iframe src="http://snapwidget.com/sl/?u=ZmFuY3l0aGluZ3NibG9nfGlufDM0NXwzfDN8fG5vfDIwfGZhZGVPdXR8b25TdGFydHx5ZXM=&v=20714" title="Instagram Widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:365px; height:365px"></iframe>
-                </div>
-            </div>
-            <!-- /Instagram widget -->
+            <!--<div id="waypoint-target"></div>-->
+            <button id="waypoint-target" type="button" class="btn btn-primary btn-block" onclick="Blogger.ShowMorePosts()">Show more posts</button>
         </div>
     </div>
 </div>
-
-<!-- Render LTKit widget -->
-<script>
-    !function (d, s, id) {
-        var e, p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-            e = d.createElement(s);
-            e.id = id;
-            e.src = p + '://' + 'www.rewardstyle.com/api/widgets' + '/js/ltkwidget.js';
-            d.body.appendChild(e);
-        }
-        if (typeof (window.__ltkwidget) === 'object' && document.readyState === 'complete') {
-            __ltkwidget.init();
-        }
-    }(document, 'script', 'ltkwidget-script');
-</script>
 
 <script src="Scripts/templates/blogPostsTemplate.js"></script>
 <script src="Scripts/templates/postFeedTemplate.js"></script>

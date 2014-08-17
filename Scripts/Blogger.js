@@ -5,7 +5,7 @@
     Blogger.postFeed.feedType = 'top';
 
     var postFeedLimit = 20;
-    var postFeedMultiple = 4;
+    var postFeedMultiple = 8;
     var popularThreads;
 
     Array.prototype.clear = function () {
@@ -66,8 +66,10 @@
         var context = { feedPosts: Blogger.postFeed };
         var html = template(context);
         
-        $('#post-feed-template').parent().find('li').remove();
+        $('#post-feed-template').parent().find('.post-feed-item').remove();
         $('#post-feed-template').parent().append(html);
+
+        ResetMasonry();
     };
 
     Blogger.GetRecentPosts = function () {
@@ -83,6 +85,8 @@
 
         $('#post-feed-template').parent().find('li').remove();
         $('#post-feed-template').parent().append(html);
+
+        ResetMasonry();
     };
 
     Blogger.ShowMorePosts = function () {
@@ -104,6 +108,8 @@
         var html = template(context);
 
         $('#post-feed-template').parent().append(html);
+
+        ResetMasonry();
     };
 
     Blogger.GetPostById = function (postId) {
@@ -155,5 +161,16 @@
             Blogger.postFeed.push(post);
         });
     };
+
+    function ResetMasonry() {
+        var postFeed = document.querySelector('.post-feed');
+        imagesLoaded(postFeed, function () {
+            var msnry = new Masonry(postFeed, {
+                itemSelector: '.post-feed-item',
+                gutter: 15,
+                isFitWidth: true
+            });
+        });
+    }
 
 }(window.Blogger = window.Blogger || {}, jQuery))

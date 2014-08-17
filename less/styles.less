@@ -14,10 +14,27 @@ a {
     color: @blue-color;
 }
 
-a:hover {
-    /*color: lightsalmon;*/
-    color: darken(@blue-color, 20%)
+.ft-button {
+    border: 2px solid lightskyblue;
+    padding: 5px;
+    border-radius: 4px;
+    display: inline-block !important;
+    width: 160px;
 }
+
+.ft-button:hover {
+    background-color: lightskyblue;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+    a:hover {
+        /*color: lightsalmon;*/
+        color: darken(@blue-color, 20%);
+    }
 
 .navbar {
     background-color: white;
@@ -41,6 +58,31 @@ a:hover {
     }
 }
 
+.post-feed-sort {
+    list-style: none;
+    text-align: center;
+    margin: 15px 0;
+    padding: 0;
+    
+    li {
+        display: inline;
+    }
+
+    h4 {
+        display: inline;
+    }
+
+    hr {
+        max-width: 15%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .divider {
+        color: #ddd;
+    }
+}
+
 .headroom--top {
     border-bottom: none;
 }
@@ -51,10 +93,6 @@ a:hover {
 
 h1, h2, h3, h4 {
     font-family: @caps-header-font;
-}
-
-.column-right {
-    display: none;
 }
 
 .rounded {
@@ -73,7 +111,7 @@ h1, h2, h3, h4 {
     }
 
     .slideshow-widget-image {
-        max-width: 450px;
+        max-width: 400px;
         padding-top: 15px;
         padding-bottom: 15px;
     }
@@ -94,14 +132,15 @@ h1, h2, h3, h4 {
 }
 
 .post-feed {
+    margin: 0 auto;
+
     .post-feed-image {
         max-width: 250px;
     }
-}
 
-.post-feed-sort {
-    .nav a {
-        color: @text-color;
+    .post-feed-item {
+        max-width: 270px;
+        padding: 10px;
     }
 }
 

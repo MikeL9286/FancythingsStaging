@@ -93,6 +93,8 @@
     <Content Include="img\slidePurse.jpeg" />
     <Content Include="img\slideSweater.jpeg" />
     <Content Include="img\slideWelcome.jpg" />
+    <Content Include="Scripts\imagesloaded.pkgd.min.js" />
+    <Content Include="Scripts\masonry.pkgd.min.js" />
     <Content Include="Scripts\headroom.js" />
     <Content Include="Scripts\Blogger.js" />
     <Content Include="Scripts\Blog.js" />
@@ -204,6 +206,7 @@
     <Content Include="Scripts\templates\postFeedTemplate.js" />
     <Content Include="Scripts\templates\blogPostsTemplate.js" />
     <Content Include="Scripts\waypoints.min.js" />
+    <Content Include="views\home_old.html" />
     <Content Include="views\policies.html" />
     <Content Include="views\press.html" />
     <Content Include="views\blogpost.html" />
