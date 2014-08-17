@@ -81,6 +81,7 @@
     <Content Include="img\aboutPeonies.jpg" />
     <Content Include="img\aboutRocky.jpg" />
     <Content Include="img\aboutWishlist.jpg" />
+    <Content Include="img\bigimage.jpg" />
     <Content Include="img\portalAbout.png" />
     <Content Include="img\portalBlog.jpg" />
     <Content Include="img\header.jpg" />
@@ -93,6 +94,7 @@
     <Content Include="img\slidePurse.jpeg" />
     <Content Include="img\slideSweater.jpeg" />
     <Content Include="img\slideWelcome.jpg" />
+    <Content Include="Scripts\jquery.backstretch.min.js" />
     <Content Include="Scripts\imagesloaded.pkgd.min.js" />
     <Content Include="Scripts\masonry.pkgd.min.js" />
     <Content Include="Scripts\headroom.js" />
@@ -115,7 +117,7 @@
     <Content Include="Scripts\google.analytics.js" />
     <Content Include="App_Readme\Handlebarsjs_README.md" />
     <Content Include="App_Readme\Handlebarsjs_LICENSE" />
-    <Content Include="less\styles.less" />
+    <Content Include="less\styles_old.less" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
@@ -189,6 +191,7 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="less\styles.less" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\handlebars.amd.js" />
     <Content Include="Scripts\handlebars.amd.min.js" />
