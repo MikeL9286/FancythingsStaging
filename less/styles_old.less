@@ -4,13 +4,9 @@
 // Fancy things styles
 // -------------------------
 
-/*body > .container {
+body > .container {
     max-width: 1400px;
     padding: 70px 15px 15px 15px;
-    letter-spacing: .1em;
-}*/
-
-body > .container {
     letter-spacing: .1em;
 }
 
@@ -26,21 +22,24 @@ a {
     width: 160px;
 }
 
-    .ft-button:hover {
-        background-color: lightskyblue;
+.ft-button:hover {
+    background-color: lightskyblue;
 
-        a {
-            color: white;
-            text-decoration: none;
-        }
+    a {
+        color: white;
+        text-decoration: none;
     }
-
-a:hover {
-    /*color: lightsalmon;*/
-    color: darken(@blue-color, 20%);
 }
 
+    a:hover {
+        /*color: lightsalmon;*/
+        color: darken(@blue-color, 20%);
+    }
+
 .navbar {
+    background-color: white;
+    border-bottom: none;
+
     .navbar-brand {
         color: @blue-color;
     }
@@ -50,7 +49,7 @@ a:hover {
     }
 
     .active > a {
-        background-color: transparent !important;
+        background-color: white !important;
         color: @blue-color !important;
     }
 
@@ -64,7 +63,7 @@ a:hover {
     text-align: center;
     margin: 15px 0;
     padding: 0;
-
+    
     li {
         display: inline;
     }
@@ -85,16 +84,10 @@ a:hover {
 }
 
 .headroom--top {
-    background-color: transparent;
     border-bottom: none;
 }
 
-.headroom--top:hover {
-    background-color: white;
-}
-
 .headroom--not-top {
-    background-color: white;
     border-bottom: 1px solid @blue-color;
 }
 
