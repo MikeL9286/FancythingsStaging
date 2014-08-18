@@ -24,6 +24,7 @@ a {
     border-radius: 4px;
     display: inline-block !important;
     width: 160px;
+    transition: background-color linear .25s;
 }
 
     .ft-button:hover {
@@ -87,15 +88,18 @@ a:hover {
 .headroom--top {
     background-color: transparent;
     border-bottom: none;
+    transition: background-color linear .25s;
 }
 
-.headroom--top:hover {
-    background-color: white;
-}
+    .headroom--top:hover {
+        background-color: white;
+        border-bottom: 1px solid @blue-color;
+    }
 
 .headroom--not-top {
     background-color: white;
     border-bottom: 1px solid @blue-color;
+    transition: background-color linear .25s;
 }
 
 h1, h2, h3, h4 {
@@ -140,6 +144,7 @@ h1, h2, h3, h4 {
 
 .post-feed {
     margin: 0 auto;
+    max-width: 1150px;
 
     .post-feed-image {
         max-width: 250px;
@@ -148,6 +153,7 @@ h1, h2, h3, h4 {
     .post-feed-item {
         max-width: 270px;
         padding: 10px;
+        box-shadow: 0 0 10px 1px #ddd;
     }
 }
 
