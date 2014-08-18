@@ -1,107 +1,57 @@
-﻿<script>
-    Blogger.GetPosts();
-    Blogger.GetPopularThreads();
-</script>
+﻿<section id="homeContainer">
+    <script>
+        Blogger.GetPosts();
+        Blogger.GetPopularThreads();
+    </script>
 
-<section class="big-image hidden-xs" style="height:580px">
-    <div style="position:absolute;bottom:0;height:100px;width:100%;background-color:#333;opacity:.8;padding:10px;color:white;text-align:center">
-        <script id="featured-post-template" type="text/x-handlebars-template">
-            {{#featuredPost}}
-            <a href="{{{postLink id}}}"><h4>{{title}}</h4></a>
-            <!--<a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]={{{title}}}&p[url]={{{postLink id}}}&amp;p[images][0]={{{thumbnail content}}}"><i class="fa fa-facebook"></i></a>-->
-            <a onclick="window.open('http://www.facebook.com/sharer.php?s=100&p[title]=title&p[summary]=summary&p[url]=http://google.com&p[images][0]=http://www.iconshock.com/img_jpg/BETA/communications/jpg/256/thumbnail_icon.jpg', 'sharer', 'toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)"><i class="fa fa-facebook"></i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]=Weekday Wardrobe&p[url]=http://cupcakesandcashmere.com%2Fseries-stories%2Fweekday-wardrobe-24&p[images][0]=http%3A%2F%2Fcupcakesandcashmere.com%2Ffiles%2Fmonday1_2.png"><i class="fa fa-facebook"></i></a>
-            <a href="https://twitter.com/home?status={{{postLink id}}}"><i class="fa fa-twitter"></i></a>
-            {{/featuredPost}}
-</script>
-        <i class="fa fa-chevron-down" style="position:absolute;bottom:40px;right:100px;color:white;font-size:2em"></i>
+    <div class="big-image hidden-xs">
+        <div class="big-image-content">
+            <script id="featured-post-template" type="text/x-handlebars-template">
+                {{#featuredPost}}
+                <a href="/blogpost.html?{{{id}}}"><h4>{{title}}</h4></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]={{{title}}}&p[url]={{{postLink id}}}&amp;p[images][0]={{{thumbnail content}}}"><i class="fa fa-facebook"></i></a>
+                <!--<a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]=Weekday Wardrobe&p[url]=http://cupcakesandcashmere.com%2Fseries-stories%2Fweekday-wardrobe-24&p[images][0]=http%3A%2F%2Fcupcakesandcashmere.com%2Ffiles%2Fmonday1_2.png"><i class="fa fa-facebook"></i></a>-->
+                <a href="https://twitter.com/home?status={{{postLink id}}}"><i class="fa fa-twitter"></i></a>
+                {{/featuredPost}}
+            </script>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <ul class="post-feed-sort">
+            <li class="hidden-xs"><hr /></li>
+            <li class="ft-button" onclick="Blogger.GetRecentPosts()"><a href="#"><h4>Recent Posts</h4></a></li>
+            <li class="divider fa fa-star hidden-xs"></li>
+            <li class="ft-button" onclick="Blogger.GetPopularPosts()"><a href="#"><h4>Top Posts</h4></a></li>
+            <li class="hidden-xs"><hr /></li>
+        </ul>
+
+        <div class="post-feed">
+            <script id="post-feed-template" type="text/x-handlebars-template">
+                {{#feedPosts}}
+                <div class="post-feed-item thumbnail">
+                    <a href="/blogpost.html?{{{id}}}">
+                        <img class="post-feed-image rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
+                    </a>
+                    <div class="post-feed-content">
+                        <a href="/blogpost.html?{{{id}}}"><h4>{{title}}</h4></a>
+                        <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
+                        <span><a href="/blogpost.html?{{{id}}}"><small>read more...</small></a></span>
+                    </div>
+                </div>
+                {{/feedPosts}}
+            </script>
+        </div>
+
+        <!--<div id="waypoint-target"></div>-->
+        <button id="waypoint-target" type="button" class="btn btn-primary btn-block" onclick="Blogger.ShowMorePosts()">Show more posts</button>
     </div>
 </section>
-
-<div class="col-xs-12">
-    <div class="slideshow-widget hidden-xs" style="display:none">
-        <div class="row slideshow-widget-post-headers">
-            <div class="col-xs-12">
-                <ul class="nav nav-tabs nav-justified" role="tablist">
-                    <script id="nav-post-titles-template" type="text/x-handlebars-template">
-                        {{#blogPosts}}
-                        <li><a href="#">{{title}}</a></li>
-                        {{/blogPosts}}
-                    </script>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row slideshow-widget-images">
-            <div class="col-xs-12">
-                <script id="slideshow-images-template" type="text/x-handlebars-template">
-                    <ul class="rslides thumbnail">
-                        {{#blogPosts}}
-                        <li>
-                            <div class="col-md-5 col-sm-6 hidden-xs slideshow-widget-image">
-                                <a href="{{{postLink id}}}">
-                                    <img src="{{{thumbnail content}}}" class="img-responsive" alt="slideshow image" />
-                                </a>
-                            </div>
-                            <div class="col-md-7 col-sm-6 col-xs-12 slideshow-widget-content">
-                                <a href="{{{postLink id}}}"><h4>{{title}}</h4></a>
-                                <p><small>{{relativeDate published}} - </small> {{summary content 250}}</p>
-                                <p><a href="{{{postLink id}}}"><small>read more...</small></a></p>
-                                <div class="tagList">
-                                    <h5>Find similar posts:</h5>
-                                    <ul class="nav nav-pills">
-                                        {{#each labels}}
-                                        <li><a href="#">{{this}}</a></li>
-                                        {{/each}}
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        {{/blogPosts}}
-                    </ul>
-                </script>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-12">
-            <ul class="post-feed-sort">
-                <li class="hidden-xs"><hr /></li>
-                <li class="ft-button" onclick="Blogger.GetRecentPosts()"><a href="#"><h4>Recent Posts</h4></a></li>
-                <li class="divider fa fa-star hidden-xs"></li>
-                <li class="ft-button" onclick="Blogger.GetPopularPosts()"><a href="#"><h4>Top Posts</h4></a></li>
-                <li class="hidden-xs"><hr /></li>
-            </ul>
-
-            <div class="post-feed">
-                <script id="post-feed-template" type="text/x-handlebars-template">
-                    {{#feedPosts}}
-                    <div class="post-feed-item thumbnail">
-                        <a href="{{{postLink id}}}">
-                            <img class="post-feed-image rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
-                        </a>
-                        <div class="post-feed-content">
-                            <a href="{{{postLink id}}}"><h4>{{title}}</h4></a>
-                            <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
-                            <span><a href="{{{postLink id}}}"><small>read more...</small></a></span>
-                        </div>
-                    </div>
-                    {{/feedPosts}}
-                </script>
-            </div>
-
-            <!--<div id="waypoint-target"></div>-->
-            <button id="waypoint-target" type="button" class="btn btn-primary btn-block" onclick="Blogger.ShowMorePosts()">Show more posts</button>
-        </div>
-    </div>
-</div>
 
 <script>
     $('.big-image').backstretch("img/bigimage.jpg");
 </script>
 
 <script src="Scripts/templates/featuredPostTemplate.js"></script>
-<script src="Scripts/templates/blogPostsTemplate.js"></script>
 <script src="Scripts/templates/postFeedTemplate.js"></script>
 <script src="Scripts/home.js" type="text/javascript"></script>

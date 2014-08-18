@@ -68,6 +68,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="about.html" />
+    <Content Include="blogpost.html" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="css\responsiveslides.css" />
     <Content Include="css\font-awesome.css" />
@@ -94,6 +96,8 @@
     <Content Include="img\slidePurse.jpeg" />
     <Content Include="img\slideSweater.jpeg" />
     <Content Include="img\slideWelcome.jpg" />
+    <Content Include="policies.html" />
+    <Content Include="press.html" />
     <Content Include="Scripts\jquery.backstretch.min.js" />
     <Content Include="Scripts\imagesloaded.pkgd.min.js" />
     <Content Include="Scripts\masonry.pkgd.min.js" />
@@ -210,14 +214,14 @@
     <Content Include="Scripts\templates\postFeedTemplate.js" />
     <Content Include="Scripts\templates\blogPostsTemplate.js" />
     <Content Include="Scripts\waypoints.min.js" />
-    <Content Include="views\home_old.html" />
+    <Content Include="services.html" />
+    <Content Include="views\about.html" />
+    <Content Include="views\partials\body.html" />
     <Content Include="views\policies.html" />
     <Content Include="views\press.html" />
     <Content Include="views\blogpost.html" />
-    <Content Include="views\about.html" />
     <Content Include="views\home.html" />
-    <Content Include="views\services.html" />
-    <Content Include="views\shared\Footer.html" />
+    <Content Include="views\partials\Footer.html" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -228,10 +232,11 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="views\shared\SocialIcons.html" />
+    <Content Include="views\partials\navigation.html" />
     <Content Include="views\blog\Index.html" />
     <Content Include="views\blog\BlogAdds.html" />
     <Content Include="Index.html" />
+    <Content Include="views\services.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

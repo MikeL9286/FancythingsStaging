@@ -1,8 +1,9 @@
 ﻿(function (Main, $, undefined) {
 
-    //$('.nav a').click(function (e) {
-    //    e.preventDefault();
-    //    $(this).tab('show');
-    //});
+    new Headroom(document.querySelector(".navbar"),
+        {
+            tolerance: 5,
+            offset: 5
+        }).init();
 
 }(window.Main = window.Main || {}, jQuery))
