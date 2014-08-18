@@ -13,10 +13,10 @@
         slideshowNavContainer.find('li:first a').tab('show');
 
         //prevent nav pills from following the links route
-        $('.nav a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        });
+        //$('.nav a').click(function (e) {
+        //    e.preventDefault();
+        //    $(this).tab('show');
+        //});
 
         Blogger.GetRecentPosts();
 
