@@ -8,10 +8,8 @@
         <div class="big-image-content">
             <script id="featured-post-template" type="text/x-handlebars-template">
                 {{#featuredPost}}
-                <a href="/blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
+                <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
                 <a href="https://www.facebook.com/sharer/sharer.php?u={{{postLink id}}}"><i class="fa fa-facebook"></i></a>
-                <!--<a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]={{{title}}}&p[url]={{{postLink id}}}&amp;p[images][0]={{{thumbnail content}}}"><i class="fa fa-facebook"></i></a>-->
-                <!--<a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]=Weekday Wardrobe&p[url]=http://cupcakesandcashmere.com%2Fseries-stories%2Fweekday-wardrobe-24&p[images][0]=http%3A%2F%2Fcupcakesandcashmere.com%2Ffiles%2Fmonday1_2.png"><i class="fa fa-facebook"></i></a>-->
                 <a href="https://twitter.com/home?status={{{postLink id}}}"><i class="fa fa-twitter"></i></a>
                 {{/featuredPost}}
             </script>

@@ -43,8 +43,8 @@ Handlebars.registerHelper('formattedDate', function (publishedDate) {
 });
 
 Handlebars.registerHelper('postLink', function (postId) {
-    var url = window.location.href.match('.*/');
-    return url + '?post=' + postId;
+    var url = window.location.href;
+    return url + 'blogpost.html?post=' + postId;
 });
 
 $('#featured-post-template').parent().append(template1(data));
