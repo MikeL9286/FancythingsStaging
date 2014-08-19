@@ -25,9 +25,9 @@
             <li class="ft-button" onclick="Blogger.GetPopularPosts()"><a href="#"><h4>Top Posts</h4></a></li>
             <li class="hidden-xs"><hr /></li>
         </ul>
-
-        <div class="post-feed">
-            <script id="post-feed-template" type="text/x-handlebars-template">
+        <div class="masonry-wrapper">
+            <div class="post-feed">
+                <script id="post-feed-template" type="text/x-handlebars-template">
                 {{#feedPosts}}
                 <div class="post-feed-item thumbnail">
                     <a href="/blogpost.html?{{{id}}}">
@@ -41,10 +41,11 @@
                 </div>
                 {{/feedPosts}}
             </script>
-        </div>
+            </div>
 
-        <!--<div id="waypoint-target"></div>-->
-        <button id="waypoint-target" type="button" class="btn btn-primary btn-block" onclick="Blogger.ShowMorePosts()">Show more posts</button>
+            <!--<div id="waypoint-target"></div>-->
+            <button id="waypoint-target" type="button" class="btn btn-primary btn-block" onclick="Blogger.ShowMorePosts()">Show more posts</button>
+        </div>
     </div>
 </section>
 
