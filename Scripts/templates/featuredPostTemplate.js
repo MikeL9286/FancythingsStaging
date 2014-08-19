@@ -44,7 +44,7 @@ Handlebars.registerHelper('formattedDate', function (publishedDate) {
 
 Handlebars.registerHelper('postLink', function (postId) {
     var url = window.location.href.match('.*/');
-    return url + '?page=Post&post=' + postId;
+    return url + '?post=' + postId;
 });
 
 $('#featured-post-template').parent().append(template1(data));
