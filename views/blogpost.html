@@ -10,7 +10,7 @@
                 <h3>{{title}}</h3>
                 <em>{{formattedDate published}}</em>
                 <div>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{{postLink}}}" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]={{{postLink}}}&p[title]=titletitle&p[summary]=summary" target="_blank"><i class="fa fa-facebook"></i></a>
                     <a href="https://twitter.com/home?status={{{postLink}}}" target="_blank"><i class="fa fa-twitter"></i></a>
                 </div>
             </div>
@@ -43,8 +43,8 @@
     //    '<meta property="og:title" content="title"/>' +
     //    '<meta property="og:image" content="image"/>');
 
-    $('meta[property*=og\\:url]').attr('content', window.location.href);
-    $('meta[property*=og\\:title]').attr('content', 'new title');
+    //$('meta[property*=og\\:url]').attr('content', window.location.href);
+    //$('meta[property*=og\\:title]').attr('content', 'new title');
 
     //$('head').append(
     //    '<meta property="og:description" content="' + Blogger.posts.title + '"/>' +
