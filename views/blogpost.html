@@ -9,7 +9,10 @@
             <div class="post-header">
                 <h3>{{title}}</h3>
                 <em>{{formattedDate published}}</em>
-                <div><i class="fa fa-facebook"></i> <i class="fa fa-twitter"></i></div>
+                <div>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{{postLink}}}"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com/home?status={{{postLink}}}"><i class="fa fa-twitter"></i></a>
+                </div>
             </div>
             {{{content}}}
             <div class="post-footer">
@@ -34,8 +37,16 @@
 <script>
     //set meta tags for sharing
     $('head').append(
-        '<meta property="og:description" content="Makeup Must-Have"/>' +
-        '<meta property="og:url" content="http://mikel9286.github.io/FancythingsStaging/blogpost.html?post=3225057740998463956">' +
-        '<meta property="og:title" content="Makeup Must-Have | Fancythings">' +
-        '<meta property="og:image" content="https://lh3.googleusercontent.com/-DqpzWjDfK3s/U_IOETV2BkI/AAAAAAAAJ60/LSrJYtn84w0/s250-no/_DSC0267.jpg">');
+        '<meta property="og:description" content="' + Blogger.posts.title + '"/>' +
+        '<meta property="og:url" content="' + window.location.href + '"/>' +
+        '<meta property="og:title" content="' + Blogger.posts.title + ' | Fancythings"/>' +
+        '<meta property="og:image" content="' + Blogger.posts.thumbnailUrl + '"/>');
+
+    $('head').append(
+        '<meta name="twitter:card" content="summary"/>' +
+        '<meta name="twitter:site" content="@fancythingsblog"/>' +
+        '<meta name="twitter:url" content="' + window.location.href + '"/>' +
+        '<meta name="twitter:title" content="' + Blogger.posts.title + '"/>' + 
+        '<meta name="twitter:description" content="description"/>' + 
+        '<meta name="twitter:image" content="' + Blogger.posts.thumbnailUrl + '"/>');
 </script>

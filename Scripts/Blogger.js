@@ -29,6 +29,7 @@
             },
             success: function (data) {
                 Blogger.posts = data.items;
+                SetThumbnails(Blogger.posts);
             }
         });
     };
@@ -46,8 +47,9 @@
             error: function (jqXHR, textStatus, errorThrown) {
                 alert("error: " + url);
             },
-            success: function (data) {                
+            success: function (data) {
                 popularThreads = data.response;
+                SetThumbnails(popularThreads);
                 //var subset = popularThreads.slice(0, postFeedMultiple);
                 //AddPopularPosts(subset);
             }
@@ -65,7 +67,7 @@
         var template = Handlebars.compile(source);
         var context = { feedPosts: Blogger.postFeed };
         var html = template(context);
-        
+
         $('#post-feed-template').parent().find('.post-feed-item').remove();
         $('#post-feed-template').parent().append(html);
 
@@ -128,6 +130,7 @@
             },
             success: function (data) {
                 post = data;
+                SetThumbnail(post);
             }
         });
         return post;
@@ -149,6 +152,7 @@
             },
             success: function (data) {
                 post = data;
+                SetThumbnail(post);
             }
         });
         return post;
@@ -172,5 +176,25 @@
             });
         });
     }
+
+    function SetThumbnail(post) {
+        var thumbnail = post.content.match('<img class="post-thumbnail".*/>');
+
+        if (thumbnail == null)
+            post.thumbnailUrl = 'http://placehold.it/300x300';
+        else
+            post.thumbnailUrl = thumbnail[0].match('http.*jpg|http.*png');
+    };
+
+    function SetThumbnails(posts) {
+        posts.forEach(function (post) {
+            var thumbnail = post.content.match('<img class="post-thumbnail".*/>');
+
+            if (thumbnail == null)
+                post.thumbnailUrl = 'http://placehold.it/300x300';
+            else
+                post.thumbnailUrl = thumbnail[0].match('http.*jpg|http.*png');
+        });
+    };
 
 }(window.Blogger = window.Blogger || {}, jQuery))
