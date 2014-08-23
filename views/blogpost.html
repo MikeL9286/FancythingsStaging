@@ -36,17 +36,24 @@
 <script>$('img[src*=blogspot]').addClass('img-responsive');</script>
 <script>
     //set meta tags for sharing
-    $('head').append(
-        '<meta property="og:description" content="' + Blogger.posts.title + '"/>' +
-        '<meta property="og:url" content="' + window.location.href + '"/>' +
-        '<meta property="og:title" content="' + Blogger.posts.title + ' | Fancythings"/>' +
-        '<meta property="og:image" content="' + Blogger.posts.thumbnailUrl + '"/>');
 
     $('head').append(
-        '<meta name="twitter:card" content="summary"/>' +
-        '<meta name="twitter:site" content="@fancythingsblog"/>' +
-        '<meta name="twitter:url" content="' + window.location.href + '"/>' +
-        '<meta name="twitter:title" content="' + Blogger.posts.title + '"/>' + 
-        '<meta name="twitter:description" content="description"/>' + 
-        '<meta name="twitter:image" content="' + Blogger.posts.thumbnailUrl + '"/>');
+        '<meta property="og:description" content="description"/>' +
+        '<meta property="og:url" content="url"/>' +
+        '<meta property="og:title" content="title"/>' +
+        '<meta property="og:image" content="image"/>');
+
+    //$('head').append(
+    //    '<meta property="og:description" content="' + Blogger.posts.title + '"/>' +
+    //    '<meta property="og:url" content="' + window.location.href + '"/>' +
+    //    '<meta property="og:title" content="' + Blogger.posts.title + ' | Fancythings"/>' +
+    //    '<meta property="og:image" content="' + Blogger.posts.thumbnailUrl + '"/>');
+
+    //$('head').append(
+    //    '<meta name="twitter:card" content="summary"/>' +
+    //    '<meta name="twitter:site" content="@fancythingsblog"/>' +
+    //    '<meta name="twitter:url" content="' + window.location.href + '"/>' +
+    //    '<meta name="twitter:title" content="' + Blogger.posts.title + '"/>' + 
+    //    '<meta name="twitter:description" content="description"/>' + 
+    //    '<meta name="twitter:image" content="' + Blogger.posts.thumbnailUrl + '"/>');
 </script>
