@@ -3,7 +3,7 @@
 </script>
 
 <section id="postContainer" class="container">
-    <div class="post-content col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-1">
+    <div class="post col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-1">
         <script id="blog-post-template" type="text/x-handlebars-template">
             {{#blogPosts}}
             <div class="post-header">
@@ -15,7 +15,9 @@
                     <a href="{{{emailShareLink}}}"><i class="fa fa-envelope"></i></a>
                 </div>
             </div>
-            {{{content}}}
+            <div class="post-content">
+                {{{content}}}
+            </div>
             <div class="post-footer">
                 <h3>-K$</h3>
                 <ul class="nav nav-pills">
@@ -34,4 +36,21 @@
 </section>
 
 <script src="Scripts/templates/blogPostTemplate.js"></script>
-<script>$('img[src*=blogspot]').addClass('img-responsive');</script>
+<script>
+    $('img[src*=blogspot]').addClass('img-responsive');
+
+    //add pinterest button to images
+    $('.post-content img:not([src*=images\\.rewardstyle],.post-thumbnail)').each(function (index) {
+        var image = $(this);
+        var imageSource = image.attr('src');
+
+        var tweetLink = 'https://twitter.com/intent/tweet?text=Loving this picture!&via=fancythingsblog&url=' + imageSource;
+        var tweetButton = '<a href="' + tweetLink + '"><i class="fa fa-twitter"></i></a>';
+
+        var pinitLink = 'http://pinterest.com/pin/create/button/?url=' + window.location.href + '&media=' + imageSource + '&description=' + $('.post-header h3').text();
+        var pinitButton = '<a href="' + pinitLink + '"><i class="fa fa-pinterest"></i></a>';
+
+        image.wrap('<div style="position:relative"></div>');
+        image.after('<div class="share-icons">' + tweetButton + pinitButton + '</div>');
+    });
+</script>

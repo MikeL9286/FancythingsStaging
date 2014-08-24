@@ -225,6 +225,26 @@ hr {
         }
     }
 
+    .post-content {
+        .share-icons {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #555;
+            opacity: 0;
+            transition: opacity linear .3s;
+
+            i {
+                font-size: 2em;
+                padding: 5px;
+            }
+        }
+
+        img:hover ~ .share-icons, .share-icons:hover {
+            opacity: .8;
+        }
+    }
+
     .post-footer {
         text-align: center;
     }
