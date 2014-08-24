@@ -4,13 +4,13 @@
         Blogger.GetPopularThreads();
     </script>
 
-    <div class="big-image hidden-xs">
-        <div class="big-image-content">
+    <div class="featured-post hidden-xs">
+        <div class="featured-post-content">
             <script id="featured-post-template" type="text/x-handlebars-template">
                 {{#featuredPost}}
-                <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{{postLink id}}}"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/home?status={{{postLink id}}}"><i class="fa fa-twitter"></i></a>
+                <a href="blogpost.html?post={{{id}}}"><h3>{{title}}</h3></a>
+                <a href="{{{twitterShareLink}}}"><i class="share-icon fa fa-twitter"></i></a>
+                <a href="{{{pinterestShareLink}}}"><i class="share-icon fa fa-pinterest"></i></a>
                 {{/featuredPost}}
             </script>
         </div>
@@ -27,19 +27,23 @@
         <div class="masonry-wrapper">
             <div class="post-feed">
                 <script id="post-feed-template" type="text/x-handlebars-template">
-                {{#feedPosts}}
-                <div class="post-feed-item thumbnail">
-                    <a href="/blogpost.html?post={{{id}}}">
-                        <img class="post-feed-image rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
-                    </a>
-                    <div class="post-feed-content">
-                        <a href="/blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
-                        <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
-                        <span><a href="/blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
+                    {{#feedPosts}}
+                    <div class="post-feed-item thumbnail">
+                        <a href="/blogpost.html?post={{{id}}}">
+                            <img class="post-feed-image rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
+                        </a>
+                        <div class="post-feed-content">
+                            <a href="/blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
+                            <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
+                            <span><a href="/blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
+                        </div>
+                        <div class="post-feed-share">
+                            <a href="{{{twitterShareLink this}}}"><i class="share-icon fa fa-twitter"></i></a>
+                            <a href="{{{pinterestShareLink this}}}"><i class="share-icon fa fa-pinterest"></i></a>
+                        </div>
                     </div>
-                </div>
-                {{/feedPosts}}
-            </script>
+                    {{/feedPosts}}
+                </script>
             </div>
 
             <!--<div id="waypoint-target"></div>-->
@@ -49,7 +53,7 @@
 </section>
 
 <script>
-    $('.big-image').backstretch("img/bigimage.jpg");
+    $('.featured-post').backstretch("img/bigimage.jpg");
 </script>
 
 <script src="Scripts/templates/featuredPostTemplate.js"></script>

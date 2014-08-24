@@ -91,11 +91,6 @@ a:hover {
     transition: background-color linear .25s;
 }
 
-    .headroom--top:hover {
-        background-color: white;
-        border-bottom: 1px solid @blue-color;
-    }
-
 .headroom--not-top {
     background-color: white;
     border-bottom: 1px solid @blue-color;
@@ -158,6 +153,19 @@ h1, h2, h3, h4 {
             padding: 10px;
             box-shadow: 0 0 10px 1px #ddd;
         }
+
+        .post-feed-content {
+            small {
+                padding: 3px 0;
+            }
+        }
+
+        .post-feed-share {
+            i {
+                font-size: 1.5em;
+                padding: 5px;
+            }
+        }
     }
 }
 
@@ -176,10 +184,10 @@ hr {
     width: 95%;
 }
 
-.big-image {
+.featured-post {
     height: 580px;
 
-    .big-image-content {
+    .featured-post-content {
         position: absolute;
         bottom: 0;
         height: 100px;
@@ -189,6 +197,15 @@ hr {
         padding: 10px;
         color: white;
         text-align: center;
+
+        h3 {
+            margin: 10px 0 5px 0;
+        }
+    }
+
+    .share-icon {
+        font-size: 1.8em;
+        padding: 5px;
     }
 }
 
@@ -201,10 +218,19 @@ hr {
 
     .post-header {
         text-align: center;
+
+        .share-icon {
+            font-size: 1.7em;
+            padding: 5px;
+        }
     }
 
     .post-footer {
         text-align: center;
+    }
+
+    .post-thumbnail {
+        display: none;
     }
 }
 

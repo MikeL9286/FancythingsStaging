@@ -42,9 +42,20 @@ Handlebars.registerHelper('formattedDate', function (publishedDate) {
     return moment(publishedDate).format('MMMM Do YYYY');
 });
 
-Handlebars.registerHelper('postLink', function (postId) {
+Handlebars.registerHelper('postLink', function () {
+    return postLink();
+});
+var postLink = function() {
     var url = window.location.href;
-    return url + 'blogpost.html?post=' + postId;
+    return url + 'blogpost.html?post=' + data.featuredPost[0].id;
+};
+
+Handlebars.registerHelper('twitterShareLink', function () {
+    return 'https://twitter.com/intent/tweet?text=' + data.featuredPost[0].title + '&via=fancythingsblog&url=' + postLink();
+});
+
+Handlebars.registerHelper('pinterestShareLink', function () {
+    return 'http://pinterest.com/pin/create/button/?url=' + postLink() + '&media=' + data.featuredPost[0].thumbnailUrl + '&description=' + data.featuredPost[0].title;
 });
 
 $('#featured-post-template').parent().append(template1(data));
