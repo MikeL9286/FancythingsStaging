@@ -44,13 +44,10 @@
         var image = $(this);
         var imageSource = image.attr('src');
 
-        var tweetLink = 'https://twitter.com/intent/tweet?text=Loving this picture!&via=fancythingsblog&url=' + imageSource;
-        var tweetButton = '<a href="' + tweetLink + '"><i class="fa fa-twitter"></i></a>';
-
         var pinitLink = 'http://pinterest.com/pin/create/button/?url=' + window.location.href + '&media=' + imageSource + '&description=' + $('.post-header h3').text();
         var pinitButton = '<a href="' + pinitLink + '"><i class="fa fa-pinterest"></i></a>';
 
         image.wrap('<div style="position:relative"></div>');
-        image.after('<div class="share-icons">' + tweetButton + pinitButton + '</div>');
+        image.after('<div class="share-icons">' + pinitButton + '</div>');
     });
 </script>
