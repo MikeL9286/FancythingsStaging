@@ -58,4 +58,8 @@ Handlebars.registerHelper('pinterestShareLink', function () {
     return 'http://pinterest.com/pin/create/button/?url=' + postLink() + '&media=' + data.featuredPost[0].thumbnailUrl + '&description=' + data.featuredPost[0].title;
 });
 
+Handlebars.registerHelper('emailShareLink', function () {
+    return 'mailto:?body=I thought you might enjoy reading this post called ' + data.featuredPost[0].title + ' on fancy things! ' + postLink();
+});
+
 $('#featured-post-template').parent().append(template1(data));

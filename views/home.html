@@ -9,8 +9,9 @@
             <script id="featured-post-template" type="text/x-handlebars-template">
                 {{#featuredPost}}
                 <a href="blogpost.html?post={{{id}}}"><h3>{{title}}</h3></a>
-                <a href="{{{twitterShareLink}}}"><i class="share-icon fa fa-twitter"></i></a>
-                <a href="{{{pinterestShareLink}}}"><i class="share-icon fa fa-pinterest"></i></a>
+                <a href="{{{twitterShareLink}}}"><i class="fa fa-twitter"></i></a>
+                <a href="{{{pinterestShareLink}}}"><i class="fa fa-pinterest"></i></a>
+                <a href="{{{emailShareLink}}}"><i class="fa fa-envelope"></i></a>
                 {{/featuredPost}}
             </script>
         </div>
@@ -38,8 +39,9 @@
                             <span><a href="blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
                         </div>
                         <div class="post-feed-share">
-                            <a href="{{{twitterShareLink this}}}"><i class="share-icon fa fa-twitter"></i></a>
-                            <a href="{{{pinterestShareLink this}}}"><i class="share-icon fa fa-pinterest"></i></a>
+                            <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
+                            <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
+                            <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
                         </div>
                     </div>
                     {{/feedPosts}}

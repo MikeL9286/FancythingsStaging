@@ -52,4 +52,12 @@ Handlebars.registerHelper('pinterestShareLink', function (post) {
     return 'http://pinterest.com/pin/create/button/?url=' + postLink(post) + '&media=' + post.thumbnailUrl + '&description=' + post.title;
 });
 
+Handlebars.registerHelper('googleShareLink', function (post) {
+    return 'https://plus.google.com/share?url=' + postLink(post);
+});
+
+Handlebars.registerHelper('emailShareLink', function (post) {
+    return 'mailto:?body=I thought you might enjoy reading this post called ' + post.title + ' on fancy things! ' + postLink(post);
+});
+
 $('#post-feed-template').parent().append(template1(data));
