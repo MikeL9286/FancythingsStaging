@@ -34,6 +34,44 @@
         });
     };
 
+    Blogger.GetArchivePosts = function () {
+        $.ajax({
+            type: "GET",
+            url: 'https://www.googleapis.com/blogger/v3/blogs/5073145937869562696/posts?maxResults=500&fetchBodies=false&fetchImages=false&fields=items(id%2Cpublished%2Ctitle)&key=AIzaSyBxl86QJ7gRccq_egFmP3J6Zhy3cQLluIk',
+            dataType: "json",
+            async: false,
+            processData: "false",
+            beforeSend: function (jqXHR, settings) {
+                //start timer gif
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("error: " + url);
+            },
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    };
+
+    Blogger.GetSearchedPosts = function (searchKey) {
+        $.ajax({
+            type: "GET",
+            url: 'https://www.googleapis.com/blogger/v3/blogs/5073145937869562696/posts/search?q=' + searchKey + '&fetchBodies=false&fields=items(id%2Cpublished%2Ctitle)&key=AIzaSyBxl86QJ7gRccq_egFmP3J6Zhy3cQLluIk',
+            dataType: "json",
+            async: false,
+            processData: "false",
+            beforeSend: function (jqXHR, settings) {
+                //start timer gif
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("error: " + url);
+            },
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    };
+
     Blogger.GetPopularThreads = function () {
         $.ajax({
             type: "GET",

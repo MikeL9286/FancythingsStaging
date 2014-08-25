@@ -16,7 +16,6 @@ Handlebars.registerHelper('postLink', function () {
 });
 
 Handlebars.registerHelper('twitterShareLink', function () {
-    console.log(data.blogPosts);
     return 'https://twitter.com/intent/tweet?text=' + data.blogPosts.title + '&via=fancythingsblog&url=' + window.location.href;
 });
 
