@@ -169,6 +169,31 @@ h1, h2, h3, h4 {
     }
 }
 
+.related-posts {
+    .image {
+        max-width: 150px;
+    }
+
+    .item {
+        max-width: 270px;
+        padding: 10px;
+        box-shadow: 0 0 10px 1px #ddd;
+    }
+
+    .content {
+        small {
+            padding: 3px 0;
+        }
+    }
+
+    .share {
+        i {
+            font-size: 1.5em;
+            padding: 5px;
+        }
+    }
+}
+
 .valign {
     display: inline-block;
     vertical-align: middle;
@@ -240,9 +265,9 @@ hr {
             }
         }
 
-        img:hover ~ .share-icons, .share-icons:hover {
-            opacity: .8;
-        }
+            img:hover ~ .share-icons, .share-icons:hover {
+                opacity: .8;
+            }
     }
 
     .post-footer {

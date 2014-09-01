@@ -1,5 +1,6 @@
 ﻿<script>
     Blogger.posts = Blogger.GetPostById(window.location.href.match('post=(.*)')[1]);
+    Blogger.GetRelatedPosts();
 </script>
 
 <section id="postContainer" class="container">
@@ -34,12 +35,22 @@
             {{/blogPosts}}
         </script>
     </div>
-    <div class="hidden-xs col-md-4 col-md-offset-1">
-        some other stuff can go here
+    <div class="related-posts hidden-xs col-md-4 col-md-offset-1">
+        <script id="related-posts-template" type="text/x-handlebars-template">
+            {{#relatedPosts}}
+            <div class="item">
+                <a href="blogpost.html?post={{{id}}}">
+                    <img class="image rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
+                </a>
+                <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
+            </div>
+            {{/relatedPosts}}
+        </script>
     </div>
 </section>
 
 <script src="Scripts/templates/blogPostTemplate.js"></script>
+<script src="Scripts/templates/relatedPostsTemplate.js"></script>
 <script>
     $('img[src*=blogspot]').addClass('img-responsive');
 

@@ -3,6 +3,7 @@
     Blogger.posts = {};
     Blogger.postFeed = [];
     Blogger.postFeed.feedType = 'top';
+    Blogger.relatedPosts = [];
 
     var postFeedLimit = 20;
     var postFeedMultiple = 8;
@@ -69,6 +70,28 @@
             success: function (data) {
                 console.log(data);
             }
+        });
+    };
+
+    //will only work on blog posts page because it assumes Blogger.posts is an obj, not an array
+    Blogger.GetRelatedPosts = function () {
+        Blogger.posts.labels.forEach(function (label) {
+            $.ajax({
+                type: "GET",
+                url: 'https://www.googleapis.com/blogger/v3/blogs/5073145937869562696/posts/search?q=' + label + '&fields=items(id%2Cpublished%2Ctitle%2Ccontent)&key=AIzaSyBxl86QJ7gRccq_egFmP3J6Zhy3cQLluIk',
+                dataType: "json",
+                async: false,
+                processData: "false",
+                beforeSend: function (jqXHR, settings) {
+                    //start timer gif
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("error: " + url);
+                },
+                success: function (data) {
+                    Blogger.relatedPosts = Blogger.relatedPosts.concat(data.items.slice(0,2));
+                }
+            });
         });
     };
 
