@@ -5,7 +5,6 @@ var template1 = Handlebars.compile(source1);
 var data = { relatedPosts: Blogger.relatedPosts };
 
 Handlebars.registerHelper('thumbnail', function (postContent) {
-    console.log(postContent);
     var thumbnail = postContent.match('<img class="post-thumbnail".*/>');
     var thumbnailUrl;
 
