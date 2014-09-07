@@ -1,6 +1,6 @@
-﻿<div class="container">
+﻿<div id="navContainer" class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <div id="mobileNav" class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -11,15 +11,22 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div id="fullNav" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li id="homeLink"><a href="/">Blog</a></li>
             <li id="servicesLink"><a href="services.html">Services</a></li>
             <li id="shopLink"><a href="http://www.etsy.com/shop/shopfancythings" target="_blank">Shop</a></li>
-            <li id="aboutLink"><a href="about.html">About</a></li>
+            <li><a href="#">More <i class="fa fa-caret-down"></i></a></li>
+            <!--<li id="aboutLink"><a href="about.html">About</a></li>
             <li id="pressLink" class="hidden-sm"><a href="press.html">As Seen In</a></li>
-            <li id="policiesLink" class="hidden-sm"><a href="policies.html">Policies</a></li>
+            <li id="policiesLink" class="hidden-sm"><a href="policies.html">Policies</a></li>-->
         </ul>
+        <form class="hidden-xs search navbar-form navbar-left" role="search" action="../../search.html">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="search" name="searchKey">
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
         <ul class="nav navbar-nav navbar-right social-media-icons">
             <li><a href="https://www.facebook.com/pages/fancy-things-the-blog/213692045319671?sk=wall" class="fa fa-facebook"></a></li>
             <li><a href="https://twitter.com/#!/fancythingsblog" class="fa fa-twitter"></a></li>

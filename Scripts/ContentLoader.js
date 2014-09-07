@@ -23,6 +23,14 @@
             body.load("views/policies.html");
             $('#policiesLink a').tab('show');
         }
+        else if (currentUrl.indexOf("search.html") != -1) {
+            body.load("views/search.html");
+            $('#homeLink a').tab('show');
+        }
+        else if (currentUrl.indexOf("archive.html") != -1) {
+            body.load("views/archive.html");
+            $('#homeLink a').tab('show');
+        }
         else {
             body.load("views/home.html");
             $('#homeLink a').tab('show');

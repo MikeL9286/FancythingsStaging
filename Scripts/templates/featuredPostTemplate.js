@@ -4,7 +4,7 @@ var template1 = Handlebars.compile(source1);
 var data = { featuredPost: Blogger.posts.slice(0, 1) };
 
 Handlebars.registerHelper('firstImage', function (postContent) {
-    return postContent.match('<img.* src=".*"')[0].match('http.*jpg|http.*png');
+    return postContent.match('<img.* src=".*"')[0];
 });
 
 Handlebars.registerHelper('thumbnail', function (postContent) {

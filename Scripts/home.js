@@ -17,4 +17,11 @@
     //    //reset the waypoint to the last item in the feed
     //}, { offset: 'bottom-in-view' });
 
+    $('.search input').focus(function () {
+        $('.search').addClass('focused');
+    });
+    $('.search input').blur(function () {
+        $('.search').removeClass('focused');
+    });
+
 }(window.Home = window.Home || {}, jQuery))

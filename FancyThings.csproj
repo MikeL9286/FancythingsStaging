@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.html" />
+    <Content Include="search.html" />
     <Content Include="blogpost.html" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="css\responsiveslides.css" />
@@ -121,7 +122,6 @@
     <Content Include="Scripts\google.analytics.js" />
     <Content Include="App_Readme\Handlebarsjs_README.md" />
     <Content Include="App_Readme\Handlebarsjs_LICENSE" />
-    <Content Include="less\styles_old.less" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
@@ -196,6 +196,7 @@
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="less\styles.less" />
+    <Content Include="less\styles_old.less" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\handlebars.amd.js" />
     <Content Include="Scripts\handlebars.amd.min.js" />
@@ -217,12 +218,14 @@
     <Content Include="Scripts\waypoints.min.js" />
     <Content Include="services.html" />
     <Content Include="views\about.html" />
-    <Content Include="views\home_old.html" />
+    <Content Include="views\home.html" />
+    <Content Include="views\search.html" />
+    <Content Include="views\home_oldest.html" />
     <Content Include="views\partials\body.html" />
     <Content Include="views\policies.html" />
     <Content Include="views\press.html" />
     <Content Include="views\blogpost.html" />
-    <Content Include="views\home.html" />
+    <Content Include="views\home_older.html" />
     <Content Include="views\partials\Footer.html" />
   </ItemGroup>
   <ItemGroup />
