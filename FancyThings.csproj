@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="about.html" />
     <Content Include="img\rslidesNav.gif" />
+    <Content Include="Scripts\templates\homePostsTemplate.js" />
     <Content Include="Scripts\templates\slideshowTemplate.js" />
     <Content Include="search.html" />
     <Content Include="blogpost.html" />
