@@ -14,6 +14,7 @@ body {
     font: 100% calibri;
     letter-spacing: .1em;
     line-height: 1.5em;
+    margin-top: 75px;
 }
 
 a {
@@ -95,21 +96,12 @@ a:hover {
     background-color: transparent;
     border-bottom: none;
     transition: background-color linear .25s;
-
-    a {
-        color: white !important;
-        transition: color linear .25s;
-    }
 }
 
 .headroom--not-top {
     background-color: white;
     border-bottom: 1px solid @blue-color;
     transition: background-color linear .25s;
-
-    a {
-        color: #777777;
-    }
 }
 
 h1, h2, h3, h4 {
@@ -121,10 +113,10 @@ h1, h2, h3, h4 {
 }
 
 #homeContainer {
-    .slideshow-widget {
+    /*.slideshow {
         margin-bottom: 20px;
 
-        .slideshow-widget-post-headers li {
+        .post-headers li {
             white-space: nowrap;
 
             a {
@@ -132,24 +124,36 @@ h1, h2, h3, h4 {
             }
         }
 
-        .slideshow-widget-image {
+        .image {
             max-width: 400px;
             padding-top: 15px;
             padding-bottom: 15px;
         }
 
-        .slideshow-widget-content {
-            padding-top: 15px;
-            padding-bottom: 15px;
-        }
-
-        .tagList {
-            margin-top: 30px;
-        }
-
         .thumbnail {
             border-top: none;
             border-radius: 0;
+        }
+    }*/
+    .slideshow {
+        position: relative;
+        width: 100%;
+
+        img {
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .content {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        em {
+            font-size: 1.6em;
         }
     }
 
@@ -500,3 +504,54 @@ hr {
         }
     }
 }
+
+.rslides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+    .rslides li {
+        -webkit-backface-visibility: hidden;
+        position: absolute;
+        display: none;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+
+        .rslides li:first-child {
+            position: relative;
+            display: block;
+            float: left;
+        }
+
+    .rslides img {
+        display: block;
+        height: auto;
+        float: left;
+        width: 100%;
+        border: 0;
+    }
+
+.rslides_nav {
+    position: absolute;
+    bottom: 42%;
+    z-index: 100;
+    opacity: .5;
+    text-indent: -9999px;
+    height: 61px;
+    width: 38px;
+}
+
+    .prev {
+        background: transparent url("../img/rslidesNav.gif") no-repeat left top;
+    }
+
+    .next {
+        background: transparent url("../img/rslidesNav.gif") no-repeat right top;
+        right: 0;
+    }

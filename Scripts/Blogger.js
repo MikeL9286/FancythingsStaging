@@ -5,8 +5,8 @@
     Blogger.postFeed.feedType = 'top';
     Blogger.relatedPosts = [];
 
-    var postFeedLimit = 20;
-    var postFeedMultiple = 8;
+    var postFeedLimit = 9;
+    var postFeedMultiple = 9;
     var popularThreads;
 
     Array.prototype.clear = function () {

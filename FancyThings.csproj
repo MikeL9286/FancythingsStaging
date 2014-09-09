@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.html" />
+    <Content Include="img\rslidesNav.gif" />
+    <Content Include="Scripts\templates\slideshowTemplate.js" />
     <Content Include="search.html" />
     <Content Include="blogpost.html" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -195,8 +197,8 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="less\styles_olds.less" />
     <Content Include="less\styles.less" />
-    <Content Include="less\styles_old.less" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\handlebars.amd.js" />
     <Content Include="Scripts\handlebars.amd.min.js" />
@@ -225,7 +227,7 @@
     <Content Include="views\policies.html" />
     <Content Include="views\press.html" />
     <Content Include="views\blogpost.html" />
-    <Content Include="views\home_older.html" />
+    <Content Include="views\home_old.html" />
     <Content Include="views\partials\Footer.html" />
   </ItemGroup>
   <ItemGroup />
