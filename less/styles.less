@@ -15,6 +15,7 @@ body {
     letter-spacing: .1em;
     line-height: 1.5em;
     margin-top: 75px;
+    font-size: 1.4em;
 }
 
 a {
@@ -157,99 +158,122 @@ h1, h2, h3, h4 {
         }
     }
 
-    .post {
-        text-align: center;
-    }
-
-    .post-feed-sort {
-        list-style: none;
-        text-align: center;
-        padding: 0;
-        margin-bottom: 30px;
-
-        li {
-            display: inline;
-        }
-
-        h4 {
-            display: inline;
-        }
-
+    .column-left {
         hr {
-            max-width: 15%;
-            display: inline-block;
-            vertical-align: middle;
+            margin: 30px auto;
+            width: 80%;
         }
 
-        .divider {
-            color: #ddd;
-        }
-    }
+        .posts {
+            .post-inner {
+                max-width: 600px;
+                margin: 0 auto;
 
-    .masonry-wrapper {
-        margin: 0 auto;
+                .header {
+                    text-align: center;
+                    margin: 15px;
 
-        .post-feed {
-            margin: 0 auto;
+                    .title {
+                        margin-bottom: 0;
+                    }
+                }
 
-            .post-feed-image {
-                max-width: 250px;
-            }
+                img {
+                    max-width: 100%;
+                }
 
-            .post-feed-item {
-                max-width: 270px;
-                padding: 10px;
-                box-shadow: 0 0 10px 1px #ddd;
-                font-size: 1.4em;
-            }
-
-            .bottom {
-                margin-top: 5px;
-            }
-
-            .read-more-link {
-                display: inline-block;
-                padding: 5px 0;
-                margin-bottom: -5px;
-            }
-
-            .post-feed-share {
-                i {
-                    font-size: 1.5em;
-                    padding: 5px;
-                    margin-bottom: -5px;
+                iframe[src*=youtube] {
+                    width: 100%;
                 }
             }
-        }
-    }
 
-    .home-content {
-        padding-top: 50px;
+            .ft-sig {
+                list-style: none;
+                padding: 0;
+                margin: 30px auto;
+                text-align: center;
 
-        .column-right {
-            text-align: center;
-            margin-top: 70px;
+                li {
+                    display: inline;
+                    color: #777;
 
-            > div {
-                margin-bottom: 15px;
-            }
-
-            .where-i-shop {
-                ul {
-                    list-style-type: none;
-                    padding: 0;
-                    margin: auto;
-                    /*background-color: #e8e8e8;*/
-                    li {
-                        padding: 6px;
+                    hr {
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 35%
                     }
                 }
             }
 
-            .riffraf-ad {
-                min-width: 100%;
+            .post-thumbnail, .post-summary {
+                display: none;
             }
         }
+
+        .post-feed-sort {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+            margin-bottom: 30px;
+
+            li {
+                display: inline;
+            }
+
+            h4 {
+                display: inline;
+            }
+
+            hr {
+                max-width: 15%;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .divider {
+                color: #ddd;
+            }
+        }
+
+        .masonry-wrapper {
+            margin: 0 auto;
+
+            .post-feed {
+                margin: 0 auto;
+
+                .post-feed-image {
+                    max-width: 250px;
+                }
+
+                .post-feed-item {
+                    max-width: 270px;
+                    padding: 10px;
+                    box-shadow: 0 0 10px 1px #ddd;
+                    font-size: 1.4em;
+                }
+
+                .bottom {
+                    margin-top: 5px;
+                }
+
+                .read-more-link {
+                    display: inline-block;
+                    padding: 5px 0;
+                    margin-bottom: -5px;
+                }
+
+                .post-feed-share {
+                    i {
+                        font-size: 1.5em;
+                        padding: 5px;
+                        margin-bottom: -5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .column-right {
     }
 }
 
@@ -551,11 +575,11 @@ hr {
     width: 38px;
 }
 
-    .prev {
-        background: transparent url("../img/rslidesNav.gif") no-repeat left top;
-    }
+.prev {
+    background: transparent url("../img/rslidesNav.gif") no-repeat left top;
+}
 
-    .next {
-        background: transparent url("../img/rslidesNav.gif") no-repeat right top;
-        right: 0;
-    }
+.next {
+    background: transparent url("../img/rslidesNav.gif") no-repeat right top;
+    right: 0;
+}

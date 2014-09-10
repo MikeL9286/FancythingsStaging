@@ -11,7 +11,7 @@
                     <li>
                         <img class="img-responsive" src="{{{slideshowImage content}}}" />
                         <div class="content">
-                            <a href="blogpost.html?post={{{id}}}"><h2>{{title}}</h2></a>
+                            <a href="blogpost.html?post={{{id}}}"><h3>{{title}}</h3></a>
                             <a href="blogpost.html?post={{{id}}}"><em>read more...</em></a>
                         </div>
                     </li>
@@ -22,13 +22,23 @@
 
         <hr />
 
-        <div class="post">
+        <div class="posts">
             <script id="home-posts-template" type="text/x-handlebars-template">
                 {{#homePosts}}
-                <a href="blogpost.html?post={{{id}}}"><h2>{{title}}</h2></a>
-                <div>{{formattedDate publishedDate}}</div>
-                <div>{{{content}}}</div>
-                <hr />
+                <div class="post panel panel-default">
+                    <div class="post-inner panel-body">
+                        <div class="header">
+                            <a href="blogpost.html?post={{{id}}}"><h2 class="title">{{title}}</h2></a>
+                            <div>{{formattedDate publishedDate}}</div>
+                        </div>
+                        <div>{{{content}}}</div>
+                    </div>
+                </div>
+                <ul class="ft-sig">
+                    <li class="divider"><hr /></li>
+                    <li><img src="../img/monogram_gold.png" /></li>
+                    <li class="divider"><hr /></li>
+                </ul>
                 {{/homePosts}}
             </script>
         </div>
