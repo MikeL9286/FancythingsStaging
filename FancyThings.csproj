@@ -217,7 +217,7 @@
     <Content Include="Scripts\templates\featuredPostTemplate.js" />
     <Content Include="Scripts\templates\blogPostTemplate.js" />
     <Content Include="Scripts\templates\relatedPostsTemplate.js" />
-    <Content Include="Scripts\templates\postFeedTemplate.js" />
+    <Content Include="Scripts\templates\morePostsTemplate.js" />
     <Content Include="Scripts\templates\blogPostsTemplate.js" />
     <Content Include="Scripts\waypoints.min.js" />
     <Content Include="services.html" />
