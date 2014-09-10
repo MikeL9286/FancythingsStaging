@@ -11,7 +11,7 @@
                     <li>
                         <img class="img-responsive" src="{{{slideshowImage content}}}" />
                         <div class="content">
-                            <a href="blogpost.html?post={{{id}}}"><h3>{{title}}</h3></a>
+                            <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
                             <a href="blogpost.html?post={{{id}}}"><em>read more...</em></a>
                         </div>
                     </li>
@@ -28,7 +28,7 @@
                 <div class="post panel panel-default">
                     <div class="post-inner panel-body">
                         <div class="header">
-                            <a href="blogpost.html?post={{{id}}}"><h2 class="title">{{title}}</h2></a>
+                            <a href="blogpost.html?post={{{id}}}"><h3 class="title">{{title}}</h3></a>
                             <div>{{formattedDate publishedDate}}</div>
                         </div>
                         <div>{{{content}}}</div>
@@ -42,35 +42,38 @@
                 {{/homePosts}}
             </script>
         </div>
-
-        <div class="row">
-            <div class="col-xs-offset-6 col-xs-6">
-                <h4>More Posts</h4>
+        
+        <div class="more-posts row">
+            <div class="header">
+                <h3>More Posts</h3>
             </div>
+            <script id="more-posts-template" type="text/x-handlebars-template">
+                <div class="row">
+                    {{#morePosts}}
+                    <div class="post panel panel-default rounded col-xs-12 col-sm-6 col-md-4">
+                        <div class="post-inner panel-body">
+                            <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
+                            <a href="blogpost.html?post={{{id}}}">
+                                <img class="img-responsive rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
+                            </a>
+                            <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
+                            <div class="share">
+                                <span><a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
+                                <span class="post-feed-share pull-right">
+                                    <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
+                                    <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
+                                    <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    {{/morePosts}}
+                </div>
+            </script>
         </div>
-        <div class="row">
-            <div class="col-xs-4">
-                more post 1
-            </div>
-            <div class="col-xs-4">
-                more post 2
-            </div>
-            <div class="col-xs-4">
-                more post 3
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-4">
-                more post 4
-            </div>
-            <div class="col-xs-4">
-                more post 5
-            </div>
-            <div class="col-xs-4">
-                more post 6
-            </div>
-        </div>
+        
         <hr />
+
         <div class="row">
             <div class="col-xs-offset-6 col-xs-6">
                 <h4>Trending Items</h4>
@@ -165,4 +168,5 @@
 
 <script src="Scripts/templates/slideshowTemplate.js"></script>
 <script src="Scripts/templates/homePostsTemplate.js"></script>
+<script src="Scripts/templates/morePostsTemplate.js"></script>
 <script src="Scripts/home.js" type="text/javascript"></script>
