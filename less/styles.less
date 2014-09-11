@@ -10,6 +10,7 @@ body {
     line-height: 1.5em;
     margin-top: 75px;
     font-size: 1.3em;
+    color: black !important;
 }
 
 a {
@@ -45,18 +46,11 @@ hr {
 
 #navContainer {
     font: 1.1em Montserrat;
+    text-transform: uppercase;
+    letter-spacing: .15em;
 
-    .search {
-        opacity: .7;
-        transition: opacity .2s;
-
-        &:hover, &.focused {
-            opacity: 1;
-        }
-
-        .search input, .search button {
-            background-color: inherit;
-        }
+    ul {
+        font-size: .85em;
     }
 
     .navbar-brand, a:hover, .active > a {
