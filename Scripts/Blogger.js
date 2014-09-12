@@ -66,7 +66,7 @@
                 alert("error: " + url);
             },
             success: function (data) {
-                console.log(data);
+                Blogger.posts = data.items;
             }
         });
     };
@@ -86,8 +86,8 @@
             },
             success: function (data) {
                 if (data.items != undefined) {
-                    Blogger.postFeed = data.items;
-                    SetThumbnails(Blogger.postFeed);
+                    Blogger.posts = data.items;
+                    SetThumbnails(Blogger.posts);
                     $('.search-description').prepend('<h4>Top search results for: ' + window.location.href.match('searchKey=(.*)')[1] + '</h4>');
                 } else {
                     $('.search-description').prepend('<h4>No results found for: ' + window.location.href.match('searchKey=(.*)')[1] + '</h4>');

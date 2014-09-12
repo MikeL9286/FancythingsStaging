@@ -8,13 +8,13 @@
             <hr />
         </div>
         <div class="post-feed">
-            <script id="search-posts-template" type="text/x-handlebars-template">
-                {{#if searchPosts}}
-                {{#searchPosts}}
+            <script id="archive-posts-template" type="text/x-handlebars-template">
+                {{#if archivePosts}}
+                {{#archivePosts}}
                 <div class="post-feed-item thumbnail">
                     <div class="post-feed-content">
                         <a href="blogpost.html?post={{{id}}}"><h3>{{title}}</h3></a>
-                        <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
+                        <div><small>{{relativeDate published}} - </small></div>
                         <a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a>
                     </div>
                     <div class="post-feed-share">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <hr />
-                {{/searchPosts}}
+                {{/archivePosts}}
                 {{/if}}
             </script>
         </div>
@@ -74,6 +74,6 @@
 </section>
 
 <script>
-    Blogger.GetSearchedPosts(window.location.href.match('searchKey=(.*)')[1]);
+    Blogger.GetArchivePosts();
 </script>
-<script src="Scripts/templates/searchPostsTemplate.js"></script>
+<script src="Scripts/templates/archivePostsTemplate.js"></script>

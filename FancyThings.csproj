@@ -71,8 +71,11 @@
     <Content Include="about.html" />
     <Content Include="img\monogram_gold.png" />
     <Content Include="img\rslidesNav.gif" />
+    <Content Include="Scripts\templates\archivePostsTemplate.js" />
+    <Content Include="Scripts\templates\searchPostsTemplate.js" />
     <Content Include="Scripts\templates\homePostsTemplate.js" />
     <Content Include="Scripts\templates\slideshowTemplate.js" />
+    <Content Include="archive.html" />
     <Content Include="search.html" />
     <Content Include="blogpost.html" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -223,6 +226,7 @@
     <Content Include="services.html" />
     <Content Include="views\about.html" />
     <Content Include="views\home.html" />
+    <Content Include="views\archive.html" />
     <Content Include="views\search.html" />
     <Content Include="views\home_oldest.html" />
     <Content Include="views\partials\body.html" />
