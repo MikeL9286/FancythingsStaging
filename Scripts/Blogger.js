@@ -30,8 +30,25 @@
             },
             success: function (data) {
                 Blogger.posts = data.items;
+                ConvertLinkyToolsFromScript();
                 SetThumbnails(Blogger.posts);
             }
+        });
+    };
+
+    function ConvertLinkyToolsFromScript() {
+        Blogger.posts.forEach(function (post) {
+            var linkyScript = post.content.match(/\<script src="http:\/\/www.linkytools.com.*<\/script>/);
+
+            if (linkyScript == null)
+                return;
+
+            //var linkySrc = linkyScript[0].match(/\<script src="(http:\/\/www.linkytools.com.*?)"/)[1];
+            var linkyId = linkyScript[0].match(/id=(.*)\"/)[1];
+
+            var newLinkyLink = '<p style="text-align:center"><a href="http://www.linkytools.com/wordpress_list.aspx?id=' + linkyId + '&type=thumbnail" target="_blank" rel="nofollow">Click here</a> to join the Weekly Favorites link up!</p>';
+
+            post.content = post.content.replace(linkyScript, newLinkyLink);
         });
     };
 
