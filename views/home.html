@@ -1,151 +1,154 @@
 ﻿<section id="homeContainer" class="container">
-    <script>
-        Blogger.GetPosts();
-    </script>
+    <div class="row">
+        <script>
+            Blogger.GetPosts();
+        </script>
 
-    <div class="column-left col-xs-12 col-md-9">
-        <div class="slideshow">
-            <script id="slideshow-template" type="text/x-handlebars-template">
-                <ul class="rslides">
-                    {{#slideshowPosts}}
-                    <li>
-                        <img class="img-responsive" src="{{{slideshowImage content}}}" />
-                        <div class="content">
-                            <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
-                            <a href="blogpost.html?post={{{id}}}"><em>read more...</em></a>
-                        </div>
-                    </li>
-                    {{/slideshowPosts}}
-                </ul>
-            </script>
-        </div>
-
-        <hr />
-
-        <div class="posts">
-            <script id="home-posts-template" type="text/x-handlebars-template">
-                {{#homePosts}}
-                <div class="post panel panel-default">
-                    <div class="post-inner panel-body">
-                        <div class="header">
-                            <a href="blogpost.html?post={{{id}}}"><h3 class="title">{{title}}</h3></a>
-                            <div>{{formattedDate publishedDate}}</div>
-                        </div>
-                        <div>{{{content}}}</div>
-                    </div>
-                </div>
-                <ul class="ft-sig">
-                    <li class="divider"><hr /></li>
-                    <li><img src="../img/monogram_gold.png" /></li>
-                    <li class="divider"><hr /></li>
-                </ul>
-                {{/homePosts}}
-            </script>
-        </div>
-
-        <div class="more-posts row">
-            <div class="header">
-                <h3>More Posts</h3>
-            </div>
-            <script id="more-posts-template" type="text/x-handlebars-template">
-                <div class="row">
-                    {{#morePosts}}
-                    <div class="post panel panel-default rounded col-xs-12 col-sm-6 col-md-4">
-                        <div class="post-inner panel-body">
-                            <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
-                            <a href="blogpost.html?post={{{id}}}">
-                                <img class="img-responsive rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
-                            </a>
-                            <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
-                            <div class="share">
-                                <span><a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
-                                <span class="post-feed-share pull-right">
-                                    <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
-                                    <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
-                                    <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
-                                </span>
+        <div class="column-left col-xs-12 col-md-9">
+            <div class="slideshow">
+                <script id="slideshow-template" type="text/x-handlebars-template">
+                    <ul class="rslides">
+                        {{#slideshowPosts}}
+                        <li>
+                            <img class="img-responsive" src="{{{slideshowImage content}}}" />
+                            <div class="content">
+                                <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
+                                <a href="blogpost.html?post={{{id}}}"><em>read more...</em></a>
                             </div>
+                        </li>
+                        {{/slideshowPosts}}
+                    </ul>
+                </script>
+            </div>
+
+            <hr />
+
+            <div class="posts">
+                <script id="home-posts-template" type="text/x-handlebars-template">
+                    {{#homePosts}}
+                    <div class="post panel panel-default">
+                        <div class="post-inner panel-body">
+                            <div class="header">
+                                <a href="blogpost.html?post={{{id}}}"><h3 class="title">{{title}}</h3></a>
+                                <div>{{formattedDate publishedDate}}</div>
+                            </div>
+                            <div>{{{content}}}</div>
                         </div>
                     </div>
-                    {{/morePosts}}
-                </div>
-            </script>
+                    <ul class="ft-sig">
+                        <li class="divider"><hr /></li>
+                        <li><img src="../img/monogram_gold.png" /></li>
+                        <li class="divider"><hr /></li>
+                    </ul>
+                    {{/homePosts}}
+                </script>
+            </div>
         </div>
+        <div class="column-right hidden-xs hidden-sm col-md-3">
+            <div class="ft-profile">
+                <img class="img-responsive rounded" src="http://placehold.it/255x270" alt="profile picture" />
+                <a href="about.html"><em>Meet Kristin!</em></a>
+            </div>
 
-        <hr />
+            <div class="trending-items">
+                <div class="shopthepost-widget" data-widget-id="223096">
+                    <script type="text/javascript">!function (d, s, id) { var e, p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { e = d.createElement(s); e.id = id; e.src = p + '://' + 'widgets.rewardstyle.com' + '/js/shopthepost.js'; d.body.appendChild(e); } if (typeof window.__stp === 'object') if (d.readyState === 'complete') { window.__stp.init(); } }(document, 'script', 'shopthepost-script');</script><div class="rs-adblock"><img src="//assets.rewardstyle.com/images/search/350.gif" onerror="                            this.parentNode.innerHTML = 'Disable your ad blocking software to view this content.'" style="width: 15px; height: 15px;" /><noscript>JavaScript is currently disabled in this browser. Reactivate it to view this content.</noscript></div>
+                </div>
+            </div>
 
-        <div class="ft-grams">
-            instagrams
+            <div class="where-i-shop">
+                <div><h4>Where I Shop</h4></div>
+                <ul>
+                    <li><a href="http://bit.ly/1vmmQQN" target="_blank">ANTHROPOLOGIE</a></li>
+                    <li><a href="http://bit.ly/1qtG1ns" target="_blank">ASOS</a></li>
+                    <li><a href="http://bit.ly/Y6jS4U" target="_blank">BAUBLEBAR</a></li>
+                    <li><a href="http://bit.ly/1t1ntBX" target="_blank">BLOOMINGDALES</a></li>
+                    <li><a href="http://bit.ly/1wdCJ05" target="_blank">C.WONDER</a></li>
+                    <li><a href="http://bit.ly/1oh8taN" target="_blank">FRENCH CONNECTION</a></li>
+                    <li><a href="http://bit.ly/10nPkcm" target="_blank">GAP</a></li>
+                    <li><a href="http://bit.ly/1qtHk5H" target="_blank">GIGI NEW YORK</a></li>
+                    <li><a href="http://bit.ly/ZVJGyK" target="_blank">J. CREW</a></li>
+                    <li><a href="http://bit.ly/1kOOyEQ" target="_blank">LILLY PULITZER</a></li>
+                    <li><a href="http://bit.ly/ZVJP52" target="_blank">LOFT</a></li>
+                    <li><a href="http://bit.ly/1v1BT5c" target="_blank">MACYS</a></li>
+                    <li><a href="http://bit.ly/1v1BaRl" target="_blank">MADEWELL</a></li>
+                    <li><a href="http://bit.ly/1vmlTIe" target="_blank">NEIMAN MARCUS</a></li>
+                    <li><a href="http://bit.ly/WWCxjO" target="_blank">NORDSTROM</a></li>
+                    <li><a href="http://bit.ly/WWCRPL" target="_blank">OLD NAVY</a></li>
+                    <li><a href="http://bit.ly/1qfGkHk" target="_blank">PIPERLIME</a></li>
+                    <li><a href="http://bit.ly/18Ku5sR" target="_blank">SAKS FIFTH AVENUE</a></li>
+                    <li><a href="http://bit.ly/1gOuuNA" target="_blank">SEPHORA</a></li>
+                    <li><a href="http://bit.ly/YQcEDj" target="_blank">SHOPBOP</a></li>
+                    <li><a href="http://bit.ly/WWCK6L" target="_blank">TARGET</a></li>
+                    <li><a href="http://bit.ly/Y6jHGP" target="_blank">TORY BURCH</a></li>
+                    <li><a href="http://bit.ly/ZVK28A" target="_blank">ULTA</a></li>
+                    <li><a href="http://bit.ly/1kY8zcg" target="_blank">WEST ELM</a></li>
+                    <li><a href="http://bit.ly/1q2JFr2" target="_blank">ZAPPOS</a></li>
+                </ul>
+            </div>
+
+            <div class="ft-search">
+                <form class="search" role="search" action="../search.html">
+                    <input type="text" placeholder="Search" name="searchKey">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+
+            <div class="ft-archive">
+                <a href="archive.html">Archive</a>
+            </div>
+
+            <div class="pop-sugar-ad">
+                <div>
+                    <a href="http://www.bellasugar.com/select" target="_blank"><img src="http://media3.onsugar.com/files/docs/POPSUGARSelectBeauty.png" alt="POPSUGAR Select Beauty"></a>
+                </div>
+            </div>
+
+            <div class="riffraf-ad">
+                <div>
+                    <a href="http://shopriffraff.com/" target="_blank"><img class="img-responsive" src="http://i1273.photobucket.com/albums/y407/Kristin_Brophy/FANCYTHINGS-1_zps636694f3.jpg" alt="Shop riffraf discount"></a>
+                </div>
+            </div>
         </div>
 
     </div>
-    <div class="column-right hidden-xs hidden-sm col-md-3">
-        <div class="ft-profile">
-            <img class="img-responsive rounded" src="http://placehold.it/255x270" alt="profile picture" />
-            <a href="about.html"><em>Meet Kristin!</em></a>
+    <div class="more-posts row">
+        <div class="header">
+            <h3>More Posts</h3>
         </div>
-
-        <div class="trending-items">
-            <div class="shopthepost-widget" data-widget-id="223096">
-                <script type="text/javascript">!function (d, s, id) { var e, p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { e = d.createElement(s); e.id = id; e.src = p + '://' + 'widgets.rewardstyle.com' + '/js/shopthepost.js'; d.body.appendChild(e); } if (typeof window.__stp === 'object') if (d.readyState === 'complete') { window.__stp.init(); } }(document, 'script', 'shopthepost-script');</script><div class="rs-adblock"><img src="//assets.rewardstyle.com/images/search/350.gif" onerror="                        this.parentNode.innerHTML = 'Disable your ad blocking software to view this content.'" style="width: 15px; height: 15px;" /><noscript>JavaScript is currently disabled in this browser. Reactivate it to view this content.</noscript></div>
+        <script id="more-posts-template" type="text/x-handlebars-template">
+            {{#morePosts}}
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="post panel panel-default rounded">
+                    <div class="post-inner panel-body">
+                        <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
+                        <a href="blogpost.html?post={{{id}}}">
+                            <img class="img-responsive rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
+                        </a>
+                        <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
+                        <div class="share">
+                            <span><a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
+                            <span class="post-feed-share pull-right">
+                                <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
+                                <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
+                                <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="where-i-shop">
-            <div><h4>Where I Shop</h4></div>
-            <ul>
-                <li><a href="http://bit.ly/1vmmQQN" target="_blank">ANTHROPOLOGIE</a></li>
-                <li><a href="http://bit.ly/1qtG1ns" target="_blank">ASOS</a></li>
-                <li><a href="http://bit.ly/Y6jS4U" target="_blank">BAUBLEBAR</a></li>
-                <li><a href="http://bit.ly/1t1ntBX" target="_blank">BLOOMINGDALES</a></li>
-                <li><a href="http://bit.ly/1wdCJ05" target="_blank">C.WONDER</a></li>
-                <li><a href="http://bit.ly/1oh8taN" target="_blank">FRENCH CONNECTION</a></li>
-                <li><a href="http://bit.ly/10nPkcm" target="_blank">GAP</a></li>
-                <li><a href="http://bit.ly/1qtHk5H" target="_blank">GIGI NEW YORK</a></li>
-                <li><a href="http://bit.ly/ZVJGyK" target="_blank">J. CREW</a></li>
-                <li><a href="http://bit.ly/1kOOyEQ" target="_blank">LILLY PULITZER</a></li>
-                <li><a href="http://bit.ly/ZVJP52" target="_blank">LOFT</a></li>
-                <li><a href="http://bit.ly/1v1BT5c" target="_blank">MACYS</a></li>
-                <li><a href="http://bit.ly/1v1BaRl" target="_blank">MADEWELL</a></li>
-                <li><a href="http://bit.ly/1vmlTIe" target="_blank">NEIMAN MARCUS</a></li>
-                <li><a href="http://bit.ly/WWCxjO" target="_blank">NORDSTROM</a></li>
-                <li><a href="http://bit.ly/WWCRPL" target="_blank">OLD NAVY</a></li>
-                <li><a href="http://bit.ly/1qfGkHk" target="_blank">PIPERLIME</a></li>
-                <li><a href="http://bit.ly/18Ku5sR" target="_blank">SAKS FIFTH AVENUE</a></li>
-                <li><a href="http://bit.ly/1gOuuNA" target="_blank">SEPHORA</a></li>
-                <li><a href="http://bit.ly/YQcEDj" target="_blank">SHOPBOP</a></li>
-                <li><a href="http://bit.ly/WWCK6L" target="_blank">TARGET</a></li>
-                <li><a href="http://bit.ly/Y6jHGP" target="_blank">TORY BURCH</a></li>
-                <li><a href="http://bit.ly/ZVK28A" target="_blank">ULTA</a></li>
-                <li><a href="http://bit.ly/1kY8zcg" target="_blank">WEST ELM</a></li>
-                <li><a href="http://bit.ly/1q2JFr2" target="_blank">ZAPPOS</a></li>
-            </ul>
-        </div>
-
-        <div class="ft-search">
-            <form class="search" role="search" action="../search.html">
-                <input type="text" placeholder="Search" name="searchKey">
-                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-        
-        <div class="ft-archive">
-            <a href="archive.html">Archive</a>
-        </div>
-
-        <div class="pop-sugar-ad">
-            <div>
-                <a href="http://www.bellasugar.com/select" target="_blank"><img src="http://media3.onsugar.com/files/docs/POPSUGARSelectBeauty.png" alt="POPSUGAR Select Beauty"></a>
-            </div>
-        </div>
-
-        <div class="riffraf-ad">
-            <div>
-                <a href="http://shopriffraff.com/" target="_blank"><img class="img-responsive" src="http://i1273.photobucket.com/albums/y407/Kristin_Brophy/FANCYTHINGS-1_zps636694f3.jpg" alt="Shop riffraf discount"></a>
-            </div>
-        </div>
+            {{/morePosts}}
+        </script>
     </div>
 </section>
+
+<div class="ft-grams container-fluid">
+    <div class="ltkwidget-widget row" data-rows="2" data-cols="8" data-show-frame="false" data-user-id="18622" data-padding="2">
+        <script type="text/javascript">!function (d, s, id) { var e, p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { e = d.createElement(s); e.id = id; e.src = p + '://' + 'widgets.rewardstyle.com' + '/js/ltkwidget.js'; d.body.appendChild(e); } if (typeof (window.__ltkwidget) === 'object') { if (document.readyState === 'complete') { __ltkwidget.init(); } } }(document, 'script', 'ltkwidget-script');</script><div class="rs-adblock"><img src="//assets.rewardstyle.com/images/search/350.gif" onerror="                this.parentNode.innerHTML = 'Disable your ad blocking software to view this content.'" /><noscript>JavaScript is currently disabled in this browser. Reactivate it to view this content.</noscript></div>
+    </div>
+</div>
+
+
 
 <script src="Scripts/templates/slideshowTemplate.js"></script>
 <script src="Scripts/templates/homePostsTemplate.js"></script>
