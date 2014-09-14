@@ -71,6 +71,7 @@
     <Content Include="about.html" />
     <Content Include="img\monogram_gold.png" />
     <Content Include="img\rslidesNav.gif" />
+    <Content Include="Scripts\blogpost.js" />
     <Content Include="Scripts\templates\archivePostsTemplate.js" />
     <Content Include="Scripts\templates\searchPostsTemplate.js" />
     <Content Include="Scripts\templates\homePostsTemplate.js" />
@@ -221,7 +222,6 @@
     <Content Include="Scripts\templates\blogPostTemplate.js" />
     <Content Include="Scripts\templates\relatedPostsTemplate.js" />
     <Content Include="Scripts\templates\morePostsTemplate.js" />
-    <Content Include="Scripts\templates\blogPostsTemplate.js" />
     <Content Include="Scripts\waypoints.min.js" />
     <Content Include="services.html" />
     <Content Include="views\about.html" />
