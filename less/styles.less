@@ -44,6 +44,24 @@ hr {
     }
 }
 
+.ft-sig {
+    list-style: none;
+    padding: 0;
+    margin: 30px auto;
+    text-align: center;
+
+    li {
+        display: inline;
+        color: #777;
+
+        hr {
+            display: inline-block;
+            vertical-align: middle;
+            width: 35%;
+        }
+    }
+}
+
 #navContainer {
     font: 1.1em Montserrat;
     text-transform: uppercase;
@@ -166,34 +184,12 @@ h1, h2, h3, h4 {
                 }
             }
 
-            .ft-sig {
-                list-style: none;
-                padding: 0;
-                margin: 30px auto;
-                text-align: center;
-
-                li {
-                    display: inline;
-                    color: #777;
-
-                    hr {
-                        display: inline-block;
-                        vertical-align: middle;
-                        width: 35%;
-                    }
-                }
-            }
-
             .post-thumbnail, .post-summary {
                 display: none;
             }
         }
 
         .more-posts {
-            .header, .title {
-                text-align: center;
-            }
-
             .post {
                 margin: 0 10px 10px 10px;
             }
@@ -339,8 +335,6 @@ h1, h2, h3, h4 {
 }
 
 #postContainer {
-    margin-top: 50px;
-
     .post-summary {
         display: none;
     }
@@ -384,8 +378,6 @@ h1, h2, h3, h4 {
 }
 
 #servicesContainer {
-    margin-top: 75px;
-
     .row {
         padding: 25px 0;
     }
@@ -423,8 +415,6 @@ h1, h2, h3, h4 {
 }
 
 #aboutContainer {
-    margin-top: 75px;
-
     .about-text {
         p {
             line-height: 1.5em;
@@ -457,38 +447,39 @@ h1, h2, h3, h4 {
 }
 
 #pressContainer {
-    margin-top: 75px;
 }
 
 #policiesContainer {
-    margin-top: 75px;
 }
 
 #searchContainer {
-    margin-top: 75px;
-
     .search-description {
         text-align: center;
     }
 
     .post-feed {
-        .post-feed-item {
-            padding: 10px;
-            box-shadow: 0 0 10px 1px #ddd;
-        }
-
-        .post-feed-content {
-            font-size: 2em;
-
+        .content {
             small {
                 padding: 5px 0;
             }
         }
 
-        .post-feed-share {
+        .share {
             i {
-                font-size: 2em;
                 padding: 5px;
+            }
+        }
+    }
+
+    .archive {
+        text-align: center;
+
+        span {
+            display: inline-block;
+
+            a {
+                display: inline-block;
+                padding: 10px 0;
             }
         }
     }

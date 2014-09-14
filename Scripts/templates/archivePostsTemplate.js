@@ -14,8 +14,8 @@ Handlebars.registerHelper('summary', function (postContent, length) {
         var content = postContent.split(centerTextToRemove).join(' ').split(smallTextToRemove).join(' ');
 
         return content.length > length ?
-            $(content).text().substring(0, length) :
-            $(content).text();
+            $('<div>' + content + '</div>').text().substring(0, length) + '...' :
+            $('<div>' + content + '</div>').text() + '...';
     }
 });
 

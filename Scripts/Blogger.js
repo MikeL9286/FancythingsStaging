@@ -30,32 +30,30 @@
             },
             success: function (data) {
                 Blogger.posts = data.items;
-                ConvertLinkyToolsFromScript();
-                SetThumbnails(Blogger.posts);
+                Blogger.posts.forEach(function (post) {
+                    convertLinkyToolsFromScript(post);
+                    setThumbnail(post);
+                });
             }
         });
     };
 
-    function ConvertLinkyToolsFromScript() {
-        Blogger.posts.forEach(function (post) {
-            var linkyScript = post.content.match(/\<script src="http:\/\/www.linkytools.com.*<\/script>/);
+    function convertLinkyToolsFromScript(post) {
+        var linkyScript = post.content.match(/\<script src="http:\/\/www.linkytools.com.*<\/script>/);
 
-            if (linkyScript == null)
-                return;
+        if (linkyScript == null)
+            return;
 
-            //var linkySrc = linkyScript[0].match(/\<script src="(http:\/\/www.linkytools.com.*?)"/)[1];
-            var linkyId = linkyScript[0].match(/id=(.*)\"/)[1];
+        var linkyId = linkyScript[0].match(/id=(.*)\"/)[1];
+        var newLinkyLink = '<p style="text-align:center"><a href="http://www.linkytools.com/wordpress_list.aspx?id=' + linkyId + '&type=thumbnail" target="_blank" rel="nofollow">Click here</a> to join the Weekly Favorites link up!</p>';
 
-            var newLinkyLink = '<p style="text-align:center"><a href="http://www.linkytools.com/wordpress_list.aspx?id=' + linkyId + '&type=thumbnail" target="_blank" rel="nofollow">Click here</a> to join the Weekly Favorites link up!</p>';
-
-            post.content = post.content.replace(linkyScript, newLinkyLink);
-        });
+        post.content = post.content.replace(linkyScript, newLinkyLink);
     };
 
     Blogger.GetArchivePosts = function () {
         $.ajax({
             type: "GET",
-            url: 'https://www.googleapis.com/blogger/v3/blogs/5073145937869562696/posts?maxResults=500&fetchBodies=false&fetchImages=false&fields=items(id%2Cpublished%2Ctitle)&key=AIzaSyBxl86QJ7gRccq_egFmP3J6Zhy3cQLluIk',
+            url: 'https://www.googleapis.com/blogger/v3/blogs/5073145937869562696/posts?maxResults=500&fetchImages=false&key=AIzaSyBxl86QJ7gRccq_egFmP3J6Zhy3cQLluIk',
             dataType: "json",
             async: false,
             processData: "false",
@@ -87,8 +85,11 @@
             success: function (data) {
                 if (data.items != undefined) {
                     Blogger.posts = data.items;
-                    SetThumbnails(Blogger.posts);
-                    $('.search-description').prepend('<h4>Top search results for: ' + window.location.href.match('searchKey=(.*)')[1] + '</h4>');
+                    Blogger.posts.forEach(function (post) {
+                        setThumbnail(post);
+                    });
+
+                    $('.search-description').prepend('<h4>Top search results for: ' + window.location.href.match('searchKey=(.*)')[1] + '</h4> (' + Blogger.posts.length + ' results)');
                 } else {
                     $('.search-description').prepend('<h4>No results found for: ' + window.location.href.match('searchKey=(.*)')[1] + '</h4>');
                 }
@@ -112,12 +113,13 @@
                     alert("error: " + url);
                 },
                 success: function (data) {
-                    Blogger.relatedPosts = Blogger.relatedPosts.concat(data.items.slice(0,2));
+                    Blogger.relatedPosts = Blogger.relatedPosts.concat(data.items.slice(0, 2));
                 }
             });
         });
     };
 
+    //TODO: Remove
     Blogger.GetPopularThreads = function () {
         $.ajax({
             type: "GET",
@@ -133,13 +135,14 @@
             },
             success: function (data) {
                 popularThreads = data.response;
-                SetThumbnails(popularThreads);
-                //var subset = popularThreads.slice(0, postFeedMultiple);
-                //AddPopularPosts(subset);
+                popularThreads.forEach(function (post) {
+                    setThumbnail(post);
+                });
             }
         });
     };
 
+    //TODO: Remove
     Blogger.GetPopularPosts = function () {
         Blogger.postFeed.clear();
         Blogger.postFeed.feedType = 'top';
@@ -158,6 +161,7 @@
         ResetMasonry();
     };
 
+    //TODO: Remove
     Blogger.GetRecentPosts = function () {
         Blogger.postFeed.clear();
         Blogger.postFeed.feedType = 'recent';
@@ -175,6 +179,7 @@
         ResetMasonry();
     };
 
+    //TODO: Remove
     Blogger.ShowMorePosts = function () {
         var postsToAdd;
         var postFeedLength = Blogger.postFeed.length;
@@ -199,7 +204,6 @@
     };
 
     Blogger.GetPostById = function (postId) {
-        var post;
         $.ajax({
             type: "GET",
             url: 'https://www.googleapis.com/blogger/v3/blogs/5073145937869562696/posts/' + postId + '?key=AIzaSyBxl86QJ7gRccq_egFmP3J6Zhy3cQLluIk',
@@ -213,11 +217,10 @@
                 alert("error: " + url);
             },
             success: function (data) {
-                post = data;
-                SetThumbnail(post);
+                Blogger.posts = data;
+                convertLinkyToolsFromScript(Blogger.posts);
             }
         });
-        return post;
     };
 
     function GetPostByTitle(postTitle) {
@@ -236,12 +239,13 @@
             },
             success: function (data) {
                 post = data;
-                SetThumbnail(post);
+                setThumbnail(post);
             }
         });
         return post;
     };
 
+    //TODO: Remove
     function AddPopularPosts(popularThreads) {
         popularThreads.forEach(function (thread) {
             var postTitle = thread.clean_title.split(': ')[1];
@@ -250,6 +254,7 @@
         });
     };
 
+    //TODO: Remove
     function ResetMasonry() {
         var postFeed = document.querySelector('.post-feed');
         imagesLoaded(postFeed, function () {
@@ -261,24 +266,13 @@
         });
     }
 
-    function SetThumbnail(post) {
+    function setThumbnail(post) {
         var thumbnail = post.content.match('<img class="post-thumbnail".*/>');
 
         if (thumbnail == null)
             post.thumbnailUrl = 'http://placehold.it/300x300';
         else
             post.thumbnailUrl = thumbnail[0].match('http.*jpg|http.*png');
-    };
-
-    function SetThumbnails(posts) {
-        posts.forEach(function (post) {
-            var thumbnail = post.content.match('<img class="post-thumbnail".*/>');
-
-            if (thumbnail == null)
-                post.thumbnailUrl = 'http://placehold.it/300x300';
-            else
-                post.thumbnailUrl = thumbnail[0].match('http.*jpg|http.*png');
-        });
     };
 
 }(window.Blogger = window.Blogger || {}, jQuery))

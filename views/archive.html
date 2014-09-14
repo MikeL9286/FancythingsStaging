@@ -1,29 +1,27 @@
 ﻿<section id="searchContainer">
     <script>
-
+        Blogger.GetArchivePosts();
     </script>
 
     <div class="col-xs-12 col-md-9">
-        <div class="search-description">
-            <hr />
-        </div>
         <div class="post-feed">
             <script id="archive-posts-template" type="text/x-handlebars-template">
                 {{#if archivePosts}}
                 {{#archivePosts}}
-                <div class="post-feed-item thumbnail">
-                    <div class="post-feed-content">
-                        <a href="blogpost.html?post={{{id}}}"><h3>{{title}}</h3></a>
-                        <div><small>{{relativeDate published}} - </small></div>
-                        <a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a>
-                    </div>
-                    <div class="post-feed-share">
-                        <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
-                        <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
-                        <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="content">
+                            <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
+                            <div><small>{{relativeDate published}} - </small>{{summary content 200}}</div>
+                            <a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a>
+                        </div>
+                        <div class="share">
+                            <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
+                            <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
+                            <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
+                        </div>
                     </div>
                 </div>
-                <hr />
                 {{/archivePosts}}
                 {{/if}}
             </script>
@@ -73,7 +71,4 @@
     </div>
 </section>
 
-<script>
-    Blogger.GetArchivePosts();
-</script>
 <script src="Scripts/templates/archivePostsTemplate.js"></script>
