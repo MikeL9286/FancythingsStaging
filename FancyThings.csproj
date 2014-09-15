@@ -71,6 +71,8 @@
     <Content Include="about.html" />
     <Content Include="img\monogram_gold.png" />
     <Content Include="img\rslidesNav.gif" />
+    <None Include="Scripts\underscore-min.map" />
+    <Content Include="Scripts\underscore-min.js" />
     <Content Include="Scripts\blogpost.js" />
     <Content Include="Scripts\templates\archivePostsTemplate.js" />
     <Content Include="Scripts\templates\searchPostsTemplate.js" />

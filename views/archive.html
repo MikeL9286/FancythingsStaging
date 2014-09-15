@@ -1,71 +1,82 @@
-﻿<section id="searchContainer">
+﻿<section id="archiveContainer" class="container">
     <script>
         Blogger.GetArchivePosts();
     </script>
 
-    <div class="col-xs-12 col-md-9">
-        <div class="post-feed">
-            <script id="archive-posts-template" type="text/x-handlebars-template">
-                {{#if archivePosts}}
-                {{#archivePosts}}
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="content">
-                            <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
-                            <div><small>{{relativeDate published}} - </small>{{summary content 200}}</div>
-                            <a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a>
+    <div class="row">
+        <div class="col-xs-12 col-md-9">
+            <div class="post-feed">
+                <div class="panel-group" id="accordian">
+                    <script id="archive-posts-template" type="text/x-handlebars-template">
+                        {{#archivePosts}}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{@index}}">{{group}} <small>({{posts.length}} posts)</small></a>
+                                </h4>
+                            </div>
+                            <div id="collapse{{@index}}" class="panel-collapse collapse">
+                                {{#posts}}
+                                <div class="panel-body">
+                                    <div class="content">
+                                        <a href="blogpost.html?post={{{id}}}"><h4>{{title}} <small>({{formattedDate published}})</small></h4></a>
+                                        <div>{{summary content 200}}</div>
+                                        <a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a>
+                                    </div>
+                                    <div class="share">
+                                        <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
+                                        <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
+                                        <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
+                                    </div>
+                                </div>
+                                {{/posts}}
+                            </div>
                         </div>
-                        <div class="share">
-                            <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
-                            <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
-                            <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
-                        </div>
-                    </div>
+                        {{/archivePosts}}
+                    </script>
                 </div>
-                {{/archivePosts}}
-                {{/if}}
-            </script>
-        </div>
-    </div>
-    <div class="column-right hidden-xs hidden-sm col-md-3">
-        <div class="where-i-shop widget panel panel-default">
-            <div class="panel-heading"><h4>Where I Shop</h4></div>
-            <ul class="panel-body">
-                <li><a href="http://bit.ly/1vmmQQN" target="_blank" rel="nofollow">ANTHROPOLOGIE</a></li>
-                <li><a href="http://bit.ly/1qtG1ns" target="_blank" rel="nofollow">ASOS</a></li>
-                <li><a href="http://bit.ly/Y6jS4U" target="_blank" rel="nofollow">BAUBLEBAR</a></li>
-                <li><a href="http://bit.ly/1t1ntBX" target="_blank" rel="nofollow">BLOOMINGDALES</a></li>
-                <li><a href="http://bit.ly/1wdCJ05" target="_blank" rel="nofollow">C.WONDER</a></li>
-                <li><a href="http://bit.ly/1oh8taN" target="_blank" rel="nofollow">FRENCH CONNECTION</a></li>
-                <li><a href="http://bit.ly/10nPkcm" target="_blank" rel="nofollow">GAP</a></li>
-                <li><a href="http://bit.ly/1qtHk5H" target="_blank" rel="nofollow">GIGI NEW YORK</a></li>
-                <li><a href="http://bit.ly/ZVJGyK" target="_blank" rel="nofollow">J. CREW</a></li>
-                <li><a href="http://bit.ly/1kOOyEQ" target="_blank" rel="nofollow">LILLY PULITZER</a></li>
-                <li><a href="http://bit.ly/ZVJP52" target="_blank" rel="nofollow">LOFT</a></li>
-                <li><a href="http://bit.ly/1v1BT5c" target="_blank" rel="nofollow">MACYS</a></li>
-                <li><a href="http://bit.ly/1v1BaRl" target="_blank" rel="nofollow">MADEWELL</a></li>
-                <li><a href="http://bit.ly/1vmlTIe" target="_blank" rel="nofollow">NEIMAN MARCUS</a></li>
-                <li><a href="http://bit.ly/WWCxjO" target="_blank" rel="nofollow">NORDSTROM</a></li>
-                <li><a href="http://bit.ly/WWCRPL" target="_blank" rel="nofollow">OLD NAVY</a></li>
-                <li><a href="http://bit.ly/1qfGkHk" target="_blank" rel="nofollow">PIPERLIME</a></li>
-                <li><a href="http://bit.ly/18Ku5sR" target="_blank" rel="nofollow">SAKS FIFTH AVENUE</a></li>
-                <li><a href="http://bit.ly/1gOuuNA" target="_blank" rel="nofollow">SEPHORA</a></li>
-                <li><a href="http://bit.ly/YQcEDj" target="_blank" rel="nofollow">SHOPBOP</a></li>
-                <li><a href="http://bit.ly/WWCK6L" target="_blank" rel="nofollow">TARGET</a></li>
-                <li><a href="http://bit.ly/Y6jHGP" target="_blank" rel="nofollow">TORY BURCH</a></li>
-                <li><a href="http://bit.ly/ZVK28A" target="_blank" rel="nofollow">ULTA</a></li>
-                <li><a href="http://bit.ly/1kY8zcg" target="_blank" rel="nofollow">WEST ELM</a></li>
-                <li><a href="http://bit.ly/1q2JFr2" target="_blank" rel="nofollow">ZAPPOS</a></li>
-            </ul>
-        </div>
-        <div class="pop-sugar-ad widget panel panel-default">
-            <div class="panel-body">
-                <a href="http://www.bellasugar.com/select" target="_blank"><img src="http://media3.onsugar.com/files/docs/POPSUGARSelectBeauty.png" alt="POPSUGAR Select Beauty"></a>
             </div>
         </div>
-        <div class="riffraf-ad widget panel panel-default">
-            <div class="panel-body">
-                <a href="http://shopriffraff.com/" target="_blank"><img class="img-responsive" src="http://i1273.photobucket.com/albums/y407/Kristin_Brophy/FANCYTHINGS-1_zps636694f3.jpg" alt="Shop riffraf discount"></a>
+        <div class="column-right hidden-xs hidden-sm col-md-3">
+            <div class="where-i-shop widget panel panel-default">
+                <div class="panel-heading"><h4>Where I Shop</h4></div>
+                <ul class="panel-body">
+                    <li><a href="http://bit.ly/1vmmQQN" target="_blank" rel="nofollow">ANTHROPOLOGIE</a></li>
+                    <li><a href="http://bit.ly/1qtG1ns" target="_blank" rel="nofollow">ASOS</a></li>
+                    <li><a href="http://bit.ly/Y6jS4U" target="_blank" rel="nofollow">BAUBLEBAR</a></li>
+                    <li><a href="http://bit.ly/1t1ntBX" target="_blank" rel="nofollow">BLOOMINGDALES</a></li>
+                    <li><a href="http://bit.ly/1wdCJ05" target="_blank" rel="nofollow">C.WONDER</a></li>
+                    <li><a href="http://bit.ly/1oh8taN" target="_blank" rel="nofollow">FRENCH CONNECTION</a></li>
+                    <li><a href="http://bit.ly/10nPkcm" target="_blank" rel="nofollow">GAP</a></li>
+                    <li><a href="http://bit.ly/1qtHk5H" target="_blank" rel="nofollow">GIGI NEW YORK</a></li>
+                    <li><a href="http://bit.ly/ZVJGyK" target="_blank" rel="nofollow">J. CREW</a></li>
+                    <li><a href="http://bit.ly/1kOOyEQ" target="_blank" rel="nofollow">LILLY PULITZER</a></li>
+                    <li><a href="http://bit.ly/ZVJP52" target="_blank" rel="nofollow">LOFT</a></li>
+                    <li><a href="http://bit.ly/1v1BT5c" target="_blank" rel="nofollow">MACYS</a></li>
+                    <li><a href="http://bit.ly/1v1BaRl" target="_blank" rel="nofollow">MADEWELL</a></li>
+                    <li><a href="http://bit.ly/1vmlTIe" target="_blank" rel="nofollow">NEIMAN MARCUS</a></li>
+                    <li><a href="http://bit.ly/WWCxjO" target="_blank" rel="nofollow">NORDSTROM</a></li>
+                    <li><a href="http://bit.ly/WWCRPL" target="_blank" rel="nofollow">OLD NAVY</a></li>
+                    <li><a href="http://bit.ly/1qfGkHk" target="_blank" rel="nofollow">PIPERLIME</a></li>
+                    <li><a href="http://bit.ly/18Ku5sR" target="_blank" rel="nofollow">SAKS FIFTH AVENUE</a></li>
+                    <li><a href="http://bit.ly/1gOuuNA" target="_blank" rel="nofollow">SEPHORA</a></li>
+                    <li><a href="http://bit.ly/YQcEDj" target="_blank" rel="nofollow">SHOPBOP</a></li>
+                    <li><a href="http://bit.ly/WWCK6L" target="_blank" rel="nofollow">TARGET</a></li>
+                    <li><a href="http://bit.ly/Y6jHGP" target="_blank" rel="nofollow">TORY BURCH</a></li>
+                    <li><a href="http://bit.ly/ZVK28A" target="_blank" rel="nofollow">ULTA</a></li>
+                    <li><a href="http://bit.ly/1kY8zcg" target="_blank" rel="nofollow">WEST ELM</a></li>
+                    <li><a href="http://bit.ly/1q2JFr2" target="_blank" rel="nofollow">ZAPPOS</a></li>
+                </ul>
+            </div>
+            <div class="pop-sugar-ad widget panel panel-default">
+                <div class="panel-body">
+                    <a href="http://www.bellasugar.com/select" target="_blank"><img src="http://media3.onsugar.com/files/docs/POPSUGARSelectBeauty.png" alt="POPSUGAR Select Beauty"></a>
+                </div>
+            </div>
+            <div class="riffraf-ad widget panel panel-default">
+                <div class="panel-body">
+                    <a href="http://shopriffraff.com/" target="_blank"><img class="img-responsive" src="http://i1273.photobucket.com/albums/y407/Kristin_Brophy/FANCYTHINGS-1_zps636694f3.jpg" alt="Shop riffraf discount"></a>
+                </div>
             </div>
         </div>
     </div>

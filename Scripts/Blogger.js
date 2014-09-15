@@ -64,7 +64,22 @@
                 alert("error: " + url);
             },
             success: function (data) {
-                Blogger.posts = data.items;
+                Blogger.posts = _.chain(data.items)
+                    //add published on date of MMMM YYYY
+                    .map(function(post, key) {
+                        post.publishedOn = moment(post.published).format('MMMM YYYY');
+                        return post;
+                    })
+                    //group by published on
+                    .groupBy('publishedOn')
+                    //map the grouped object back to an array with grouped posts and publishedOn properties
+                    .map(function(posts, key) {
+                        return {
+                            group: key,
+                            posts: posts
+                        }
+                    })
+                    .value();
             }
         });
     };
