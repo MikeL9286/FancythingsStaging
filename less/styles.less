@@ -73,6 +73,10 @@ hr {
         li a {
             color: #444;
         }
+
+        &.social-media-icons li {
+            float: left;
+        }
     }
 
     .navbar-brand, a:hover, .active > a {
@@ -96,6 +100,14 @@ hr {
     background-color: transparent;
     border-bottom: none;
     transition: background-color linear .25s;
+
+    .navbar-collapse {
+        background-color: white;
+
+        &.collapsing, &.in {
+            border: none;
+        }
+    }
 }
 
 .headroom--not-top {
