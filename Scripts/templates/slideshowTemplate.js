@@ -4,12 +4,16 @@ var template1 = Handlebars.compile(source1);
 
 var data = { slideshowPosts: Blogger.posts.slice(0, 5) };
 
-Handlebars.registerHelper('firstImage', function (postContent) {
-    return postContent.match('<img.* src=".*"')[0].match('http.*jpg|http.*png');
-});
-
 Handlebars.registerHelper('slideshowImage', function (postContent) {
-    return 'http://placehold.it/800x450';
+    var image = postContent.match('<img .* class="post-image" />');
+    var imageUrl;
+
+    if (image == null)
+        imageUrl = 'http://placehold.it/800x450';
+    else
+        imageUrl = image[0].match('http.*jpg|http.*png');
+
+    return imageUrl;
 });
 
 Handlebars.registerHelper('thumbnail', function(postContent) {
