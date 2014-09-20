@@ -20,6 +20,8 @@
             desiredHeight = (post.height() > desiredHeight) ? post.height() : desiredHeight;
         });
         posts.css('min-height', desiredHeight);
+        
+        $('img[src*=blogspot]').addClass('img-responsive');
     });
 
 }(window.Home = window.Home || {}, jQuery))
