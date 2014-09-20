@@ -3,7 +3,8 @@
 var template1 = Handlebars.compile(source1);
 
 var data = {
-    morePosts: Blogger.posts.slice(3, 9)
+    morePostsRow1: Blogger.posts.slice(3, 6),
+    morePostsRow2: Blogger.posts.slice(6, 9)
 };
 
 Handlebars.registerHelper('thumbnail', function(postContent) {

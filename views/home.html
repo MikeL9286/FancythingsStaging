@@ -44,38 +44,66 @@
                 </script>
             </div>
 
-            <div class="more-posts row">
+            <div class="more-posts">
                 <script id="more-posts-template" type="text/x-handlebars-template">
-                    {{#morePosts}}
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="post panel panel-default rounded">
-                            <div class="post-inner panel-body">
-                                <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
-                                <a href="blogpost.html?post={{{id}}}">
-                                    <img class="img-responsive rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
-                                </a>
-                                <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
-                                <div class="share">
-                                    <span><a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
-                                    <span class="post-feed-share pull-right">
-                                        <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
-                                        <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
-                                        <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
-                                    </span>
-                                </div>
-                                <div>
-                                    <a href="blogpost.html?post={{id}}#disqus_thread">comments hopefully</a>
+                    <div class="more-posts-row1 row">
+                        {{#morePostsRow1}}
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="post panel panel-default rounded">
+                                <div class="post-inner panel-body">
+                                    <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
+                                    <a href="blogpost.html?post={{{id}}}">
+                                        <img class="img-responsive rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
+                                    </a>
+                                    <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
+                                    <div class="share">
+                                        <span><a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
+                                        <span class="post-feed-share pull-right">
+                                            <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
+                                            <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
+                                            <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <a href="blogpost.html?post={{id}}#disqus_thread"></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        {{/morePostsRow1}}
                     </div>
-                    {{/morePosts}}
+                    <div class="more-posts-row2 row">
+                        {{#morePostsRow2}}
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="post panel panel-default rounded">
+                                <div class="post-inner panel-body">
+                                    <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
+                                    <a href="blogpost.html?post={{{id}}}">
+                                        <img class="img-responsive rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
+                                    </a>
+                                    <div><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
+                                    <div class="share">
+                                        <span><a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
+                                        <span class="post-feed-share pull-right">
+                                            <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
+                                            <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
+                                            <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <a href="blogpost.html?post={{id}}#disqus_thread"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/morePostsRow2}}
+                    </div>
                 </script>
             </div>
 
             <div class="view-more-posts">
                 <a href="./archive.html" class="btn btn-primary link-btn">
-                    View Older Posts                
+                    View Older Posts
                 </a>
             </div>
         </div>
@@ -153,8 +181,6 @@
         <script type="text/javascript">!function (d, s, id) { var e, p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { e = d.createElement(s); e.id = id; e.src = p + '://' + 'widgets.rewardstyle.com' + '/js/ltkwidget.js'; d.body.appendChild(e); } if (typeof (window.__ltkwidget) === 'object') { if (document.readyState === 'complete') { __ltkwidget.init(); } } }(document, 'script', 'ltkwidget-script');</script><div class="rs-adblock"><img src="//assets.rewardstyle.com/images/search/350.gif" onerror="                this.parentNode.innerHTML = 'Disable your ad blocking software to view this content.'" /><noscript>JavaScript is currently disabled in this browser. Reactivate it to view this content.</noscript></div>
     </div>
 </div>
-
-
 
 <script src="Scripts/templates/slideshowTemplate.js"></script>
 <script src="Scripts/templates/homePostsTemplate.js"></script>
