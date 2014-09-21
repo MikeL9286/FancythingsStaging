@@ -229,6 +229,7 @@
     <Content Include="views\about.html" />
     <Content Include="views\home.html" />
     <Content Include="views\archive.html" />
+    <Content Include="views\partials\rightColumn.html" />
     <Content Include="views\search.html" />
     <Content Include="views\home_oldest.html" />
     <Content Include="views\partials\body.html" />
