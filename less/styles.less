@@ -13,6 +13,51 @@ body {
     color: black !important;
 }
 
+.loading-overlay {
+    z-index: 9999;
+    background-color: white;
+    position: absolute;
+    height: 100%;
+    width: 100%;    
+
+    &.loaded {
+        display: none;
+    }
+
+    i {
+        position: absolute;
+        top: 30%;
+        left: 48%;
+        color: black;
+        font-size: 1.5em;
+        -webkit-animation: rotate 2.2s linear 0 infinite;
+        -moz-animation: rotate 2.2s linear 0 infinite;
+        animation: rotate 2.2s linear 0 infinite;
+    }
+}
+
+@-webkit-keyframes rotate {
+    to {
+        -webkit-transform:rotateZ(360deg);
+        -moz-transform:rotateZ(360deg);
+        transform:rotateZ(360deg);
+    }
+}
+@-moz-keyframes rotate {
+    to {
+        -webkit-transform:rotateZ(360deg);
+        -moz-transform:rotateZ(360deg);
+        transform:rotateZ(360deg);
+    }
+}
+@keyframes rotate {
+    to {
+        -webkit-transform:rotateZ(360deg);
+        -moz-transform:rotateZ(360deg);
+        transform:rotateZ(360deg);
+    }
+}
+
 a {
     color: @blue-color;
 
@@ -81,6 +126,11 @@ hr {
                 font-size: 1.15em;
             }
         }
+    }
+
+    .navbar-brand img {
+        height: 50px;
+        width: 50px;
     }
 
     .navbar-brand, a:hover, .active > a {

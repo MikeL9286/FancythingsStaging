@@ -6,4 +6,8 @@
             offset: 5
         }).init();
 
+    imagesLoaded($('body'), function() {
+        $('.loading-overlay').addClass('loaded');
+    });
+
 }(window.Main = window.Main || {}, jQuery))
