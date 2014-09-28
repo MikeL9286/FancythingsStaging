@@ -8,7 +8,7 @@ body {
     font-size: 100%;
     letter-spacing: .1em;
     line-height: 1.5em;
-    margin-top: 75px;
+    margin-top: 100px;
     font-size: 1.3em;
     color: black !important;
 }
@@ -352,17 +352,17 @@ h5 {
 
 .related-posts {
     text-align: center;
-    margin-top: 80px;
 
     .image {
         max-width: 150px;
     }
 
-    .item {
-        max-width: 230px;
-        padding: 10px;
-        box-shadow: 0 0 10px 1px #ddd;
-        margin: 0 auto 15px auto;
+    .panel h5 {
+        background-color: transparent;
+        color: inherit;
+        margin: 10px 0 0 0;
+        padding: 0;
+        letter-spacing: inherit;
     }
 
     .content {
@@ -394,8 +394,12 @@ h5 {
         text-align: center;
 
         i {
-            font-size: 1.7em;
+            font-size: 1.5em;
             padding: 5px;
+        }
+
+        & h4:first-of-type {
+            margin-top: 0;
         }
     }
 

@@ -9,7 +9,7 @@
             <script id="blog-post-template" type="text/x-handlebars-template">
                 {{#blogPosts}}
                 <div class="post-header">
-                    <h3>{{title}}</h3>
+                    <h4>{{title}}</h4>
                     <em>{{formattedDate published}}</em>
                     <div>
                         <a href="{{twitterShareLink}}"><i class="fa fa-twitter"></i></a>
@@ -36,20 +36,21 @@
             </script>
         </div>
         <div class="related-posts hidden-xs col-md-4 col-md-offset-1">
-            <h4>
-                You might also like...
-            </h4>
-            <hr />
-            <script id="related-posts-template" type="text/x-handlebars-template">
-                {{#relatedPosts}}
-                <div class="item">
-                    <a href="blogpost.html?post={{{id}}}">
-                        <img class="image rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
-                    </a>
-                    <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
-                </div>
-                {{/relatedPosts}}
-            </script>
+            <div class="widget">
+                <h5>You might also like... <i class="fa fa-caret-down"></i></h5>
+                <script id="related-posts-template" type="text/x-handlebars-template">
+                    {{#relatedPosts}}
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="blogpost.html?post={{{id}}}">
+                                <img class="image rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
+                            </a>
+                            <a href="blogpost.html?post={{{id}}}"><h5>{{title}}</h5></a>
+                        </div>
+                    </div>
+                    {{/relatedPosts}}
+                </script>
+            </div>
         </div>
     </div>
 </section>
