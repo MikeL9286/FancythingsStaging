@@ -18,7 +18,7 @@ body {
     background-color: white;
     position: absolute;
     height: 100%;
-    width: 100%;    
+    width: 100%;
 
     &.loaded {
         display: none;
@@ -38,23 +38,25 @@ body {
 
 @-webkit-keyframes rotate {
     to {
-        -webkit-transform:rotateZ(360deg);
-        -moz-transform:rotateZ(360deg);
-        transform:rotateZ(360deg);
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
     }
 }
+
 @-moz-keyframes rotate {
     to {
-        -webkit-transform:rotateZ(360deg);
-        -moz-transform:rotateZ(360deg);
-        transform:rotateZ(360deg);
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
     }
 }
+
 @keyframes rotate {
     to {
-        -webkit-transform:rotateZ(360deg);
-        -moz-transform:rotateZ(360deg);
-        transform:rotateZ(360deg);
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
     }
 }
 
@@ -105,6 +107,35 @@ hr {
             width: 35% !important;
         }
     }
+}
+
+.fa {
+    transition: color .2s;
+    color: black;
+}
+
+.fa-facebook:hover {
+    color: #3b5998 !important;
+}
+
+.fa-twitter:hover {
+    color: #2ca9e1 !important;
+}
+
+.fa-instagram:hover {
+    color: #3f729b !important;
+}
+
+.fa-envelope:hover {
+    color: #FFD139 !important;
+}
+
+.fa-pinterest:hover {
+    color: #d43638 !important;
+}
+
+.fa-heart:hover {
+    color: red !important;
 }
 
 #navContainer {
@@ -230,7 +261,15 @@ h5 {
 
         .posts {
             .post {
-                //position: absolute;
+                .post-share {
+                    text-align: center;
+                    margin-bottom: 15px;
+
+                    i {
+                        font-size: 2em;
+                        padding: 10px;
+                    }
+                }
             }
 
             .post-inner {
@@ -533,16 +572,13 @@ h5 {
     }
 
     .post-feed {
-        .content {
-            small {
-                padding: 5px 0;
-            }
+        .post {
+            max-width: 90%;
+            margin: 0 auto 20px auto;
         }
 
-        .share {
-            i {
-                padding: 5px;
-            }
+        .content {
+            margin-bottom: 10px;
         }
     }
 }

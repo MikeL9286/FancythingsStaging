@@ -12,18 +12,13 @@
                 <script id="search-posts-template" type="text/x-handlebars-template">
                     {{#if searchPosts}}
                     {{#searchPosts}}
-                    <div class="panel panel-default">
+                    <div class="panel panel-default post">
                         <div class="panel-body">
                             <div class="content">
-                                <a href="blogpost.html?post={{{id}}}"><h4>{{title}}</h4></a>
+                                <a href="blogpost.html?post={{{id}}}"><h5>{{title}}</h5></a>
                                 <div><small>{{relativeDate published}} - </small> {{{summary content 200}}}</div>
-                                <a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a>
                             </div>
-                            <div class="share">
-                                <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
-                                <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
-                                <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
-                            </div>
+                            <a href="blogpost.html?post={{{id}}}"><small class="read-more-link">read more...</small></a>
                         </div>
                     </div>
                     {{/searchPosts}}
