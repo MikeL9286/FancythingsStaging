@@ -290,7 +290,7 @@
         if (thumbnail != null)
             post.thumbnailUrl = thumbnail[0].match('http.*jpg|http.*png|http.*jpeg');
         else
-            post.thumbnailUrl = '../img/logo.jpg';
+            post.thumbnailUrl = '../img/logo250x250.png';
     };
 
 }(window.Blogger = window.Blogger || {}, jQuery))

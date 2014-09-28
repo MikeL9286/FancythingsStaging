@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="about.html" />
     <Content Include="img\logo.jpg" />
+    <Content Include="img\logo250x250.png" />
     <Content Include="img\monogram_gold.png" />
     <Content Include="img\rslidesNav.gif" />
     <None Include="Scripts\underscore-min.map" />
