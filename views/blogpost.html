@@ -11,14 +11,14 @@
                 <div class="post-header">
                     <h4>{{title}}</h4>
                     <em>{{formattedDate published}}</em>
-                    <div>
-                        <a href="{{twitterShareLink}}"><i class="fa fa-twitter"></i></a>
-                        <a href="{{pinterestShareLink}}"><i class="fa fa-pinterest"></i></a>
-                        <a href="{{{emailShareLink}}}"><i class="fa fa-envelope"></i></a>
-                    </div>
                 </div>
                 <div class="post-content">
                     {{{content}}}
+                </div>
+                <div class="post-social">
+                    <a href="{{twitterShareLink}}"><i class="fa fa-twitter"></i></a>
+                    <a href="{{pinterestShareLink}}"><i class="fa fa-pinterest"></i></a>
+                    <a href="{{{emailShareLink}}}"><i class="fa fa-envelope"></i></a>
                 </div>
                 <div class="post-footer">
                     <ul class="ft-sig">
@@ -46,6 +46,7 @@
                                 <img class="image rounded" src="{{{thumbnail content}}}" alt="post thumbnail">
                             </a>
                             <a href="blogpost.html?post={{{id}}}"><h5>{{title}}</h5></a>
+                            <em>{{formattedDate published}}</em>
                         </div>
                     </div>
                     {{/relatedPosts}}

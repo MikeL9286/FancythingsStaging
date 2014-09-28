@@ -354,15 +354,22 @@ h5 {
     text-align: center;
 
     .image {
-        max-width: 150px;
+        max-width: 170px;
     }
 
-    .panel h5 {
-        background-color: transparent;
-        color: inherit;
-        margin: 10px 0 0 0;
-        padding: 0;
-        letter-spacing: inherit;
+    .panel {
+        h5 {
+            background-color: transparent;
+            color: inherit;
+            margin: 10px 0 5px 0;
+            padding: 0;
+            letter-spacing: inherit;
+        }
+
+        em {
+            font-family: Georgia;
+            font-size: 1em;
+        }
     }
 
     .content {
@@ -393,13 +400,18 @@ h5 {
     .post-header {
         text-align: center;
 
-        i {
-            font-size: 1.5em;
-            padding: 5px;
-        }
-
         & h4:first-of-type {
             margin-top: 0;
+        }
+    }
+
+    .post-social {
+        text-align: center;
+        margin-top: 15px;
+
+        i {
+            font-size: 1.7em;
+            padding: 5px;
         }
     }
 
