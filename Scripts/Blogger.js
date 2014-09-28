@@ -128,7 +128,9 @@
                     alert("error: " + url);
                 },
                 success: function (data) {
-                    Blogger.relatedPosts = Blogger.relatedPosts.concat(data.items.slice(0, 2));
+                    Blogger.relatedPosts = _.filter(data.items, function (post) {
+                        return post.id != Blogger.posts.id && !_.contains(Blogger.relatedPosts, post);
+                    });
                 }
             });
         });
