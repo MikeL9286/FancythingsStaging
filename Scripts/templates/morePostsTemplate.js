@@ -7,18 +7,6 @@ var data = {
     morePostsRow2: Blogger.posts.slice(6, 9)
 };
 
-Handlebars.registerHelper('thumbnail', function(postContent) {
-    var thumbnail = postContent.match('<img class="post-thumbnail".*/>');
-    var thumbnailUrl;
-
-    if (thumbnail == null)
-        thumbnailUrl = 'http://placehold.it/250x250';
-    else
-        thumbnailUrl = thumbnail[0].match('http.*jpg|http.*png');
-
-    return thumbnailUrl;
-});
-
 Handlebars.registerHelper('summary', function (postContent, length) {
     var postSummary = postContent.match('<div class="post-summary">(.*)</div>');
     if (postSummary != null) {

@@ -129,6 +129,7 @@
                 },
                 success: function (data) {
                     Blogger.relatedPosts = _.filter(data.items, function (post) {
+                        setThumbnail(post);
                         return post.id != Blogger.posts.id && !_.contains(Blogger.relatedPosts, post);
                     });
                 }
@@ -286,10 +287,10 @@
     function setThumbnail(post) {
         var thumbnail = post.content.match('<img class="post-thumbnail".*/>');
 
-        if (thumbnail == null)
-            post.thumbnailUrl = 'http://placehold.it/300x300';
+        if (thumbnail != null)
+            post.thumbnailUrl = thumbnail[0].match('http.*jpg|http.*png|http.*jpeg');
         else
-            post.thumbnailUrl = thumbnail[0].match('http.*jpg|http.*png');
+            post.thumbnailUrl = '../img/logo.jpg';
     };
 
 }(window.Blogger = window.Blogger || {}, jQuery))
