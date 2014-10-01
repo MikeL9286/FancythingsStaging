@@ -2,10 +2,7 @@
 
 var template1 = Handlebars.compile(source1);
 
-var data = {
-    morePostsRow1: Blogger.posts.slice(3, 6),
-    morePostsRow2: Blogger.posts.slice(6, 9)
-};
+var data = { morePosts: Blogger.posts.slice(3, 9) };
 
 Handlebars.registerHelper('summary', function (postContent, length) {
     var postSummary = postContent.match('<div class="post-summary">(.*)</div>');

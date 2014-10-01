@@ -49,66 +49,35 @@
                 </script>
             </div>
 
-            <div class="more-posts">
+            <div class="more-posts row">
                 <script id="more-posts-template" type="text/x-handlebars-template">
-                    <div class="more-posts-row1 row">
-                        {{#morePostsRow1}}
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="post panel panel-default rounded">
-                                <div class="post-inner panel-body">
-                                    <div class="more-posts-title">
-                                        <a href="blogpost.html?post={{{id}}}"><h5>{{title}}</h5></a>
-                                    </div>
-                                    <a href="blogpost.html?post={{{id}}}">
-                                        <img class="img-responsive rounded" src="{{{thumbnailUrl}}}" alt="post thumbnail">
-                                    </a>
-                                    <div class="more-posts-summary"><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
-                                    <div class="share">
-                                        <span><a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
-                                        <span class="post-feed-share pull-right">
-                                            <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
-                                            <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
-                                            <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
-                                        </span>
-                                    </div>
-                                    <div class="disqus-count">
-                                        <a class="disqus-count-shown" href="blogpost.html?post={{id}}"></a>
-                                        <a class="disqus-count-hidden" href="{{url}}#disqus_thread" style="display:none"></a>
-                                    </div>
+                    {{#morePosts}}
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="post panel panel-default rounded">
+                            <div class="post-inner panel-body">
+                                <div class="more-posts-title">
+                                    <a href="blogpost.html?post={{{id}}}"><h5>{{title}}</h5></a>
+                                </div>
+                                <a href="blogpost.html?post={{{id}}}">
+                                    <img class="img-responsive rounded" src="{{{thumbnailUrl}}}" alt="post thumbnail">
+                                </a>
+                                <div class="more-posts-summary"><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
+                                <div class="share">
+                                    <span><a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
+                                    <span class="post-feed-share pull-right">
+                                        <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
+                                        <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
+                                        <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
+                                    </span>
+                                </div>
+                                <div class="disqus-count">
+                                    <a class="disqus-count-shown" href="blogpost.html?post={{id}}"></a>
+                                    <a class="disqus-count-hidden" href="{{url}}#disqus_thread" style="display:none"></a>
                                 </div>
                             </div>
                         </div>
-                        {{/morePostsRow1}}
                     </div>
-                    <div class="more-posts-row2 row">
-                        {{#morePostsRow2}}
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="post panel panel-default rounded">
-                                <div class="post-inner panel-body">
-                                    <div class="more-posts-title">
-                                        <a href="blogpost.html?post={{{id}}}"><h5>{{title}}</h5></a>
-                                    </div>
-                                    <a href="blogpost.html?post={{{id}}}">
-                                        <img class="img-responsive rounded" src="{{{thumbnailUrl}}}" alt="post thumbnail">
-                                    </a>
-                                    <div class="more-posts-summary"><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
-                                    <div class="share">
-                                        <span><a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
-                                        <span class="post-feed-share pull-right">
-                                            <a href="{{{twitterShareLink this}}}"><i class="fa fa-twitter"></i></a>
-                                            <a href="{{{pinterestShareLink this}}}"><i class="fa fa-pinterest"></i></a>
-                                            <a href="{{{emailShareLink this}}}"><i class="fa fa-envelope"></i></a>
-                                        </span>
-                                    </div>
-                                    <div class="disqus-count">
-                                        <a class="disqus-count-shown" href="blogpost.html?post={{id}}"></a>
-                                        <a class="disqus-count-hidden" href="{{url}}#disqus_thread" style="display:none"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {{/morePostsRow2}}
-                    </div>
+                    {{/morePosts}}
                 </script>
             </div>
 
