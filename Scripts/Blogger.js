@@ -128,7 +128,7 @@
                     alert("error: " + url);
                 },
                 success: function (data) {
-                    Blogger.relatedPosts = _.filter(data.items, function (post) {
+                    Blogger.relatedPosts = _.filter(data.items.splice(0,6), function (post) {
                         setThumbnail(post);
                         return post.id != Blogger.posts.id && !_.contains(Blogger.relatedPosts, post);
                     });
