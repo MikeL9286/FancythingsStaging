@@ -237,6 +237,7 @@
             success: function (data) {
                 Blogger.posts = data;
                 convertLinkyToolsFromScript(Blogger.posts);
+                setThumbnail(Blogger.posts);
             }
         });
     };

@@ -16,7 +16,7 @@
         var pinitLink = 'http://pinterest.com/pin/create/button/?url=' + window.location.href + '&media=' + imageSource + '&description=' + $('.post-header h3').text();
         var pinitButton = '<a href="' + pinitLink + '"><i class="fa fa-pinterest"></i></a>';
 
-        image.wrap('<span style="position:relative"></span>');
+        image.wrap('<div style="position:relative"></div>');
         image.after('<span class="share-icons">' + pinitButton + '</span>');
     });
 
