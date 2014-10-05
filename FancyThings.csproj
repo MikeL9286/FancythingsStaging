@@ -69,8 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.html" />
+    <Content Include="googleea93669c9f8f0789.html" />
     <Content Include="img\logo.jpg" />
     <Content Include="img\logo250x250.png" />
+    <Content Include="img\meetKristin.jpg" />
     <Content Include="img\monogram_gold.png" />
     <Content Include="img\rslidesNav.gif" />
     <None Include="Scripts\underscore-min.map" />
@@ -109,7 +111,6 @@
     <Content Include="img\slidePurse.jpeg" />
     <Content Include="img\slideSweater.jpeg" />
     <Content Include="img\slideWelcome.jpg" />
-    <Content Include="policies.html" />
     <Content Include="press.html" />
     <Content Include="Scripts\jquery.backstretch.min.js" />
     <Content Include="Scripts\imagesloaded.pkgd.min.js" />
@@ -235,7 +236,6 @@
     <Content Include="views\search.html" />
     <Content Include="views\home_oldest.html" />
     <Content Include="views\partials\body.html" />
-    <Content Include="views\policies.html" />
     <Content Include="views\press.html" />
     <Content Include="views\blogpost.html" />
     <Content Include="views\home_old.html" />
