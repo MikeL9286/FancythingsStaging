@@ -21,6 +21,12 @@
                 </script>
             </div>
 
+            <div class="trending-items widget">
+                <div class="shopthepost-widget" data-widget-id="303944">
+                    <script type="text/javascript">!function (d, s, id) { var e, p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { e = d.createElement(s); e.id = id; e.src = p + '://' + 'widgets.rewardstyle.com' + '/js/shopthepost.js'; d.body.appendChild(e); } if (typeof window.__stp === 'object') if (d.readyState === 'complete') { window.__stp.init(); } }(document, 'script', 'shopthepost-script');</script><div class="rs-adblock"><img src="//assets.rewardstyle.com/images/search/350.gif" onerror="                            this.parentNode.innerHTML = 'Disable your ad blocking software to view this content.'" style="width: 15px; height: 15px;" /><noscript>JavaScript is currently disabled in this browser. Reactivate it to view this content.</noscript></div>
+                </div>
+            </div>
+
             <hr class="hidden-xs" />
 
             <div class="posts">
@@ -29,7 +35,7 @@
                     <div class="post panel panel-default">
                         <div class="post-inner panel-body">
                             <div class="header">
-                                <a href="blogpost.html?post={{{id}}}"><h4 class="title">{{title}}</h4></a>
+                                <a href="blogpost.html?post={{{id}}}" target="_blank"><h4 class="title">{{title}}</h4></a>
                                 <div>{{formattedDate publishedDate}}</div>
                             </div>
                             <div>{{{content}}}</div>
@@ -56,14 +62,14 @@
                         <div class="post panel panel-default rounded">
                             <div class="post-inner panel-body">
                                 <div class="more-posts-title">
-                                    <a href="blogpost.html?post={{{id}}}"><h5>{{title}}</h5></a>
+                                    <a href="blogpost.html?post={{{id}}}" target="_blank"><h5>{{title}}</h5></a>
                                 </div>
-                                <a href="blogpost.html?post={{{id}}}">
+                                <a href="blogpost.html?post={{{id}}}" target="_blank">
                                     <img class="img-responsive rounded" src="{{{thumbnailUrl}}}" alt="post thumbnail">
                                 </a>
                                 <div class="more-posts-summary"><small>{{relativeDate published}} - </small> {{summary content 200}}</div>
                                 <div class="share">
-                                    <span><a class="read-more-link" href="blogpost.html?post={{{id}}}"><small>read more...</small></a></span>
+                                    <span><a class="read-more-link" href="blogpost.html?post={{{id}}}" target="_blank"><small>read more...</small></a></span>
                                     <span class="post-feed-share pull-right">
                                         <a href="{{{twitterShareLink this}}}" target="_blank"><i class="fa fa-twitter"></i></a>
                                         <a href="{{{pinterestShareLink this}}}" target="_blank"><i class="fa fa-pinterest"></i></a>

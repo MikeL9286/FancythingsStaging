@@ -3,14 +3,8 @@
     $('img[src*=blogspot]').addClass('img-responsive');
 
     //add pinterest button to images
-    $('.post-content img:not([src*=images\\.rewardstyle],.post-thumbnail)').each(function (index) {
+    $('.post-content img:not([src*=images\\.rewardstyle],.post-thumbnail,[src*=photobucket],[src*=googleusercontent])').each(function (index) {
         var image = $(this);
-
-        //filter the share-icons from getting the pin button
-        if (image.parent().find('> .share-icons').length > 0) {
-            return;
-        }
-
         var imageSource = image.attr('src');
 
         var pinitLink = 'http://pinterest.com/pin/create/button/?url=' + window.location.href + '&media=' + imageSource + '&description=' + $('.post-header h3').text();

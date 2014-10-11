@@ -61,6 +61,33 @@ body {
     }
 }
 
+.share-icons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity linear .3s;
+
+    a {
+        background-color: #999;
+        border: 1px solid #bbb;
+        display: inline-block;
+        width: 100px;
+        opacity: .8;
+    }
+
+    i {
+        font-size: 2em;
+        padding: 5px;
+        width: 100%;
+    }
+}
+
+img:hover ~ .share-icons, .share-icons:hover {
+    opacity: 1;
+}
+
 a {
     color: @blue-color;
 
@@ -250,6 +277,7 @@ h5 {
             position: relative;
             width: 100%;
             max-height: 477px;
+            margin-bottom: 30px;
 
             img {
                 border-radius: 4px;
@@ -481,25 +509,6 @@ h5 {
         iframe[src*=rafflecopter], #raflcptr {
             max-width: 100%;
         }
-
-        .share-icons {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #555;
-            opacity: 0;
-            transition: opacity linear .3s;
-
-            i {
-                font-size: 2em;
-                padding: 5px;
-            }
-        }
-
-            img:hover ~ .share-icons, .share-icons:hover {
-                opacity: .8;
-            }
     }
 
     .post-footer {
