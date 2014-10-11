@@ -73,6 +73,7 @@
     <Content Include="googleea93669c9f8f0789.html" />
     <Content Include="img\logo.jpg" />
     <Content Include="img\logo250x250.png" />
+    <Content Include="img\logo32x32.png" />
     <Content Include="img\meetKristin.jpg" />
     <Content Include="img\monogram_gold.png" />
     <Content Include="img\rslidesNav.gif" />
@@ -89,7 +90,6 @@
     <Content Include="blogpost.html" />
     <Content Include="css\responsiveslides.css" />
     <Content Include="css\font-awesome.min.css" />
-    <Content Include="favicon.png" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="img\aboutArmParty.jpg" />
     <Content Include="img\aboutEspresso.jpg" />
