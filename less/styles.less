@@ -3,11 +3,11 @@
 @import "variables.less";
 
 @font-face {
-        font-family: 'droid serif';
-        src: url('./fonts/DroidSerif.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-    }
+    font-family: 'droid serif';
+    src: url('./fonts/DroidSerif.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 // Fancy things styles
 // -------------------------
@@ -91,9 +91,9 @@ body {
     }
 }
 
-img:hover ~ .share-icons, .share-icons:hover {
-    opacity: 1;
-}
+    img:hover ~ .share-icons, .share-icons:hover {
+        opacity: 1;
+    }
 
 a {
     color: @blue-color;
@@ -424,22 +424,22 @@ h5 {
         .view-more-posts {
             margin: 25px 0 30px 0;
             text-align: center;
-
-            a {
-                color: black;
-                background-color: transparent;
-                border-color: @blue-color;
-                transition: color .2s;
-                transition: background-color .2s;
-                transition: border-color .2s;
-
-                &:hover {
-                    color: white;
-                    background-color: @blue-color;
-                    border-color: darken(@blue-color, 10%);
-                }
-            }
         }
+    }
+}
+
+.ft-link-btn {
+    color: black;
+    background-color: transparent;
+    border-color: @blue-color;
+    transition: color .2s;
+    transition: background-color .2s;
+    transition: border-color .2s;
+
+    &:hover {
+        color: white;
+        background-color: @blue-color;
+        border-color: darken(@blue-color, 10%);
     }
 }
 
@@ -533,7 +533,12 @@ h5 {
     }
 
     .service {
-        min-height: 200px;
+        background-color: inherit;
+        transition: background-color .1s;
+
+        &:hover {
+            background-color: lighten(@blue-color, 35%);
+        }
     }
 
     i {

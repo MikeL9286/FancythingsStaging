@@ -84,6 +84,7 @@
     <Content Include="fonts\DroidSerif.ttf" />
     <Content Include="less\styles_old.less" />
     <None Include="Scripts\underscore-min.map" />
+    <Content Include="Scripts\services.js" />
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Scripts\blogpost.js" />
     <Content Include="Scripts\templates\archivePostsTemplate.js" />
