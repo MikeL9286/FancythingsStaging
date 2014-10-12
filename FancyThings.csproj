@@ -71,6 +71,7 @@
     <Content Include="about.html" />
     <Content Include="css\styles.css" />
     <Content Include="googleea93669c9f8f0789.html" />
+    <Content Include="img\aboutProfile2.jpg" />
     <Content Include="img\logo.jpg" />
     <Content Include="img\logo250x250.png" />
     <Content Include="img\logo32x32.png" />
@@ -82,7 +83,6 @@
     <Content Include="fonts\DroidSerif-BoldItalic.ttf" />
     <Content Include="fonts\DroidSerif-Italic.ttf" />
     <Content Include="fonts\DroidSerif.ttf" />
-    <Content Include="less\styles_old.less" />
     <None Include="Scripts\underscore-min.map" />
     <Content Include="Scripts\services.js" />
     <Content Include="Scripts\underscore-min.js" />
