@@ -239,7 +239,6 @@
     <Content Include="views\partials\body.html" />
     <Content Include="views\press.html" />
     <Content Include="views\blogpost.html" />
-    <Content Include="views\partials\Footer.html" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
