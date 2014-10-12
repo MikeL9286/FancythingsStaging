@@ -78,6 +78,11 @@
     <Content Include="img\monogram_gold.png" />
     <Content Include="img\rslidesNav.gif" />
     <Content Include="css\styles.css.map" />
+    <Content Include="fonts\DroidSerif-Bold.ttf" />
+    <Content Include="fonts\DroidSerif-BoldItalic.ttf" />
+    <Content Include="fonts\DroidSerif-Italic.ttf" />
+    <Content Include="fonts\DroidSerif.ttf" />
+    <Content Include="less\styles_old.less" />
     <None Include="Scripts\underscore-min.map" />
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Scripts\blogpost.js" />
@@ -230,11 +235,9 @@
     <Content Include="views\archive.html" />
     <Content Include="views\partials\rightColumn.html" />
     <Content Include="views\search.html" />
-    <Content Include="views\home_oldest.html" />
     <Content Include="views\partials\body.html" />
     <Content Include="views\press.html" />
     <Content Include="views\blogpost.html" />
-    <Content Include="views\home_old.html" />
     <Content Include="views\partials\Footer.html" />
   </ItemGroup>
   <ItemGroup />
@@ -247,9 +250,8 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="views\partials\navigation.html" />
-    <Content Include="views\blog\Index.html" />
-    <Content Include="views\blog\BlogAdds.html" />
     <Content Include="Index.html" />
+    <Content Include="views\services-old.html" />
     <Content Include="views\services.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

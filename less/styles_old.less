@@ -528,12 +528,34 @@ h5 {
 }
 
 #servicesContainer {
+    .row {
+        padding-top: 25px;
+    }
+
     .servicePitch {
         text-align: center;
     }
 
     .service {
-        min-height: 200px;
+        min-height: 175px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+
+        &:nth-child(1) {
+            background-color: lemonchiffon;
+        }
+
+        &:nth-child(2) {
+            background-color: lightblue;
+        }
+
+        &:nth-child(3) {
+            background-color: lightgrey;
+        }
+
+        &:nth-child(4) {
+            background-color: lightsalmon;
+        }
     }
 
     i {
