@@ -85,6 +85,13 @@
     <Content Include="fonts\DroidSerif.ttf" />
     <None Include="Scripts\underscore-min.map" />
     <Content Include="liketoknowit.html" />
+    <Content Include="Scripts\Blogger.js" />
+    <Content Include="Scripts\ContentLoader.min.js" />
+    <Content Include="Scripts\headroom.js" />
+    <Content Include="Scripts\headroom.min.js" />
+    <Content Include="Scripts\home.min.js" />
+    <Content Include="Scripts\thirdPartyJsBundle.js" />
+    <Content Include="Scripts\thirdPartyJsBundle.min.js" />
     <Content Include="Scripts\services.js" />
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Scripts\blogpost.js" />
@@ -119,23 +126,12 @@
     <Content Include="img\slideSweater.jpeg" />
     <Content Include="img\slideWelcome.jpg" />
     <Content Include="press.html" />
-    <Content Include="Scripts\jquery.backstretch.min.js" />
     <Content Include="Scripts\imagesloaded.pkgd.min.js" />
-    <Content Include="Scripts\masonry.pkgd.min.js" />
-    <Content Include="Scripts\headroom.js" />
-    <Content Include="Scripts\Blogger.js" />
-    <Content Include="Scripts\Blog.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Blogger.min.js" />
     <Content Include="Scripts\ContentLoader.js" />
-    <Content Include="Scripts\less-1.5.1.js" />
     <Content Include="Scripts\less-1.5.1.min.js" />
     <Content Include="Scripts\home.js" />
-    <Content Include="Scripts\moment-with-langs.js" />
-    <Content Include="Scripts\moment-with-langs.min.js" />
-    <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
-    <Content Include="Scripts\responsiveslides.js" />
     <Content Include="Scripts\responsiveslides.min.js" />
     <Content Include="Scripts\Slideshow.js" />
     <Content Include="Scripts\Main.js" />
@@ -213,7 +209,6 @@
     <Content Include="less\bootstrap\badges.less" />
     <Content Include="less\bootstrap\alerts.less" />
     <Content Include="less\styles.less" />
-    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\handlebars.amd.js" />
     <Content Include="Scripts\handlebars.amd.min.js" />
     <Content Include="Scripts\handlebars.js" />
@@ -222,15 +217,10 @@
     <Content Include="Scripts\handlebars.runtime.amd.min.js" />
     <Content Include="Scripts\handlebars.runtime.js" />
     <Content Include="Scripts\handlebars.runtime.min.js" />
-    <Content Include="Scripts\jquery-2.1.1.js" />
-    <Content Include="Scripts\jquery-2.1.1.min.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\templates\featuredPostTemplate.js" />
     <Content Include="Scripts\templates\blogPostTemplate.js" />
     <Content Include="Scripts\templates\relatedPostsTemplate.js" />
     <Content Include="Scripts\templates\morePostsTemplate.js" />
-    <Content Include="Scripts\waypoints.min.js" />
     <Content Include="services.html" />
     <Content Include="views\about.html" />
     <Content Include="views\home.html" />
@@ -270,7 +260,6 @@
     <Content Include="less\spinning.less" />
     <Content Include="less\stacked.less" />
     <Content Include="less\variables.less" />
-    <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
