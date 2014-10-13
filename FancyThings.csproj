@@ -84,6 +84,7 @@
     <Content Include="fonts\DroidSerif-Italic.ttf" />
     <Content Include="fonts\DroidSerif.ttf" />
     <None Include="Scripts\underscore-min.map" />
+    <Content Include="liketoknowit.html" />
     <Content Include="Scripts\services.js" />
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Scripts\blogpost.js" />
@@ -235,6 +236,7 @@
     <Content Include="views\home.html" />
     <Content Include="views\archive.html" />
     <Content Include="views\partials\rightColumn.html" />
+    <Content Include="views\liketoknowit.html" />
     <Content Include="views\search.html" />
     <Content Include="views\partials\body.html" />
     <Content Include="views\press.html" />
@@ -251,7 +253,6 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="views\partials\navigation.html" />
     <Content Include="Index.html" />
-    <Content Include="views\services-old.html" />
     <Content Include="views\services.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

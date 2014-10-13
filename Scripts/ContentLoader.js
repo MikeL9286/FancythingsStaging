@@ -18,15 +18,14 @@
             body.load("views/press.html");
             $('#pressLink a').tab('show');
         }
-        else if (currentUrl.indexOf("policies.html") != -1) {
-            body.load("views/policies.html");
-            $('#policiesLink a').tab('show');
-        }
         else if (currentUrl.indexOf("search.html") != -1) {
             body.load("views/search.html");
         }
         else if (currentUrl.indexOf("archive.html") != -1) {
             body.load("views/archive.html");
+        }
+        else if (currentUrl.indexOf("liketoknowit.html") != -1) {
+            body.load("views/liketoknowit.html");
         }
         else {
             body.load("views/home.html");
