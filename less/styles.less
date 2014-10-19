@@ -4,7 +4,7 @@
 @import "variables.less";
 
 @font-face {
-    font-family: 'droid serif';
+    font-family: 'droidserif';
     src: url('./fonts/DroidSerif.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -21,6 +21,7 @@ body {
     font-size: 1.3em;
     color: black !important;
     min-width: 470px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .loading-overlay {
@@ -300,8 +301,8 @@ h5 {
                 text-align: center;
                 padding: 10px;
 
-                em {
-                    font-size: 1.2em;
+                a {
+                    color: white;
                 }
             }
 
